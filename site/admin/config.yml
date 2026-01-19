@@ -2,8 +2,7 @@ backend:
   name: github
   repo: mistersuuns/mongooseproject # Path to your GitHub repo
   branch: main # Branch to update (optional; defaults to master)
-  # Note: For GitHub Pages, you may need an OAuth proxy
-  # See: https://decapcms.org/docs/authentication-backends/#github-backend
+  proxy_url: https://netlify-cms-oauth-provider-node.vercel.app # OAuth proxy for GitHub Pages
 
 # Uncomment below to enable drafts
 # publish_mode: editorial_workflow
