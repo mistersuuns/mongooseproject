@@ -1,7 +1,7 @@
 {
   "name": "framer-site",
   "version": "1.0.0",
-  "description": "This repository hosts a Framer site on GitHub Pages with automatic deployment.",
+  "description": "Banded Mongoose Research Project website hosted on GitHub Pages with Decap CMS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

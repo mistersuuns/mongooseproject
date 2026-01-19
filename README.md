@@ -1,17 +1,26 @@
-# Framer Site - GitHub Pages Hosting
+# Banded Mongoose Research Project - GitHub Pages
 
-This repository hosts a Framer site on GitHub Pages with automatic deployment.
+This repository hosts the **Banded Mongoose Research Project** website (mongooseproject.org) on GitHub Pages with automatic deployment and a custom CMS.
+
+**Note:** This is a site-specific repository for mongooseproject.org. While it includes some generic tools for downloading Framer sites, the implementation is tailored to this specific site.
+
+## About This Repository
+
+This repository contains:
+- **Static site files** for mongooseproject.org (downloaded from Framer)
+- **Decap CMS** setup for managing publications, news, and people
+- **GitHub Pages** deployment workflow
+- **Tools** for updating content from Framer
 
 ## Quick Start
 
-**Note:** Framer Sites doesn't have a built-in export feature. We'll download your published site instead.
+### Updating Content from Framer
 
-### 1. Download Your Framer Site
+If you've made changes to the site in Framer:
 
-1. Get your published Framer site URL (e.g., `https://yoursite.framer.website`)
-2. Run the download script:
+1. Run the download script:
    ```bash
-   ./download-site.sh https://yoursite.framer.website
+   ./download-site.sh https://mongooseproject.org/
    ```
    
    Or manually download using `wget`:
