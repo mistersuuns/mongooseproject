@@ -12,7 +12,7 @@ import * as cheerio from 'cheerio';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const siteDir = path.join(__dirname, '../site');
+const siteDir = path.join(__dirname, '../site/mongooseproject.org');
 const dataDir = path.join(__dirname, '../data');
 
 // Ensure data directory exists
@@ -21,61 +21,71 @@ if (!fs.existsSync(dataDir)) {
 }
 
 /**
- * Extract publications from HTML files
+ * Extract data from Framer handover script tag
+ */
+function extractHandoverData(html) {
+    const $ = cheerio.load(html);
+    const handoverScript = $('script[type="framer/handover"]').html();
+    
+    if (!handoverScript) {
+        return null;
+    }
+    
+    try {
+        // The handover data is a JSON array, parse it
+        const data = JSON.parse(handoverScript);
+        return data;
+    } catch (e) {
+        console.error('Error parsing handover data:', e.message);
+        return null;
+    }
+}
+
+/**
+ * Extract publications from publications.html
  */
 function extractPublications() {
-    const pubsDir = path.join(siteDir, 'pubs-news-ppl');
     const publications = [];
+    const pubsFile = path.join(siteDir, 'publications.html');
     
-    // Get all HTML files in pubs-news-ppl directory
-    const files = fs.readdirSync(pubsDir).filter(f => f.endsWith('.html'));
+    if (!fs.existsSync(pubsFile)) {
+        console.warn('⚠️  publications.html not found');
+        return publications;
+    }
     
-    for (const file of files) {
-        const filePath = path.join(pubsDir, file);
-        const html = fs.readFileSync(filePath, 'utf-8');
-        const $ = cheerio.load(html);
-        
-        // Extract title
-        const title = $('title').text().replace(' - Banded Mongoose Research Project', '').trim();
-        
-        // Extract meta description
-        const description = $('meta[name="description"]').attr('content') || '';
-        
-        // Extract content - try to find main content area
-        const content = $('#main').html() || $('body').html() || '';
-        
-        // Extract year from filename or content (if possible)
-        const yearMatch = title.match(/\b(19|20)\d{2}\b/);
-        const year = yearMatch ? parseInt(yearMatch[0]) : null;
-        
-        // Extract authors (if in title or content)
-        const authors = [];
-        // Try to find author patterns in content
-        const authorPattern = /(?:by|author[s]?|written by)[:\s]+([^\.]+)/i;
-        const authorMatch = content.match(authorPattern);
-        if (authorMatch) {
-            authors.push(...authorMatch[1].split(/[,&]/).map(a => a.trim()));
-        }
-        
-        // Determine if it's a publication, news, or person page
-        const isPerson = file.includes('professor') || file.includes('dr-') || 
-                        file.includes('assistant-') || file.includes('chair-') ||
-                        file.includes('field-manager') || file.match(/^[a-z-]+\.html$/);
-        const isNews = file.includes('new-') || file.includes('grant') || file.includes('funding');
-        
-        if (!isPerson && !isNews) {
-            publications.push({
-                id: file.replace('.html', ''),
-                title: title,
-                slug: file.replace('.html', ''),
-                description: description,
-                content: content.substring(0, 5000), // Limit content size
-                year: year,
-                authors: authors.length > 0 ? authors : [],
-                url: `/pubs-news-ppl/${file}`,
-                date: null, // Will need to be added manually or extracted better
-                category: 'publication'
-            });
+    const html = fs.readFileSync(pubsFile, 'utf-8');
+    const handoverData = extractHandoverData(html);
+    
+    if (!handoverData || !handoverData[2] || !handoverData[2][1]) {
+        console.warn('⚠️  No handover data found in publications.html');
+        return publications;
+    }
+    
+    // The data structure is: [metadata, query, results]
+    // results is a Map with publication data
+    const results = handoverData[2][1];
+    
+    // Iterate through the results map
+    for (const [key, value] of Object.entries(results)) {
+        if (typeof value === 'object' && value !== null) {
+            // Extract publication fields from the value object
+            const pub = {
+                id: value.id || key.replace('/pubs-news-ppl/', '').replace('.html', ''),
+                title: value.tYY63vr3J || value.title || '',
+                slug: value.TAIvpALDu || key.replace('/pubs-news-ppl/', '').replace('.html', ''),
+                description: value.description || '',
+                year: value.t8YR7PHk7 ? parseInt(value.t8YR7PHk7) : null,
+                authors: value.Hohw1kgab ? [value.Hohw1kgab] : [],
+                url: value.WO629Dm7x || value.url || key,
+                date: value.t8YR7PHk7 || null,
+                category: 'publication',
+                body: '' // Will be extracted from individual pages if needed
+            };
+            
+            // Only add if it's actually a publication (has title and authors)
+            if (pub.title && pub.authors.length > 0) {
+                publications.push(pub);
+            }
         }
     }
     
@@ -83,69 +93,76 @@ function extractPublications() {
 }
 
 /**
- * Extract people from HTML files
+ * Extract people from people.html and individual person pages
  */
 function extractPeople() {
     const people = [];
     const peopleFile = path.join(siteDir, 'people.html');
+    const pubsNewsPplDir = path.join(siteDir, 'pubs-news-ppl');
     
-    if (!fs.existsSync(peopleFile)) {
-        return people;
-    }
-    
-    const html = fs.readFileSync(peopleFile, 'utf-8');
-    const $ = cheerio.load(html);
-    
-    // Find all people links/entries
-    $('a[href*="pubs-news-ppl"]').each((i, el) => {
-        const href = $(el).attr('href');
-        const name = $(el).text().trim();
+    // First, get all person HTML files
+    if (fs.existsSync(pubsNewsPplDir)) {
+        const files = fs.readdirSync(pubsNewsPplDir).filter(f => f.endsWith('.html'));
         
-        if (name && href && href.includes('pubs-news-ppl')) {
-            const slug = href.replace('/pubs-news-ppl/', '').replace('.html', '');
-            const personFile = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
+        for (const file of files) {
+            const filePath = path.join(pubsNewsPplDir, file);
+            const html = fs.readFileSync(filePath, 'utf-8');
+            const $ = cheerio.load(html);
             
-            if (fs.existsSync(personFile)) {
-                const personHtml = fs.readFileSync(personFile, 'utf-8');
-                const $person = cheerio.load(personHtml);
-                const title = $person('title').text().replace(' - Banded Mongoose Research Project', '').trim();
-                const description = $person('meta[name="description"]').attr('content') || '';
-                const content = $person('#main').html() || $person('body').html() || '';
+            // Check if it's a person page (has person-specific content)
+            const title = $('title').text().replace(' - Banded Mongoose Research Project', '').trim();
+            const h1 = $('h1').first().text().trim();
+            
+            // Person pages typically have a person's name as the main heading
+            // and don't have publication-like content
+            const isPerson = !title.toLowerCase().includes('publication') && 
+                           !title.toLowerCase().includes('grant') &&
+                           !title.toLowerCase().includes('funding') &&
+                           !title.toLowerCase().includes('tracking') &&
+                           h1 && h1.length < 100; // Person names are short
+            
+            if (isPerson) {
+                const slug = file.replace('.html', '');
+                const description = $('meta[name="description"]').attr('content') || '';
+                const content = $('#main').html() || $('body').html() || '';
                 
                 people.push({
                     id: slug,
-                    name: name,
+                    name: h1 || title,
                     slug: slug,
-                    title: title,
+                    title: null, // Role/title - would need to extract from content
                     description: description,
-                    content: content.substring(0, 5000),
-                    url: href,
-                    role: null, // Will need to extract from content
+                    content: content.substring(0, 10000), // Limit size
+                    url: `/pubs-news-ppl/${file}`,
                     email: null
                 });
             }
         }
-    });
+    }
     
     return people;
 }
 
 /**
- * Extract news items
+ * Extract news items from news.html
  */
 function extractNews() {
     const news = [];
     const newsFile = path.join(siteDir, 'news.html');
     
     if (!fs.existsSync(newsFile)) {
+        console.warn('⚠️  news.html not found');
         return news;
     }
     
     const html = fs.readFileSync(newsFile, 'utf-8');
     const $ = cheerio.load(html);
     
-    // Find news items (similar to publications but marked as news)
-    $('a[href*="pubs-news-ppl"]').each((i, el) => {
+    // Find news items - they're typically links to pages in pubs-news-ppl
+    // that have "grant", "funding", "tracking" or similar in the title
+    const newsLinks = $('a[href*="pubs-news-ppl"]');
+    
+    newsLinks.each((i, el) => {
         const href = $(el).attr('href');
         const title = $(el).text().trim();
         
@@ -153,21 +170,34 @@ function extractNews() {
             const slug = href.replace('/pubs-news-ppl/', '').replace('.html', '');
             const newsItemFile = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
             
+            // Check if it's actually a news item (not a person or publication)
             if (fs.existsSync(newsItemFile)) {
                 const newsHtml = fs.readFileSync(newsItemFile, 'utf-8');
                 const $news = cheerio.load(newsHtml);
-                const description = $news('meta[name="description"]').attr('content') || '';
-                const content = $news('#main').html() || $news('body').html() || '';
+                const newsTitle = $news('title').text().replace(' - Banded Mongoose Research Project', '').trim();
                 
-                news.push({
-                    id: slug,
-                    title: title,
-                    slug: slug,
-                    description: description,
-                    content: content.substring(0, 5000),
-                    url: href,
-                    date: null
-                });
+                // News items typically have "grant", "funding", "tracking" etc in title
+                const isNews = newsTitle.toLowerCase().includes('grant') ||
+                              newsTitle.toLowerCase().includes('funding') ||
+                              newsTitle.toLowerCase().includes('tracking') ||
+                              newsTitle.toLowerCase().includes('new');
+                
+                if (isNews) {
+                    const description = $news('meta[name="description"]').attr('content') || '';
+                    const content = $news('#main').html() || $news('body').html() || '';
+                    const dateMatch = content.match(/(\d{4}\/\d{1,2}\/\d{1,2})/);
+                    const date = dateMatch ? dateMatch[1] : null;
+                    
+                    news.push({
+                        id: slug,
+                        title: newsTitle || title,
+                        slug: slug,
+                        description: description,
+                        content: content.substring(0, 10000),
+                        url: href,
+                        date: date
+                    });
+                }
             }
         }
     });
@@ -176,7 +206,7 @@ function extractNews() {
 }
 
 // Main extraction
-console.log('🔍 Extracting CMS data from HTML files...\n');
+console.log('🔍 Extracting CMS data from Framer HTML files...\n');
 
 const publications = extractPublications();
 const people = extractPeople();
