@@ -14,16 +14,32 @@
       --spacing-xl: 1.5rem;    /* 24px */
     }
 
-    /* Reduce Decap logo size */
-    #nc-root img[src*="decap"],
-    #nc-root img[src*="bridge"],
-    #nc-root svg[class*="logo"],
-    #nc-root [class*="logo"] img,
-    #nc-root [class*="logo"] svg {
+    /* Reduce Decap logo size - aggressive targeting */
+    #nc-root img,
+    #nc-root svg,
+    img[src*="decap"],
+    img[src*="bridge"],
+    svg[class*="logo"],
+    [class*="logo"] img,
+    [class*="logo"] svg,
+    [class*="nc-authPage"] img,
+    [class*="nc-authPage"] svg,
+    [class*="nc-authPage-header"] img,
+    [class*="nc-authPage-header"] svg,
+    header img,
+    header svg {
       max-height: 2rem !important;
       max-width: 12rem !important;
       height: auto !important;
       width: auto !important;
+    }
+    
+    /* Target Decap text specifically */
+    #nc-root [class*="nc-authPage"] h1,
+    #nc-root [class*="nc-authPage"] [class*="title"],
+    #nc-root [class*="nc-authPage-header"] {
+      font-size: 1.25rem !important;
+      line-height: 1.5 !important;
     }
 
     /* Invitation message */
@@ -32,7 +48,7 @@
       font-size: 0.875rem; /* 14px */
       color: #1e293b;
       text-align: center;
-      margin: 0 0 var(--spacing-lg) 0; /* 18px bottom */
+      margin: 0 0 calc(var(--spacing-lg) * 2) 0 !important; /* 36px bottom - 200% increase */
       max-width: 32.5rem; /* 520px */
     }
 
