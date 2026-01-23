@@ -54,19 +54,20 @@
       max-width: 32.5rem; /* 520px */
     }
 
-    /* Wrapper - zero out all spacing, account for parent padding */
+    /* Wrapper - center buttons, account for parent padding */
     .decapbridge-signup-wrap {
       display: flex !important;
       flex-direction: column !important;
-      align-items: stretch !important;
+      align-items: center !important;
       margin: 0 !important;
       padding: 0 !important;
       gap: 0 !important;
     }
 
-    /* Signup button - gap to login is HALF of text-to-signup gap (9px = 18px/2) */
+    /* Signup button - fit to content, gap to login is HALF of text-to-signup gap (9px = 18px/2) */
     .decapbridge-signup-btn {
-      width: 100% !important;
+      width: fit-content !important;
+      min-width: fit-content !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -78,7 +79,7 @@
       font-size: 1rem !important; /* 16px */
       font-weight: 600 !important;
       cursor: pointer !important;
-      margin: 0 !important;
+      margin: 0 auto !important;
       margin-bottom: 0.5625rem !important; /* 9px = half of 18px */
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
@@ -103,10 +104,14 @@
       padding-top: 0 !important;
     }
     
-    /* Target login button specifically - remove all spacing */
+    /* Target login button specifically - remove all spacing and match signup button width */
     button[type="submit"]:not(.decapbridge-signup-btn) {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
+      width: fit-content !important;
+      min-width: fit-content !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
     
     /* Remove spacing from any parent containers */
@@ -116,6 +121,9 @@
       margin: 0 !important;
       padding: 0 !important;
       gap: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
     }
   </style>
 </head>
@@ -178,28 +186,42 @@
         // Insert wrapper immediately above login button (same container)
         loginButton.parentElement.insertBefore(wrap, loginButton);
         
-        // Systematically remove ALL spacing from login button and its containers
+        // Systematically remove ALL spacing from login button and match signup button width
         // Do this immediately and also after a delay to catch any DecapBridge CSS
         function removeLoginSpacing() {
-          // Remove margin/padding from login button
+          // Get signup button width
+          const signupBtn = document.querySelector('.decapbridge-signup-btn');
+          const signupWidth = signupBtn ? signupBtn.offsetWidth + 'px' : 'fit-content';
+          
+          // Remove margin/padding from login button and match width
           loginButton.style.marginTop = '0';
           loginButton.style.marginBottom = '0';
           loginButton.style.paddingTop = '0';
+          loginButton.style.width = signupWidth;
+          loginButton.style.minWidth = signupWidth;
+          loginButton.style.marginLeft = 'auto';
+          loginButton.style.marginRight = 'auto';
           
-          // Remove spacing from parent containers
+          // Remove spacing from parent containers and center
           const loginParent = loginButton.parentElement;
           if (loginParent) {
             loginParent.style.marginTop = '0';
             loginParent.style.paddingTop = '0';
             loginParent.style.gap = '0';
+            loginParent.style.display = 'flex';
+            loginParent.style.flexDirection = 'column';
+            loginParent.style.alignItems = 'center';
           }
           
-          // Remove spacing from form if it exists
+          // Remove spacing from form if it exists and center
           const loginForm = loginButton.closest('form');
           if (loginForm) {
             loginForm.style.marginTop = '0';
             loginForm.style.paddingTop = '0';
             loginForm.style.gap = '0';
+            loginForm.style.display = 'flex';
+            loginForm.style.flexDirection = 'column';
+            loginForm.style.alignItems = 'center';
           }
         }
         
