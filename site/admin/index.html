@@ -11,14 +11,16 @@
       font-size: 14px;
       color: #1e293b;
       text-align: center;
-      margin: 0 0 6px 0;
+      /* increase space to signup button (~200%+) */
+      margin: 0 0 18px 0;
       max-width: 520px;
     }
     .decapbridge-signup-wrap {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      margin: 0 0 6px 0;
+      /* reduce gap between signup + login */
+      margin: 0 0 2px 0;
     }
     .decapbridge-signup-btn {
       width: 100% !important;
@@ -100,6 +102,10 @@
 
         // Insert wrapper immediately above login button (same container)
         loginButton.parentElement.insertBefore(wrap, loginButton);
+
+        // Force a tight, consistent gap between signup and login regardless of Decap CSS
+        loginButton.style.marginTop = '2px';
+        loginButton.style.marginBottom = '0';
       }
     }
     
