@@ -4,42 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <!-- Netlify Identity Widget - REQUIRED for git-gateway -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- DecapBridge - No additional scripts needed, handled by Decap CMS -->
 </head>
 <body>
   <!-- Include the script that builds the page and powers Decap CMS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-  <script>
-    // Initialize Identity widget
-    if (window.netlifyIdentity) {
-      // Initialize with API URL
-      window.netlifyIdentity.init({
-        APIUrl: 'https://mistersuuns.space/.netlify/identity'
-      });
-      
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          const hash = window.location.hash;
-          
-          if (hash.includes('invite_token=')) {
-            // When invite_token is present, the widget should automatically
-            // show password setup form. Don't interfere - just let it handle it.
-            // But we may need to trigger it explicitly
-            setTimeout(() => {
-              // Try opening signup - widget should detect token and show password setup
-              window.netlifyIdentity.open('signup');
-            }, 200);
-          } else {
-            window.netlifyIdentity.open('login');
-          }
-        }
-      });
-      
-      window.netlifyIdentity.on("login", () => {
-        window.location.hash = '';
-      });
-    }
-  </script>
 </body>
 </html>
