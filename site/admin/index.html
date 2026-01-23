@@ -6,12 +6,17 @@
   <title>Content Manager</title>
   <style>
     /* Style for injected signup button */
-    .decapbridge-signup-btn {
-      width: auto;
-      max-width: 100%;
-      display: inline-flex;
-      align-items: center;
+    .decapbridge-signup-wrap {
+      display: flex;
       justify-content: center;
+      margin: 0 0 12px 0;
+    }
+    .decapbridge-signup-btn {
+      width: fit-content !important;
+      max-width: 100% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       background: #00c7b7 !important;
       color: white !important;
       padding: 12px 24px !important;
@@ -20,7 +25,7 @@
       font-size: 16px !important;
       font-weight: 600 !important;
       cursor: pointer !important;
-      margin-bottom: 16px !important;
+      margin: 0 !important;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
     .decapbridge-signup-btn:hover {
@@ -66,6 +71,9 @@
       
       // If we found a login button, inject signup button above it
       if (loginButton && !document.querySelector('.decapbridge-signup-btn')) {
+        const wrap = document.createElement('div');
+        wrap.className = 'decapbridge-signup-wrap';
+
         const signupBtn = document.createElement('button');
         signupBtn.type = 'button';
         signupBtn.className = 'decapbridge-signup-btn';
@@ -73,9 +81,11 @@
         signupBtn.onclick = function() {
           window.location.href = 'https://auth.decapbridge.com/sites/6924f3be-3af2-4b74-af00-7582d5a4e36c/pkce?signup=true';
         };
-        
-        // Insert before login button
-        loginButton.parentElement.insertBefore(signupBtn, loginButton);
+
+        wrap.appendChild(signupBtn);
+
+        // Insert wrapper immediately above login button (same container)
+        loginButton.parentElement.insertBefore(wrap, loginButton);
       }
     }
     
