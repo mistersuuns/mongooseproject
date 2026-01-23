@@ -159,7 +159,13 @@
 <svg display="block" role="presentation" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M 7.656 16.656 C 5.895 18.389 3.065 18.377 1.318 16.63 C -0.429 14.883 -0.441 12.054 1.292 10.292 L 10.292 1.292 C 12.054 -0.441 14.883 -0.429 16.63 1.318 C 18.377 3.065 18.389 5.895 16.656 7.656 Z" fill-opacity="var(--1m6trwb, 0)" fill="var(--21h8s6, rgb(0, 0, 0))" height="17.948174427620206px" id="eTR6NgaTs" transform="translate(3.026 3.026)" width="17.948174427620195px"/><path d="M 0 6 L 6 0" fill="transparent" height="6px" id="Tq8y4bmt5" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(9 9)" width="6px"/><path d="M 0 4.105 L 2.818 1.292 C 4.58 -0.441 7.409 -0.429 9.156 1.318 C 10.903 3.065 10.915 5.895 9.182 7.656 L 6.364 10.469" fill="transparent" height="10.469399713810105px" id="c33sCRJKn" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(10.5 3.031)" width="10.474087213810108px"/><path d="M 4.105 0 L 1.292 2.818 C -0.441 4.58 -0.429 7.409 1.318 9.156 C 3.065 10.903 5.895 10.915 7.656 9.182 L 10.469 6.364" fill="transparent" height="10.474087213810108px" id="afoIWCIcF" stroke-dasharray="" stroke-linecap="round" stroke-linejoin="round" stroke-width="var(--pgex8v, 1.5)" stroke="var(--21h8s6, rgb(0, 0, 0))" transform="translate(3.031 10.5)" width="10.469399713810105px"/></svg>
 </div>
 	<!-- Start of bodyEnd -->
-    
+    <!-- Netlify Identity - Redirect invitation tokens to /admin/ -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      if (window.location.hash.includes('invite_token=')) {
+        window.location.href = '/admin/' + window.location.hash;
+      }
+    </script>
     <!-- End of bodyEnd -->
 </body>
 </html>

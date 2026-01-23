@@ -12,13 +12,47 @@
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
     if (window.netlifyIdentity) {
+      // Wait for widget to be ready
       window.netlifyIdentity.on("init", user => {
         if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
+          const hash = window.location.hash;
+          
+          // Check for invitation token
+          if (hash.includes('invite_token=')) {
+            // Extract the token
+            const tokenMatch = hash.match(/invite_token=([^&]+)/);
+            
+            if (tokenMatch) {
+              // Open signup modal - the widget should detect the token
+              // and show password setup form instead of registration form
+              window.netlifyIdentity.open('signup');
+            } else {
+              window.netlifyIdentity.open('login');
+            }
+          } else {
+            window.netlifyIdentity.open('login');
+          }
         }
       });
+      
+      // After successful signup/login
+      window.netlifyIdentity.on("login", () => {
+        window.location.hash = '';
+      });
+    } else {
+      // Widget not loaded, check again after a delay
+      setTimeout(function() {
+        if (window.netlifyIdentity) {
+          const hash = window.location.hash;
+          if (hash.includes('invite_token=')) {
+            window.netlifyIdentity.on("init", user => {
+              if (!user) {
+                window.netlifyIdentity.open('signup');
+              }
+            });
+          }
+        }
+      }, 1000);
     }
   </script>
 </body>
