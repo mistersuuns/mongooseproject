@@ -4,8 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
+  <style>
+    .signup-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #00c7b7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      z-index: 10000;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .signup-link:hover {
+      background: #00a896;
+    }
+  </style>
 </head>
 <body>
+  <!-- Signup link for first-time users -->
+  <a href="https://auth.decapbridge.com/sites/6924f3be-3af2-4b74-af00-7582d5a4e36c/pkce?signup=true" class="signup-link">Sign Up / Set Password</a>
   <!-- Mount point for Decap CMS -->
   <div id="nc-root"></div>
   <!-- Include the script that builds the page and powers Decap CMS -->
