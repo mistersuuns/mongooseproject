@@ -5,42 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
   <style>
-    /* Style for injected signup button */
+    /* Spacing system using CSS custom properties */
+    :root {
+      --spacing-xs: 0.25rem;   /* 4px */
+      --spacing-sm: 0.5rem;    /* 8px */
+      --spacing-md: 0.625rem;  /* 10px */
+      --spacing-lg: 1.125rem;  /* 18px */
+      --spacing-xl: 1.5rem;    /* 24px */
+    }
+
+    /* Reduce Decap logo size */
+    #nc-root img[src*="decap"],
+    #nc-root img[src*="bridge"],
+    #nc-root svg[class*="logo"],
+    #nc-root [class*="logo"] img,
+    #nc-root [class*="logo"] svg {
+      max-height: 2rem !important;
+      max-width: 12rem !important;
+      height: auto !important;
+      width: auto !important;
+    }
+
+    /* Invitation message */
     .decapbridge-invite-copy {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 14px;
+      font-size: 0.875rem; /* 14px */
       color: #1e293b;
       text-align: center;
-      /* increase space to signup button (~200%+) */
-      margin: 0 0 18px 0;
-      max-width: 520px;
+      margin: 0 0 var(--spacing-lg) 0; /* 18px bottom */
+      max-width: 32.5rem; /* 520px */
     }
+
+    /* Wrapper - accounts for parent padding/margins */
     .decapbridge-signup-wrap {
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      /* reduce gap between signup + login */
-      margin: 0 0 2px 0;
+      margin: 0;
+      padding: 0;
     }
+
+    /* Signup button - 10px gap to login button below */
     .decapbridge-signup-btn {
       width: 100% !important;
-      max-width: 100% !important;
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
       background: #00c7b7 !important;
       color: white !important;
-      padding: 12px 24px !important;
+      padding: 0.75rem 1.5rem !important; /* 12px 24px */
       border: none !important;
-      border-radius: 4px !important;
-      font-size: 16px !important;
+      border-radius: 0.25rem !important; /* 4px */
+      font-size: 1rem !important; /* 16px */
       font-weight: 600 !important;
       cursor: pointer !important;
-      margin: 0 !important;
+      margin: 0 0 var(--spacing-md) 0 !important; /* 10px bottom gap to login */
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
     }
+
     .decapbridge-signup-btn:hover {
       background: #00a896 !important;
+    }
+
+    /* Ensure login button has no top margin to respect our 10px gap */
+    .decapbridge-signup-wrap + * button[type="submit"],
+    .decapbridge-signup-wrap ~ button[type="submit"] {
+      margin-top: 0 !important;
     }
   </style>
 </head>
@@ -102,10 +132,12 @@
 
         // Insert wrapper immediately above login button (same container)
         loginButton.parentElement.insertBefore(wrap, loginButton);
-
-        // Force a tight, consistent gap between signup and login regardless of Decap CSS
-        loginButton.style.marginTop = '2px';
-        loginButton.style.marginBottom = '0';
+        
+        // Add class to login button's parent for CSS targeting if needed
+        const loginContainer = loginButton.closest('form') || loginButton.parentElement;
+        if (loginContainer) {
+          loginContainer.classList.add('decapbridge-login-container');
+        }
       }
     }
     
