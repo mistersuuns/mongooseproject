@@ -178,7 +178,36 @@
         // Insert wrapper immediately above login button (same container)
         loginButton.parentElement.insertBefore(wrap, loginButton);
         
-        // Add class to login button's parent for CSS targeting if needed
+        // Systematically remove ALL spacing from login button and its containers
+        // Do this immediately and also after a delay to catch any DecapBridge CSS
+        function removeLoginSpacing() {
+          // Remove margin/padding from login button
+          loginButton.style.marginTop = '0';
+          loginButton.style.marginBottom = '0';
+          loginButton.style.paddingTop = '0';
+          
+          // Remove spacing from parent containers
+          const loginParent = loginButton.parentElement;
+          if (loginParent) {
+            loginParent.style.marginTop = '0';
+            loginParent.style.paddingTop = '0';
+            loginParent.style.gap = '0';
+          }
+          
+          // Remove spacing from form if it exists
+          const loginForm = loginButton.closest('form');
+          if (loginForm) {
+            loginForm.style.marginTop = '0';
+            loginForm.style.paddingTop = '0';
+            loginForm.style.gap = '0';
+          }
+        }
+        
+        removeLoginSpacing();
+        setTimeout(removeLoginSpacing, 100);
+        setTimeout(removeLoginSpacing, 500);
+        
+        // Add class to login button's parent for CSS targeting
         const loginContainer = loginButton.closest('form') || loginButton.parentElement;
         if (loginContainer) {
           loginContainer.classList.add('decapbridge-login-container');
