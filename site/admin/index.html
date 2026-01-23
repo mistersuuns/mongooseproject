@@ -6,9 +6,18 @@
   <title>Content Manager</title>
   <style>
     /* Style for injected signup button */
+    .decapbridge-invite-copy {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+      color: #1e293b;
+      text-align: center;
+      margin: 0 0 10px 0;
+      max-width: 520px;
+    }
     .decapbridge-signup-wrap {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       margin: 0 0 12px 0;
     }
     .decapbridge-signup-btn {
@@ -74,6 +83,10 @@
         const wrap = document.createElement('div');
         wrap.className = 'decapbridge-signup-wrap';
 
+        const copy = document.createElement('div');
+        copy.className = 'decapbridge-invite-copy';
+        copy.textContent = "You've been invited to edit mongooseproject.org cms. Create a password and sign in here.";
+
         const signupBtn = document.createElement('button');
         signupBtn.type = 'button';
         signupBtn.className = 'decapbridge-signup-btn';
@@ -82,6 +95,7 @@
           window.location.href = 'https://auth.decapbridge.com/sites/6924f3be-3af2-4b74-af00-7582d5a4e36c/pkce?signup=true';
         };
 
+        wrap.appendChild(copy);
         wrap.appendChild(signupBtn);
 
         // Insert wrapper immediately above login button (same container)
