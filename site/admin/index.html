@@ -45,7 +45,7 @@
     /* Invitation message - gap to signup button */
     .decapbridge-invite-copy {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 0.875rem; /* 14px */
+      font-size: 1.3125rem; /* 21px (50% larger than 14px) */
       color: #1e293b;
       text-align: center;
       margin: 0 !important;
@@ -104,7 +104,7 @@
       padding-top: 0 !important;
     }
     
-    /* Target login button specifically - remove all spacing and match signup button width */
+    /* Target login button specifically - remove all spacing, center text, and match signup width */
     button[type="submit"]:not(.decapbridge-signup-btn) {
       margin-top: 0 !important;
       margin-bottom: 0 !important;
@@ -112,6 +112,11 @@
       min-width: fit-content !important;
       margin-left: auto !important;
       margin-right: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1rem !important; /* match signup button font size */
+      text-align: center !important;
     }
     
     /* Remove spacing from any parent containers */
@@ -201,6 +206,15 @@
           loginButton.style.minWidth = signupWidth;
           loginButton.style.marginLeft = 'auto';
           loginButton.style.marginRight = 'auto';
+          loginButton.style.display = 'inline-flex';
+          loginButton.style.alignItems = 'center';
+          loginButton.style.justifyContent = 'center';
+          loginButton.style.textAlign = 'center';
+          
+          // Normalize label text to \"Log in\" if it's \"Login\"
+          if (loginButton.textContent.trim().toLowerCase() === 'login') {
+            loginButton.textContent = 'Log in';
+          }
           
           // Remove spacing from parent containers and center
           const loginParent = loginButton.parentElement;
