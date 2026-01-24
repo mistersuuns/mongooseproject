@@ -6,7 +6,6 @@ backend:
   auth_type: pkce
   base_url: https://auth.decapbridge.com
   auth_endpoint: /sites/6924f3be-3af2-4b74-af00-7582d5a4e36c/pkce
-  auth_token_endpoint: /sites/6924f3be-3af2-4b74-af00-7582d5a4e36c/token
   gateway_url: https://gateway.decapbridge.com
 
   # See who did what (optional)
