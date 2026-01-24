@@ -8,6 +8,55 @@
 <body>
   <!-- Decap CMS admin - DecapBridge handles auth via PKCE as configured in config.yml -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    (function () {
+      function hasPkceStateInQuery() {
+        try {
+          return /[?&]state=/.test(window.location.search);
+        } catch (e) {
+          return false;
+        }
+      }
+
+      function onLoginRoute() {
+        var h = window.location.hash || '';
+        h = h.toLowerCase();
+        return h === '' || h === '#/' || h.indexOf('#/login') === 0;
+      }
+
+      function tryAutoLogin() {
+        if (!onLoginRoute()) return;
+        if (hasPkceStateInQuery()) return; // don't interfere with PKCE callback
+
+        var buttons = document.querySelectorAll('button');
+        for (var i = 0; i < buttons.length; i++) {
+          var btn = buttons[i];
+          var text = (btn.textContent || '').trim().toLowerCase();
+          if (text === 'login' || text === 'log in') {
+            btn.click();
+            return;
+          }
+        }
+      }
+
+      window.addEventListener('load', function () {
+        // Give Decap a moment to render the login UI, then try once
+        setTimeout(tryAutoLogin, 800);
+
+        // In case the UI mounts a bit later, poll briefly then stop
+        var attempts = 0;
+        var maxAttempts = 20;
+        var interval = setInterval(function () {
+          attempts++;
+          if (attempts > maxAttempts) {
+            clearInterval(interval);
+            return;
+          }
+          tryAutoLogin();
+        }, 500);
+      });
+    })();
+  </script>
 </body>
 </html>
 
