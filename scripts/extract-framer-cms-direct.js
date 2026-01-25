@@ -448,16 +448,37 @@ function extractTitlesFromPeoplePage() {
             const jsonMatch = html.match(/<script type="framer\/handover"[^>]*>([\s\S]+?)<\/script>/);
             if (jsonMatch) {
                 const jsonData = JSON.parse(jsonMatch[1]);
-                // Recursively search for people objects (has TAIvpALDu=slug, Hohw1kgab=name, MY38jWI86=title)
+                // Recursively search for people objects (has TAIvpALDu=slug, Hohw1kgab=name, MY38jWI86=position)
                 function findPeople(obj) {
                     if (Array.isArray(obj)) {
                         obj.forEach(item => findPeople(item));
                     } else if (typeof obj === 'object' && obj !== null) {
                         if (obj.TAIvpALDu && obj.Hohw1kgab && obj.MY38jWI86) {
                             const slug = obj.TAIvpALDu;
-                            const title = obj.MY38jWI86;
-                            if (slug && title && title.length > 2 && title.length < 100 && title !== obj.Hohw1kgab) {
-                                titlesMap[slug] = title;
+                            const name = obj.Hohw1kgab;
+                            const position = obj.MY38jWI86;
+                            // Only add if position is different from name and looks like a position
+                            if (slug && typeof slug === 'string' && slug.includes('-') && 
+                                name && typeof name === 'string' && name.length > 2 &&
+                                position && typeof position === 'string' && position.length > 2 && 
+                                position !== name && position.length < 100) {
+                                // Validate it's a position (not just another name)
+                                const hasPositionKeyword = position.toLowerCase().includes('student') || 
+                                    position.toLowerCase().includes('professor') ||
+                                    position.toLowerCase().includes('researcher') ||
+                                    position.toLowerCase().includes('fellow') ||
+                                    position.toLowerCase().includes('manager') ||
+                                    position.toLowerCase().includes('director') ||
+                                    position.toLowerCase().includes('associate') ||
+                                    position.toLowerCase().includes('phd') ||
+                                    position.toLowerCase().includes('mres') ||
+                                    position.toLowerCase().includes('mbyres') ||
+                                    position.toLowerCase().includes('chair') ||
+                                    position.toLowerCase().includes('lecturer');
+                                
+                                if (hasPositionKeyword) {
+                                    titlesMap[slug] = position;
+                                }
                             }
                         }
                         Object.values(obj).forEach(val => findPeople(val));
@@ -466,7 +487,7 @@ function extractTitlesFromPeoplePage() {
                 findPeople(jsonData);
             }
         } catch (e) {
-            // Fall through to HTML parsing
+            console.warn(`  ⚠️  JSON extraction error: ${e.message}`);
         }
         
         // Strategy 1: Find h1/h4 pairs (main People section) - fallback

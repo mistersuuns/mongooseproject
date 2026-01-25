@@ -77,16 +77,20 @@ url: "${news.url}"
 }
 
 function convertPersonToMarkdown(person) {
-  // Match Framer CMS structure EXACTLY: Title, Slug, Link, Position, Category, Description, Image, URL
+  // Match Framer CMS structure EXACTLY: Title (name), Slug, Link, Position, Category, Description, Image, URL
+  // In Framer CMS: Title = person's name, Position = their role
   const fields = [];
-  fields.push(`title: "${(person.title || person.name || '').replace(/"/g, '\\"')}"`);
+  
+  // Title is the person's NAME (Framer CMS structure)
+  const name = person.title || person.name || '';
+  fields.push(`title: "${name.replace(/"/g, '\\"')}"`);
   fields.push(`slug: "${person.slug}"`);
   
   if (person.link) {
     fields.push(`link: "${person.link}"`);
   }
-  if (person.position || person.title) {
-    fields.push(`position: "${(person.position || person.title || '').replace(/"/g, '\\"')}"`);
+  if (person.position) {
+    fields.push(`position: "${person.position.replace(/"/g, '\\"')}"`);
   }
   if (person.category) {
     fields.push(`category: "${person.category.replace(/"/g, '\\"')}"`);
@@ -159,8 +163,12 @@ if (fs.existsSync(newsFile)) {
   console.log(`✅ Converted ${news.length} news items to Markdown`);
 }
 
-// Convert people
-const peopleFile = path.join(dataDir, 'people.json');
+// Convert people - try people-all-fields.json first, then fallback to people.json
+let peopleFile = path.join(dataDir, 'people-all-fields.json');
+if (!fs.existsSync(peopleFile)) {
+  peopleFile = path.join(dataDir, 'people.json');
+}
+
 if (fs.existsSync(peopleFile)) {
   const people = JSON.parse(fs.readFileSync(peopleFile, 'utf-8'));
   const peopleDir = path.join(outputDir, 'people');
