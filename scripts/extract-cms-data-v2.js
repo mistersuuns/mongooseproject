@@ -12,6 +12,7 @@ import https from 'https';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dataDir = path.join(__dirname, '../data');
+const siteDir = path.join(__dirname, '../site');
 
 // Ensure data directory exists
 if (!fs.existsSync(dataDir)) {
@@ -116,9 +117,157 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
 }
 
 /**
- * Extract people from searchIndex
+ * Extract title/role and bio from HTML file
+ * HTML is minified, so we need to search for patterns in the raw text
  */
-function extractPeople(searchIndex) {
+function extractPersonDetails(htmlPath, name) {
+    let title = null;
+    let bio = '';
+    
+    if (!fs.existsSync(htmlPath)) {
+        return { title, bio };
+    }
+    
+    try {
+        const html = fs.readFileSync(htmlPath, 'utf8');
+        
+        // Extract title/role - search for common academic titles
+        // Since HTML is minified, search for title patterns in the raw text
+        const titleKeywords = [
+            'Professor of',
+            'Assistant Professor',
+            'Postdoc',
+            'Field Manager',
+            'PhD',
+            'Dr.',
+            'Researcher',
+            'Principal Investigator'
+        ];
+        
+        // Try to find title near the name (within 2000 chars)
+        const nameIndex = html.indexOf(name);
+        if (nameIndex !== -1) {
+            const searchWindow = html.substring(nameIndex, nameIndex + 2000);
+            
+            for (const keyword of titleKeywords) {
+                const keywordIndex = searchWindow.indexOf(keyword);
+                if (keywordIndex !== -1) {
+                    // Extract text starting from keyword, up to 100 chars or next tag/brace
+                    const titleStart = keywordIndex;
+                    const titleEnd = Math.min(
+                        titleStart + 100,
+                        searchWindow.length,
+                        searchWindow.indexOf('<', titleStart) !== -1 ? searchWindow.indexOf('<', titleStart) : searchWindow.length,
+                        searchWindow.indexOf('{', titleStart) !== -1 ? searchWindow.indexOf('{', titleStart) : searchWindow.length
+                    );
+                    const extracted = searchWindow.substring(titleStart, titleEnd);
+                    const cleaned = extracted.replace(/[<>{}[\]&;]/g, ' ').replace(/\s+/g, ' ').trim();
+                    
+                    if (cleaned.length > 5 && cleaned.length < 100) {
+                        title = cleaned;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // Fallback: search entire HTML for title patterns
+        if (!title) {
+            for (const keyword of titleKeywords) {
+                const pattern = new RegExp(`${keyword}[^<>{}\\[\\]]{0,60}`, 'gi');
+                const matches = html.match(pattern);
+                if (matches && matches.length > 0) {
+                    for (const match of matches) {
+                        const cleaned = match.replace(/[<>{}[\]&;]/g, ' ').replace(/\s+/g, ' ').trim();
+                        if (cleaned.length > 10 && cleaned.length < 100) {
+                            title = cleaned;
+                            break;
+                        }
+                    }
+                    if (title) break;
+                }
+            }
+        }
+        
+        // Extract bio - look for long text blocks after the name/title
+        // Bio usually starts with phrases like "My research", "I study", "The project", etc.
+        const bioStartPhrases = ['my research', 'i study', 'the project', 'our research', 'we study', 'i aim', 'my work'];
+        
+        // Find name position and search after it
+        const nameIndex = html.indexOf(name);
+        if (nameIndex !== -1) {
+            const afterName = html.substring(nameIndex + name.length, nameIndex + 5000);
+            
+            // Look for bio start phrases
+            for (const phrase of bioStartPhrases) {
+                const phraseIndex = afterName.toLowerCase().indexOf(phrase);
+                if (phraseIndex !== -1) {
+                    // Extract text from phrase to end of paragraph or next section
+                    const bioStart = phraseIndex;
+                    let bioEnd = bioStart + 2000; // Default length
+                    
+                    // Try to find end markers
+                    const endMarkers = ['</p>', '</div>', '<h', 'Mongoose videos', '2025 BMPR'];
+                    for (const marker of endMarkers) {
+                        const markerIndex = afterName.indexOf(marker, bioStart);
+                        if (markerIndex !== -1 && markerIndex < bioEnd) {
+                            bioEnd = markerIndex;
+                        }
+                    }
+                    
+                    const bioText = afterName.substring(bioStart, bioEnd)
+                        .replace(/<[^>]+>/g, ' ')
+                        .replace(/&[^;]+;/g, ' ')
+                        .replace(/\s+/g, ' ')
+                        .trim();
+                    
+                    if (bioText.length > 200 && bioText.length < 2000) {
+                        bio = bioText;
+                        break;
+                    }
+                }
+            }
+        }
+        
+        // Fallback: find longest paragraph that contains research keywords
+        if (!bio) {
+            const bioKeywords = ['research', 'study', 'project', 'investigate', 'examine', 'aims', 'focus', 'behavior', 'animals'];
+            const textBlocks = html.match(/>[^<>]{200,3000}</g) || [];
+            
+            const candidates = [];
+            for (const block of textBlocks) {
+                const text = block.replace(/[<>]/g, ' ')
+                    .replace(/&[^;]+;/g, ' ')
+                    .replace(/\s+/g, ' ')
+                    .trim();
+                
+                if (text.length > 200 && 
+                    bioKeywords.some(kw => text.toLowerCase().includes(kw)) &&
+                    !text.toLowerCase().includes('banded mongoose research project') &&
+                    !text.toLowerCase().includes('copyright') &&
+                    !text.toLowerCase().includes('all rights reserved') &&
+                    !text.toLowerCase().match(/^(about|people|research themes|news|publications|contact)$/i) &&
+                    text.includes('.')) {
+                    candidates.push(text);
+                }
+            }
+            
+            if (candidates.length > 0) {
+                bio = candidates.sort((a, b) => b.length - a.length)[0];
+            }
+        }
+        
+    } catch (e) {
+        console.warn(`⚠️  Could not parse HTML for ${htmlPath}: ${e.message}`);
+    }
+    
+    return { title, bio };
+}
+
+/**
+ * Extract people from searchIndex and HTML files
+ */
+function extractPeople(searchIndex, siteDir) {
     const people = [];
     const knownPeopleSlugs = [
         'neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
@@ -151,13 +300,17 @@ function extractPeople(searchIndex) {
             const looksLikePerson = !hasYear && !isLongTitle && !isNews && name.length < 50 && !hasAuthors;
             
             if (isKnownPerson || looksLikePerson) {
+                // Try to extract title and bio from HTML file
+                const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
+                const { title, bio } = extractPersonDetails(htmlPath, name);
+                
                 people.push({
                     id: slug,
                     name: name,
                     slug: slug,
-                    title: null,
+                    title: title,
                     description: data.description || '',
-                    content: '',
+                    content: bio,
                     url: url,
                     email: null
                 });
@@ -226,7 +379,7 @@ downloadJSON(searchIndexUrl)
         console.log(`✅ Downloaded searchIndex (${Object.keys(searchIndex).length} entries)\n`);
         
         // Extract in order: people first, then news, then publications (excluding the others)
-        const people = extractPeople(searchIndex);
+        const people = extractPeople(searchIndex, siteDir);
         const news = extractNews(searchIndex);
         const peopleSlugs = people.map(p => p.slug);
         const newsSlugs = news.map(n => n.slug);
