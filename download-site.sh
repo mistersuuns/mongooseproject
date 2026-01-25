@@ -18,8 +18,41 @@ OUTPUT_DIR="site"
 echo "🚀 Downloading Framer site from: $SITE_URL"
 echo ""
 
-# Check if wget is available
-if command -v wget &> /dev/null; then
+# Check if curl is available (preferred on macOS)
+if command -v curl &> /dev/null; then
+    echo "📦 Using curl to download site..."
+    
+    # Create output directory
+    mkdir -p "$OUTPUT_DIR"
+    
+    # Try using curl with recursive download
+    # Note: curl doesn't have built-in recursive like wget, so we'll use a simple approach
+    echo "   Downloading main page..."
+    curl -L -o "$OUTPUT_DIR/index.html" "$SITE_URL" || {
+        echo "⚠️  curl download had some issues"
+    }
+    
+    # If wget is also available, prefer it for recursive downloads
+    if command -v wget &> /dev/null; then
+        echo "   wget also available, using it for recursive download..."
+        wget \
+            --recursive \
+            --level=inf \
+            --timestamping \
+            --page-requisites \
+            --html-extension \
+            --convert-links \
+            --restrict-file-names=windows \
+            --domains "$(echo $SITE_URL | sed -E 's|https?://([^/]+).*|\1|')" \
+            --no-parent \
+            --directory-prefix="$OUTPUT_DIR" \
+            "$SITE_URL" 2>&1 | grep -v "unable to resolve" || {
+            echo "⚠️  wget download completed with some warnings (this is normal)"
+        }
+    fi
+
+# Fallback to wget if curl not available
+elif command -v wget &> /dev/null; then
     echo "📦 Using wget to download site..."
     
     # Create output directory
@@ -38,7 +71,7 @@ if command -v wget &> /dev/null; then
         --domains "$(echo $SITE_URL | sed -E 's|https?://([^/]+).*|\1|')" \
         --no-parent \
         --directory-prefix="$OUTPUT_DIR" \
-        "$SITE_URL" || {
+        "$SITE_URL" 2>&1 | grep -v "unable to resolve" || {
         echo "⚠️  wget download completed with some warnings (this is normal)"
     }
     
@@ -58,16 +91,10 @@ if command -v wget &> /dev/null; then
         rmdir "$OUTPUT_DIR/$URL_PATH" 2>/dev/null || true
     fi
     
-elif command -v curl &> /dev/null; then
-    echo "📦 Using curl (basic download - may need manual processing)..."
-    echo "⚠️  For better results, install wget or use a tool like HTTrack"
-    mkdir -p "$OUTPUT_DIR"
-    curl -L -o "$OUTPUT_DIR/index.html" "$SITE_URL"
-    
 else
-    echo "❌ Error: Neither wget nor curl found. Please install one:"
-    echo "   macOS: brew install wget"
-    echo "   Or use: brew install httrack"
+    echo "❌ Error: Neither curl nor wget found. Please install one:"
+    echo "   macOS: curl should be pre-installed"
+    echo "   Or install wget: brew install wget"
     exit 1
 fi
 

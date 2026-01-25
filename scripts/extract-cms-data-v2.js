@@ -8,6 +8,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import https from 'https';
+import { execSync } from 'child_process';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -346,7 +347,7 @@ function extractPeople(searchIndex, siteDir) {
                     id: slug,
                     name: name,
                     slug: slug,
-                    title: title,
+                    title: title || 'Team Member', // Default title to ensure CMS visibility
                     description: data.description || '',
                     content: bio,
                     url: url,
@@ -408,19 +409,37 @@ function extractNews(searchIndex) {
 }
 
 // Main extraction
-console.log('🔍 Loading local searchIndex...\n');
+console.log('🔍 Downloading Framer searchIndex...\n');
 
+const searchIndexUrl = 'https://framerusercontent.com/sites/4nPRg3hC3Keb52fPYFU5qT/searchIndex-bqgNGwXnRph4.json';
 const localSearchIndexPath = path.join(dataDir, 'searchIndex.json');
 
-if (!fs.existsSync(localSearchIndexPath)) {
-    console.error(`❌ Error: Local searchIndex.json not found at ${localSearchIndexPath}`);
-    console.error('   Please download it using the browser/strategy defined in MIGRATION_STRATEGY.md');
-    process.exit(1);
+let searchIndex;
+
+// Try to download using curl (more reliable than Node https on macOS)
+try {
+    execSync(`curl -s "${searchIndexUrl}" -o "${localSearchIndexPath}"`, { stdio: 'pipe' });
+    if (fs.existsSync(localSearchIndexPath) && fs.statSync(localSearchIndexPath).size > 0) {
+        searchIndex = JSON.parse(fs.readFileSync(localSearchIndexPath, 'utf8'));
+        console.log(`✅ Downloaded searchIndex (${Object.keys(searchIndex).length} entries)\n`);
+    } else {
+        throw new Error('Downloaded file is empty');
+    }
+} catch (error) {
+    // Fallback: try local file if download fails
+    if (fs.existsSync(localSearchIndexPath)) {
+        console.log('⚠️  Download failed, using local searchIndex.json...\n');
+        searchIndex = JSON.parse(fs.readFileSync(localSearchIndexPath, 'utf8'));
+        console.log(`✅ Loaded local searchIndex (${Object.keys(searchIndex).length} entries)\n`);
+    } else {
+        console.error(`❌ Error: Could not download or find searchIndex.json`);
+        console.error(`   Download error: ${error.message}`);
+        console.error(`   Local path: ${localSearchIndexPath}`);
+        process.exit(1);
+    }
 }
 
 try {
-    const searchIndex = JSON.parse(fs.readFileSync(localSearchIndexPath, 'utf8'));
-    console.log(`✅ Loaded searchIndex (${Object.keys(searchIndex).length} entries)\n`);
 
     // Extract in order: people first, then news, then publications (excluding the others)
     const people = extractPeople(searchIndex, siteDir);
