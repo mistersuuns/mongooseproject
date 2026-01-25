@@ -353,29 +353,27 @@ function extractTitlesFromPeoplePage() {
         if (fs.existsSync(tempFile)) {
             const html = fs.readFileSync(tempFile, 'utf8');
             
-            // Strategy: For each link to a person page, check nearby content for h1/h4 pairs
-            const linkMatches = Array.from(html.matchAll(/href="\.\/pubs-news-ppl\/([^"]+)"/g));
-            
-            for (const linkMatch of linkMatches) {
-                const slug = linkMatch[1];
-                const linkIdx = linkMatch.index;
+            // Strategy 1: Find h1/h4 pairs (main People section), then find closest link before each h1
+            const h1Matches = Array.from(html.matchAll(/<h1[^>]*>([^<]+)<\/h1>/g));
+            for (const h1Match of h1Matches) {
+                const name = h1Match[1].trim();
+                // Only process if it looks like a person name
+                if (name.length < 3 || name.length > 50 || !/^[A-Z]/.test(name)) continue;
                 
-                // Look in a window around the link (2000 chars before, 3000 after)
-                const window = html.substring(Math.max(0, linkIdx - 2000), linkIdx + 3000);
+                const h1Idx = h1Match.index;
+                // Find h4 after h1 (title)
+                const after = html.substring(h1Idx, h1Idx + 1000);
+                const h4Match = after.match(/<h4[^>]*>([^<]+)<\/h4>/);
                 
-                // Find h1 and h4 in this window
-                const h1Match = window.match(/<h1[^>]*>([^<]+)<\/h1>/);
-                const h4Match = window.match(/<h4[^>]*>([^<]+)<\/h4>/);
-                
-                if (h1Match && h4Match) {
-                    const name = h1Match[1].trim();
+                if (h4Match) {
                     const title = h4Match[1].trim();
+                    // Find closest link before this h1 (within 3000 chars)
+                    const before = html.substring(Math.max(0, h1Idx - 3000), h1Idx);
+                    const links = Array.from(before.matchAll(/href="\.\/pubs-news-ppl\/([^"]+)"/g));
                     
-                    // Only if h4 comes after h1 (title should be after name)
-                    const h1Pos = window.indexOf(h1Match[0]);
-                    const h4Pos = window.indexOf(h4Match[0]);
-                    
-                    if (h4Pos > h1Pos && title && title.length > 2 && title !== name) {
+                    if (links.length > 0 && title && title.length > 2 && title !== name) {
+                        // Use the last (closest) link
+                        const slug = links[links.length - 1][1];
                         titlesMap[slug] = title;
                     }
                 }
