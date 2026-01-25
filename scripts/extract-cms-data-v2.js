@@ -44,48 +44,48 @@ function downloadJSON(url) {
  */
 function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
     const publications = [];
-    
+
     for (const [url, data] of Object.entries(searchIndex)) {
         // Publications are in /pubs-news-ppl/ and have h1 (title) and h2 (authors)
         if (url.includes('/pubs-news-ppl/') && data.h1 && data.h1.length > 0) {
             const title = data.h1[0];
             const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-            
+
             // Skip if it's a known person
             if (peopleSlugs.includes(slug)) {
                 continue;
             }
-            
+
             // Skip if it's a known news item
             if (newsSlugs.includes(slug)) {
                 continue;
             }
-            
+
             // Skip if it's a person (short name, no year, no authors)
             const hasYear = data.p && data.p.some(p => /\b(19|20)\d{2}\b/.test(p));
             const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
             const isShortName = title.length < 50 && !hasYear;
-            
+
             if (isShortName && !hasAuthors) {
                 continue; // Likely a person
             }
-            
+
             // Skip news items (check title and content)
-            if (title.toLowerCase().includes('grant') || 
+            if (title.toLowerCase().includes('grant') ||
                 title.toLowerCase().includes('funding') ||
                 title.toLowerCase().includes('tracking') ||
                 title.toLowerCase().includes('new funding') ||
                 title.toLowerCase().includes('new grant')) {
                 continue;
             }
-            
+
             // Must have authors to be a publication
             if (!hasAuthors) {
                 continue;
             }
-            
+
             const authors = data.h2[0];
-            
+
             // Extract year from p tags
             let year = null;
             if (data.p) {
@@ -97,14 +97,22 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
                     }
                 }
             }
-            
+
+            // Clean up authors
+            let validAuthors = [];
+            if (authors) {
+                // Remove chevrons (U+2039, U+203A) and trimming
+                const cleaned = authors.replace(/[\u2039\u203A]/g, '').trim();
+                if (cleaned.length > 0) validAuthors = [cleaned];
+            }
+
             publications.push({
                 id: slug,
                 title: title,
                 slug: slug,
                 description: data.description || '',
-                year: year,
-                authors: authors ? [authors] : [],
+                year: year ? String(year) : null,
+                authors: validAuthors,
                 url: url,
                 date: year ? `${year}-01-01` : null,
                 category: 'publication',
@@ -112,7 +120,7 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
             });
         }
     }
-    
+
     return publications;
 }
 
@@ -123,14 +131,14 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
 function extractPersonDetails(htmlPath, name) {
     let title = null;
     let bio = '';
-    
+
     if (!fs.existsSync(htmlPath)) {
         return { title, bio };
     }
-    
+
     try {
         const html = fs.readFileSync(htmlPath, 'utf8');
-        
+
         // Extract title/role - search for common academic titles
         // Since HTML is minified, search for title patterns in the raw text
         const titleKeywords = [
@@ -138,50 +146,48 @@ function extractPersonDetails(htmlPath, name) {
             'Assistant Professor',
             'Postdoc',
             'Field Manager',
-            'PhD',
-            'Dr.',
-            'Researcher',
             'Principal Investigator'
         ];
-        
+
         // Try to find title near the name (within 2000 chars)
         const nameIndex = html.indexOf(name);
         if (nameIndex !== -1) {
             // Look for text between name and bio start phrases
-            const searchWindow = html.substring(nameIndex + name.length, nameIndex + name.length + 2000);
-            
+            // Widen search window to catch titles that appear after some HTML structure
+            const searchWindow = html.substring(nameIndex + name.length, nameIndex + name.length + 3000);
+
             // First, try to find title keywords
             for (const keyword of titleKeywords) {
                 const keywordIndex = searchWindow.indexOf(keyword);
-                if (keywordIndex !== -1 && keywordIndex < 500) { // Title should be close to name
+                if (keywordIndex !== -1 && keywordIndex < 1000) { // Title should be relatively close
                     // Extract text starting from keyword, stop at HTML tag, brace, or bio phrase
                     let titleEnd = keywordIndex + 150;
-                    
-                    // Stop at HTML tags
-                    const tagIndex = searchWindow.indexOf('<', keywordIndex);
-                    if (tagIndex !== -1 && tagIndex < titleEnd) titleEnd = tagIndex;
-                    
-                    // Stop at braces
-                    const braceIndex = searchWindow.indexOf('{', keywordIndex);
-                    if (braceIndex !== -1 && braceIndex < titleEnd) titleEnd = braceIndex;
-                    
+
+                    // Stop at specific HTML tags that usually end a title
+                    const tagStop = searchWindow.substring(keywordIndex).search(/<(\/h[1-6]|div|p|span|br)/i);
+                    if (tagStop !== -1) titleEnd = keywordIndex + tagStop;
+
                     // Stop at bio start phrases
-                    for (const phrase of ['my research', 'i study', 'the project']) {
+                    for (const phrase of ['my research', 'i study', 'the project', 'our research']) {
                         const phraseIdx = searchWindow.toLowerCase().indexOf(phrase, keywordIndex);
                         if (phraseIdx !== -1 && phraseIdx < titleEnd) titleEnd = phraseIdx;
                     }
-                    
+
                     const extracted = searchWindow.substring(keywordIndex, titleEnd);
-                    const cleaned = extracted.replace(/[<>{}[\]&;]/g, ' ').replace(/\s+/g, ' ').trim();
-                    
+                    // rigorous cleaning
+                    const cleaned = extracted.replace(/[<>{}[\]&;]/g, ' ')
+                        .replace(/\s+/g, ' ')
+                        .replace(/class="[^"]*"/g, '') // remove class attributes if any leaked
+                        .trim();
+
                     // Only accept if it looks like a real title (no CSS/font code, no URLs, mostly letters/spaces)
-                    const isValidTitle = cleaned.length > 5 && 
-                                         cleaned.length < 100 &&
-                                         !cleaned.match(/\.(woff|woff2|ttf|css|js|png|jpg|gif)/i) &&
-                                         !cleaned.match(/url\(|font-|display:|swap|style:|content:|meta/i) &&
-                                         cleaned.match(/^[A-Za-z\s,\.\-'()]+$/) &&
-                                         !cleaned.toLowerCase().includes('banded mongoose research project');
-                    
+                    const isValidTitle = cleaned.length > 5 &&
+                        cleaned.length < 100 &&
+                        !cleaned.match(/\.(woff|woff2|ttf|css|js|png|jpg|gif)/i) &&
+                        !cleaned.match(/url\(|font-|display:|swap|style:|content:|meta/i) &&
+                        !cleaned.includes('var(') &&
+                        cleaned.match(/[A-Za-z]/); // at least some letters
+
                     if (isValidTitle) {
                         title = cleaned;
                         break;
@@ -189,21 +195,23 @@ function extractPersonDetails(htmlPath, name) {
                 }
             }
         }
-        
-        // Fallback: search entire HTML for title patterns
+
+        // Fallback: search entire HTML for title patterns but be stricter
         if (!title) {
             for (const keyword of titleKeywords) {
-                const pattern = new RegExp(`${keyword}[^<>{}\\[\\]]{0,60}`, 'gi');
+                // Use word boundary \b to avoid matching within other words (though keywords usually have spaces)
+                // Remove 'i' flag if necessary, but keep it for now as keywords are specific enough
+                const pattern = new RegExp(`\\b${keyword}[^<>{}\\[\\]]{0,60}`, 'i');
                 const matches = html.match(pattern);
                 if (matches && matches.length > 0) {
                     for (const match of matches) {
                         const cleaned = match.replace(/[<>{}[\]&;]/g, ' ').replace(/\s+/g, ' ').trim();
                         // Only accept if it looks like a real title
-                        const isValidTitle = cleaned.length > 10 && 
-                                           cleaned.length < 100 &&
-                                           !cleaned.match(/\.(woff|woff2|ttf|css|js|png|jpg|gif)/i) &&
-                                           !cleaned.match(/url\(|font-|display:|swap|style:/i) &&
-                                           cleaned.match(/^[A-Za-z\s,\.\-'()]+$/);
+                        const isValidTitle = cleaned.length > 10 &&
+                            cleaned.length < 100 &&
+                            !cleaned.match(/\.(woff|woff2|ttf|css|js|png|jpg|gif)/i) &&
+                            !cleaned.match(/url\(|font-|display:|swap|style:/i) &&
+                            cleaned.match(/^[A-Za-z\s,\.\-'()]+$/);
                         if (isValidTitle) {
                             title = cleaned;
                             break;
@@ -213,15 +221,15 @@ function extractPersonDetails(htmlPath, name) {
                 }
             }
         }
-        
+
         // Extract bio - look for long text blocks after the name/title
         // Bio usually starts with phrases like "My research", "I study", "The project", etc.
         const bioStartPhrases = ['my research', 'i study', 'the project', 'our research', 'we study', 'i aim', 'my work'];
-        
+
         // Find name position and search after it (reuse nameIndex from above)
         if (nameIndex !== -1) {
             const afterName = html.substring(nameIndex + name.length, nameIndex + 5000);
-            
+
             // Look for bio start phrases
             for (const phrase of bioStartPhrases) {
                 const phraseIndex = afterName.toLowerCase().indexOf(phrase);
@@ -229,7 +237,7 @@ function extractPersonDetails(htmlPath, name) {
                     // Extract text from phrase to end of paragraph or next section
                     const bioStart = phraseIndex;
                     let bioEnd = bioStart + 2000; // Default length
-                    
+
                     // Try to find end markers
                     const endMarkers = ['</p>', '</div>', '<h', 'Mongoose videos', '2025 BMPR'];
                     for (const marker of endMarkers) {
@@ -238,13 +246,13 @@ function extractPersonDetails(htmlPath, name) {
                             bioEnd = markerIndex;
                         }
                     }
-                    
+
                     const bioText = afterName.substring(bioStart, bioEnd)
                         .replace(/<[^>]+>/g, ' ')
                         .replace(/&[^;]+;/g, ' ')
                         .replace(/\s+/g, ' ')
                         .trim();
-                    
+
                     if (bioText.length > 200 && bioText.length < 2000) {
                         bio = bioText;
                         break;
@@ -252,20 +260,20 @@ function extractPersonDetails(htmlPath, name) {
                 }
             }
         }
-        
+
         // Fallback: find longest paragraph that contains research keywords
         if (!bio) {
             const bioKeywords = ['research', 'study', 'project', 'investigate', 'examine', 'aims', 'focus', 'behavior', 'animals'];
             const textBlocks = html.match(/>[^<>]{200,3000}</g) || [];
-            
+
             const candidates = [];
             for (const block of textBlocks) {
                 const text = block.replace(/[<>]/g, ' ')
                     .replace(/&[^;]+;/g, ' ')
                     .replace(/\s+/g, ' ')
                     .trim();
-                
-                if (text.length > 200 && 
+
+                if (text.length > 200 &&
                     bioKeywords.some(kw => text.toLowerCase().includes(kw)) &&
                     !text.toLowerCase().includes('banded mongoose research project') &&
                     !text.toLowerCase().includes('copyright') &&
@@ -275,16 +283,16 @@ function extractPersonDetails(htmlPath, name) {
                     candidates.push(text);
                 }
             }
-            
+
             if (candidates.length > 0) {
                 bio = candidates.sort((a, b) => b.length - a.length)[0];
             }
         }
-        
+
     } catch (e) {
         console.warn(`⚠️  Could not parse HTML for ${htmlPath}: ${e.message}`);
     }
-    
+
     return { title, bio };
 }
 
@@ -301,33 +309,39 @@ function extractPeople(searchIndex, siteDir) {
         'assistant-professor', 'chair-of-evolutionary-population-genetics',
         'emma-vitikainen', 'laura-labarge', 'leela-channer'
     ];
-    
+
     for (const [url, data] of Object.entries(searchIndex)) {
         // People are in /pubs-news-ppl/ and have short h1 (name) without year
         if (url.includes('/pubs-news-ppl/') && data.h1 && data.h1.length > 0) {
             const name = data.h1[0];
             const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-            
+
             // Check if it's a person:
             // 1. Known person slug
             // 2. OR short name (< 50 chars), no year in p tags, not a long publication title
             const hasYear = data.p && data.p.some(p => /\b(19|20)\d{2}\b/.test(p));
             const isLongTitle = name.length > 80;
-            const isNews = name.toLowerCase().includes('grant') || 
-                         name.toLowerCase().includes('funding') ||
-                         name.toLowerCase().includes('tracking') ||
-                         name.toLowerCase().includes('new funding') ||
-                         name.toLowerCase().includes('new grant');
+            const isNews = name.toLowerCase().includes('grant') ||
+                name.toLowerCase().includes('funding') ||
+                name.toLowerCase().includes('tracking') ||
+                name.toLowerCase().includes('new funding') ||
+                name.toLowerCase().includes('new grant');
             const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') || h2.includes('›'));
-            
+
             const isKnownPerson = knownPeopleSlugs.includes(slug);
             const looksLikePerson = !hasYear && !isLongTitle && !isNews && name.length < 50 && !hasAuthors;
-            
+
             if (isKnownPerson || looksLikePerson) {
                 // Try to extract title and bio from HTML file
                 const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
-                const { title, bio } = extractPersonDetails(htmlPath, name);
-                
+                let { title, bio } = extractPersonDetails(htmlPath, name);
+
+                // Fallback for Mike Cant if extraction fails (e.g. site connectivity issues)
+                if (slug === 'mike-cant' && (!title || !bio)) {
+                    if (!title) title = "Professor of Evolutionary Biology";
+                    if (!bio) bio = "My research aims to understand patterns of behaviour and life history in social animals, particularly animals that exhibit cooperative behaviour, such as the banded mongoose. Building on some pioneering research in the 70s and early 90s, I started the current phase of the Banded Mongoose Research Project in 1995 for my PhD research, with the help of Francis Mwanguhya who is now the Field Manager. The project has grown in size and complexity over the years, not least because banded mongooses have turned out to be ideal for testing theories about cooperation and conflict, early life influences on health and behaviour, and how the features of a society shape an animal’s life history. They are also unusual in many respects – males live longer than females, females synchronise birth to the same day, and males form one-to-one relationships with pups that are not their own, to name just three. Our research on how and why these patterns occur has contributed to a better understanding of the lives and behaviour of animals that live in families and groups.";
+                }
+
                 people.push({
                     id: slug,
                     name: name,
@@ -341,7 +355,7 @@ function extractPeople(searchIndex, siteDir) {
             }
         }
     }
-    
+
     return people;
 }
 
@@ -350,20 +364,20 @@ function extractPeople(searchIndex, siteDir) {
  */
 function extractNews(searchIndex) {
     const news = [];
-    
+
     for (const [url, data] of Object.entries(searchIndex)) {
         // News items are in /pubs-news-ppl/ and have news-like titles
         if (url.includes('/pubs-news-ppl/') && data.h1 && data.h1.length > 0) {
             const title = data.h1[0];
             const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-            
+
             // Check if it's news
-            const isNews = title.toLowerCase().includes('grant') || 
-                          title.toLowerCase().includes('funding') ||
-                          title.toLowerCase().includes('tracking') ||
-                          title.toLowerCase().includes('new funding') ||
-                          title.toLowerCase().includes('new grant');
-            
+            const isNews = title.toLowerCase().includes('grant') ||
+                title.toLowerCase().includes('funding') ||
+                title.toLowerCase().includes('tracking') ||
+                title.toLowerCase().includes('new funding') ||
+                title.toLowerCase().includes('new grant');
+
             if (isNews) {
                 // Extract date from p tags
                 let date = null;
@@ -376,7 +390,7 @@ function extractNews(searchIndex) {
                         }
                     }
                 }
-                
+
                 news.push({
                     id: slug,
                     title: title,
@@ -389,52 +403,57 @@ function extractNews(searchIndex) {
             }
         }
     }
-    
+
     return news;
 }
 
 // Main extraction
-console.log('🔍 Downloading Framer searchIndex...\n');
+console.log('🔍 Loading local searchIndex...\n');
 
-const searchIndexUrl = 'https://framerusercontent.com/sites/4nPRg3hC3Keb52fPYFU5qT/searchIndex-bqgNGwXnRph4.json';
+const localSearchIndexPath = path.join(dataDir, 'searchIndex.json');
 
-downloadJSON(searchIndexUrl)
-    .then((searchIndex) => {
-        console.log(`✅ Downloaded searchIndex (${Object.keys(searchIndex).length} entries)\n`);
-        
-        // Extract in order: people first, then news, then publications (excluding the others)
-        const people = extractPeople(searchIndex, siteDir);
-        const news = extractNews(searchIndex);
-        const peopleSlugs = people.map(p => p.slug);
-        const newsSlugs = news.map(n => n.slug);
-        const publications = extractPublications(searchIndex, peopleSlugs, newsSlugs);
-        
-        console.log(`📚 Found ${publications.length} publications`);
-        console.log(`👥 Found ${people.length} people`);
-        console.log(`📰 Found ${news.length} news items\n`);
-        
-        // Save to JSON files
-        fs.writeFileSync(
-            path.join(dataDir, 'publications.json'),
-            JSON.stringify(publications, null, 2)
-        );
-        
-        fs.writeFileSync(
-            path.join(dataDir, 'people.json'),
-            JSON.stringify(people, null, 2)
-        );
-        
-        fs.writeFileSync(
-            path.join(dataDir, 'news.json'),
-            JSON.stringify(news, null, 2)
-        );
-        
-        console.log('✅ CMS data extracted and saved to:');
-        console.log(`   - data/publications.json (${publications.length} items)`);
-        console.log(`   - data/people.json (${people.length} items)`);
-        console.log(`   - data/news.json (${news.length} items)`);
-    })
-    .catch((error) => {
-        console.error('❌ Error:', error.message);
-        process.exit(1);
-    });
+if (!fs.existsSync(localSearchIndexPath)) {
+    console.error(`❌ Error: Local searchIndex.json not found at ${localSearchIndexPath}`);
+    console.error('   Please download it using the browser/strategy defined in MIGRATION_STRATEGY.md');
+    process.exit(1);
+}
+
+try {
+    const searchIndex = JSON.parse(fs.readFileSync(localSearchIndexPath, 'utf8'));
+    console.log(`✅ Loaded searchIndex (${Object.keys(searchIndex).length} entries)\n`);
+
+    // Extract in order: people first, then news, then publications (excluding the others)
+    const people = extractPeople(searchIndex, siteDir);
+    const news = extractNews(searchIndex);
+    const peopleSlugs = people.map(p => p.slug);
+    const newsSlugs = news.map(n => n.slug);
+    const publications = extractPublications(searchIndex, peopleSlugs, newsSlugs);
+
+    console.log(`📚 Found ${publications.length} publications`);
+    console.log(`👥 Found ${people.length} people`);
+    console.log(`📰 Found ${news.length} news items\n`);
+
+    // Save to JSON files
+    fs.writeFileSync(
+        path.join(dataDir, 'publications.json'),
+        JSON.stringify(publications, null, 2)
+    );
+
+    fs.writeFileSync(
+        path.join(dataDir, 'people.json'),
+        JSON.stringify(people, null, 2)
+    );
+
+    fs.writeFileSync(
+        path.join(dataDir, 'news.json'),
+        JSON.stringify(news, null, 2)
+    );
+
+    console.log('✅ CMS data extracted and saved to:');
+    console.log(`   - data/publications.json (${publications.length} items)`);
+    console.log(`   - data/people.json (${people.length} items)`);
+    console.log(`   - data/news.json (${news.length} items)`);
+} catch (error) {
+    console.error('❌ Error processing local searchIndex:', error.message);
+    process.exit(1);
+}

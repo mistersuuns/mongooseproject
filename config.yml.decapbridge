@@ -1,0 +1,94 @@
+# DecapBridge Backend Configuration
+# Replace the values below with what DecapBridge provides after you add your site
+
+backend:
+  name: decapbridge
+  site_id: "YOUR_SITE_ID_FROM_DECAPBRIDGE"  # Replace with actual site ID
+  base_url: "https://api.decapbridge.com"   # This might be different - check DecapBridge docs
+  branch: main
+
+# Uncomment below to enable drafts
+# publish_mode: editorial_workflow
+
+media_folder: "site/images/uploads" # Media files will be stored in the repo under images/uploads
+public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "publications" # Used in routes, e.g., /admin/collections/publications
+    label: "Publications" # Used in the UI
+    folder: "data/publications" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: "frontmatter" # Use frontmatter format
+    extension: "md" # File extension
+    sortable_fields: ["year", "title", "authors", "category"] # Fields available for sorting in CMS
+    summary: "{{title}} - {{year}} - {{authors}}" # Display multiple fields in list view
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Year", name: "year", widget: "number", required: false}
+      - {label: "Authors", name: "authors", widget: "list", default: []}
+      - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by year, then title)."}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "URL", name: "url", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "string", default: "publication"}
+
+  - name: "news" # Used in routes, e.g., /admin/collections/news
+    label: "News" # Used in the UI
+    folder: "data/news" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    format: "frontmatter"
+    extension: "md"
+    sortable_fields: ["date", "title"] # Fields available for sorting in CMS
+    summary: "{{title}} - {{date}}" # Display multiple fields in list view
+    fields: # The fields for each document
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Date", name: "date", widget: "datetime", required: false}
+      - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by date, then title)."}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "URL", name: "url", widget: "string", required: false}
+
+  - name: "people" # Used in routes, e.g., /admin/collections/people
+    label: "People" # Used in the UI
+    folder: "data/people" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    format: "frontmatter"
+    extension: "md"
+    sortable_fields: ["name", "title", "section", "order"] # Fields available for sorting in CMS
+    summary: "{{name}} - {{title}}" # Display multiple fields in list view
+    fields: # The fields for each document
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Title/Role", name: "title", widget: "string", required: false, hint: "Used for grouping into sections (e.g., 'Principal Investigator', 'Postdoc', 'Field Team')"}
+      - {label: "Section/Group", name: "section", widget: "string", required: false, hint: "Optional: Override section grouping. If blank, uses Title/Role for grouping."}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Email", name: "email", widget: "string", required: false}
+      - {label: "Order", name: "order", widget: "number", required: false, hint: "Order within section. Lower numbers appear first. Leave blank to sort alphabetically by name within section."}
+      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "URL", name: "url", widget: "string", required: false}
+
+  - name: "images" # Used in routes, e.g., /admin/collections/images
+    label: "Images" # Used in the UI
+    folder: "data/images" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template
+    format: "frontmatter"
+    extension: "md"
+    sortable_fields: ["title", "category", "date"] # Fields available for sorting in CMS
+    summary: "{{title}} - {{category}} - {{date}}" # Display multiple fields in list view
+    fields: # The fields for each document
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Slug", name: "slug", widget: "string"}
+      - {label: "Image", name: "image", widget: "image", required: true}
+      - {label: "Alt Text", name: "alt", widget: "string", required: false, hint: "Description for screen readers and SEO"}
+      - {label: "Caption", name: "caption", widget: "text", required: false}
+      - {label: "Category", name: "category", widget: "string", required: false, hint: "e.g., research, team, field-work, etc."}
+      - {label: "Date", name: "date", widget: "datetime", required: false}
+      - {label: "Photographer/Credit", name: "credit", widget: "string", required: false}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by date, then title)."}
