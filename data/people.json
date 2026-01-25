@@ -4,8 +4,8 @@
     "name": "Michael Cant",
     "slug": "mike-cant",
     "title": "Professor of Evolutionary Biology",
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
-    "content": "My research aims to understand patterns of behaviour and life history in social animals, particularly animals that exhibit cooperative behaviour, such as the banded mongoose. Building on some pioneering research in the 70s and early 90s, I started the current phase of the Banded Mongoose Research Project in 1995 for my PhD research, with the help of Francis Mwanguhya who is now the Field Manager. The project has grown in size and complexity over the years, not least because banded mongooses have turned out to be ideal for testing theories about cooperation and conflict, early life influences on health and behaviour, and how the features of a society shape an animal’s life history. They are also unusual in many respects – males live longer than females, females synchronise birth to the same day, and males form one-to-one relationships with pups that are not their own, to name just three. Our research on how and why these patterns occur has contributed to a better understanding of the lives and behaviour of animals that live in families and groups.",
+    "description": "",
+    "content": "",
     "url": "/pubs-news-ppl/mike-cant",
     "email": null
   },
@@ -13,8 +13,8 @@
     "id": "field-manager",
     "name": "Francis Mwanguhya",
     "slug": "field-manager",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "Field Manager",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/field-manager",
     "email": null
@@ -24,7 +24,7 @@
     "name": "Hazel Nichols",
     "slug": "hazel-nichols",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/hazel-nichols",
     "email": null
@@ -34,7 +34,7 @@
     "name": "Faye Thompson",
     "slug": "faye-thompson",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/faye-thompson",
     "email": null
@@ -43,8 +43,8 @@
     "id": "professor",
     "name": "Dan Franks",
     "slug": "professor",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "Professor",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/professor",
     "email": null
@@ -53,8 +53,8 @@
     "id": "assistant-professor",
     "name": "Patrick Green",
     "slug": "assistant-professor",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "Assistant Professor",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/assistant-professor",
     "email": null
@@ -63,8 +63,8 @@
     "id": "chair-of-evolutionary-population-genetics",
     "name": "Joe Hoffman",
     "slug": "chair-of-evolutionary-population-genetics",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "Chair of Evolutionary Population Genetics",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/chair-of-evolutionary-population-genetics",
     "email": null
@@ -74,7 +74,7 @@
     "name": "Graham Birch",
     "slug": "graham-birch",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/graham-birch",
     "email": null
@@ -84,7 +84,7 @@
     "name": "Emma Vitikainen",
     "slug": "emma-vitikainen",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/emma-vitikainen",
     "email": null
@@ -94,7 +94,7 @@
     "name": "Laura LaBarge",
     "slug": "laura-labarge",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/laura-labarge",
     "email": null
@@ -104,7 +104,7 @@
     "name": "Leela Channer",
     "slug": "leela-channer",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/leela-channer",
     "email": null
@@ -114,7 +114,7 @@
     "name": "Neil Jordan",
     "slug": "neil-jordan",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/neil-jordan",
     "email": null
@@ -124,7 +124,7 @@
     "name": "Harry Marshall",
     "slug": "dr-harry-marshall",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/dr-harry-marshall",
     "email": null
@@ -133,8 +133,8 @@
     "id": "nikita-bedov-panasyuk",
     "name": "Nikita Bedov Panasyuk",
     "slug": "nikita-bedov-panasyuk",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "PhD student",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/nikita-bedov-panasyuk",
     "email": null
@@ -143,8 +143,8 @@
     "id": "jennifer-sanderson",
     "name": "Jennifer Sanderson",
     "slug": "jennifer-sanderson",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "Postdoctoral Research Associate",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/jennifer-sanderson",
     "email": null
@@ -154,7 +154,7 @@
     "name": "Michelle Hares",
     "slug": "dr-michelle-hares",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/dr-michelle-hares",
     "email": null
@@ -163,8 +163,8 @@
     "id": "beth-preston",
     "name": "Beth Preston",
     "slug": "beth-preston",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "PhD Student",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/beth-preston",
     "email": null
@@ -174,7 +174,7 @@
     "name": "Catherine Sheppard",
     "slug": "catherine-sheppard",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/catherine-sheppard",
     "email": null
@@ -184,7 +184,7 @@
     "name": "Emma Inzani",
     "slug": "emma-inzani",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/emma-inzani",
     "email": null
@@ -194,7 +194,7 @@
     "name": "Dave Seager",
     "slug": "dave-seager",
     "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/dave-seager",
     "email": null
@@ -203,8 +203,8 @@
     "id": "monil-khera",
     "name": "Monil Khera",
     "slug": "monil-khera",
-    "title": null,
-    "description": "The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.",
+    "title": "PhD Student",
+    "description": "",
     "content": "",
     "url": "/pubs-news-ppl/monil-khera",
     "email": null
