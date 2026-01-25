@@ -418,15 +418,8 @@ function extractTitlesFromPeoplePage() {
                     }
                     
                     // Validate title - must not be a person name
-                    if (title && 
-                        title !== '–' && 
-                        title !== '-' &&
-                        title.length > 2 && 
-                        title !== firstH6 &&
-                        !title.match(/^[A-Z][a-z]+\s+[A-Z][a-z]+$/) && // Not just "First Last"
-                        !title.includes('@') &&
-                        !title.includes('mailto') &&
-                        (title.toLowerCase().includes('student') || 
+                    // Accept if it contains title keywords OR if it's a valid academic title
+                    const hasTitleKeyword = title.toLowerCase().includes('student') || 
                          title.toLowerCase().includes('professor') ||
                          title.toLowerCase().includes('researcher') ||
                          title.toLowerCase().includes('fellow') ||
@@ -435,7 +428,17 @@ function extractTitlesFromPeoplePage() {
                          title.toLowerCase().includes('associate') ||
                          title.toLowerCase().includes('phd') ||
                          title.toLowerCase().includes('mres') ||
-                         title.toLowerCase().includes('mbyres'))) {
+                         title.toLowerCase().includes('mbyres');
+                    
+                    if (title && 
+                        title !== '–' && 
+                        title !== '-' &&
+                        title.length > 2 && 
+                        title !== firstH6 &&
+                        !title.match(/^[A-Z][a-z]+\s+[A-Z][a-z]+$/) && // Not just "First Last"
+                        !title.includes('@') &&
+                        !title.includes('mailto') &&
+                        hasTitleKeyword) {
                         titlesMap[slug] = title;
                     }
                 }
