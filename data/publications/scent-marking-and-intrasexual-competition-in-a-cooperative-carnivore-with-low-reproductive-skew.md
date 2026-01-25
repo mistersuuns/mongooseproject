@@ -1,5 +1,5 @@
 ---
-title: "Scent-marking and intrasexual competition in a cooperative carnivore with low reproductive skew"
+title: "2008 - Scent-marking and intrasexual competition in a cooperative carnivore with low reproductive skew"
 slug: "scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew"
 description: ""
 year: "2008"

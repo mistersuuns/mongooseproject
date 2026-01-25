@@ -1,5 +1,5 @@
 ---
-title: "Do anvil-using banded mongooses understand means-end relationships? A field experiment"
+title: "2010 - Do anvil-using banded mongooses understand means-end relationships? A field experiment"
 slug: "do-anvil-using-banded-mongooses-understand-means-end-relationships-a-field-experiment"
 description: ""
 year: "2010"

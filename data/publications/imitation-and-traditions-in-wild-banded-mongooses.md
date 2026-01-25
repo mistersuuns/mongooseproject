@@ -1,5 +1,5 @@
 ---
-title: "Imitation and traditions in wild banded mongooses"
+title: "2010 - Imitation and traditions in wild banded mongooses"
 slug: "imitation-and-traditions-in-wild-banded-mongooses"
 description: ""
 year: "2010"

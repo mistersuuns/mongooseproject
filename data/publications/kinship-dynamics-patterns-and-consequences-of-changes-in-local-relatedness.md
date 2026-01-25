@@ -1,5 +1,5 @@
 ---
-title: "Kinship dynamics: patterns and consequences of changes in local relatedness"
+title: "2021 - Kinship dynamics: patterns and consequences of changes in local relatedness"
 slug: "kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness"
 description: ""
 year: "2021"

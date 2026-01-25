@@ -510,10 +510,10 @@ function extractPeople(searchIndex, siteDir) {
                 const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
                 const { title: htmlTitle, bio } = extractPersonDetails(htmlPath, name);
                 
-                // Prioritize title from People listing page (most accurate)
-                // Fall back to slug-to-title mapping, then HTML extraction
+                // Only use title if it was found on the People listing page or from slug mapping
+                // Don't use HTML extraction fallback - titles must be on People page
                 const slugTitle = slugToTitle(slug);
-                const title = titlesMap[slug] || slugTitle || htmlTitle;
+                const title = titlesMap[slug] || slugTitle || null;
 
 
                 // Filter out generic boilerplate description

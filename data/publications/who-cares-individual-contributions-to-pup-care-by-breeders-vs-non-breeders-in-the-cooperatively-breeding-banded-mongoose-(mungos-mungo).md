@@ -1,5 +1,5 @@
 ---
-title: "Who cares? Individual contributions to pup care by breeders vs non-breeders in the cooperatively breeding banded mongoose (Mungos Mungo)"
+title: "2007 - Who cares? Individual contributions to pup care by breeders vs non-breeders in the cooperatively breeding banded mongoose (Mungos Mungo)"
 slug: "who-cares-individual-contributions-to-pup-care-by-breeders-vs-non-breeders-in-the-cooperatively-breeding-banded-mongoose-(mungos-mungo)"
 description: ""
 year: "2007"

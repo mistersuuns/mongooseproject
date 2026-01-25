@@ -1,5 +1,5 @@
 ---
-title: "Kidnapping and infanticide between groups of banded mongooses"
+title: "2009 - Kidnapping and infanticide between groups of banded mongooses"
 slug: "kidnapping-and-infanticide-between-groups-of-banded-mongooses"
 description: ""
 year: "2009"

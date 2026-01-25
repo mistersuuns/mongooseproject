@@ -1,5 +1,5 @@
 ---
-title: "Lifetime fitness consequences of early-life ecological hardship in a wild mammal population"
+title: "2017 - Lifetime fitness consequences of early-life ecological hardship in a wild mammal population"
 slug: "lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population"
 description: ""
 year: "2017"

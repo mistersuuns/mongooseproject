@@ -1,5 +1,5 @@
 ---
-title: "Causes and consequences of intergroup conflict in cooperative banded mongooses"
+title: "2017 - Causes and consequences of intergroup conflict in cooperative banded mongooses"
 slug: "causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses"
 description: ""
 year: "2017"

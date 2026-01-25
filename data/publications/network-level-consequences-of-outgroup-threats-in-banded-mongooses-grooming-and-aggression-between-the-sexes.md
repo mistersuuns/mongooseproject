@@ -1,5 +1,5 @@
 ---
-title: "Network-level consequences of outgroup threats in banded mongooses: Grooming and aggression between the sexes"
+title: "2020 - Network-level consequences of outgroup threats in banded mongooses: Grooming and aggression between the sexes"
 slug: "network-level-consequences-of-outgroup-threats-in-banded-mongooses-grooming-and-aggression-between-the-sexes"
 description: ""
 year: "2020"

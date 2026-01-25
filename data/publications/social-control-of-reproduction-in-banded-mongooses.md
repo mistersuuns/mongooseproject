@@ -1,5 +1,5 @@
 ---
-title: "Social control of reproduction in banded mongooses"
+title: "2000 - Social control of reproduction in banded mongooses"
 slug: "social-control-of-reproduction-in-banded-mongooses"
 description: ""
 year: "2000"

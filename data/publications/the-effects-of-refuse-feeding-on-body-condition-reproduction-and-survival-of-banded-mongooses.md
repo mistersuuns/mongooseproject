@@ -1,5 +1,5 @@
 ---
-title: "The effects of refuse feeding on body condition, reproduction, and survival of banded mongooses"
+title: "2004 - The effects of refuse feeding on body condition, reproduction, and survival of banded mongooses"
 slug: "the-effects-of-refuse-feeding-on-body-condition-reproduction-and-survival-of-banded-mongooses"
 description: ""
 year: "2004"

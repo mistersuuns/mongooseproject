@@ -1,5 +1,5 @@
 ---
-title: "Caregiver's cognitive traits are associated with pup fitness in a cooperatively breeding mammal"
+title: "2023 - Caregiver's cognitive traits are associated with pup fitness in a cooperatively breeding mammal"
 slug: "caregiver-s-cognitive-traits-are-associated-with-pup-fitness-in-a-cooperatively-breeding-mammal"
 description: ""
 year: "2023"

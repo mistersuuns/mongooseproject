@@ -1,5 +1,5 @@
 ---
-title: "A double pedigree reveals genetic but not cultural inheritance of cooperative personalities in wild banded mongooses"
+title: "2021 - A double pedigree reveals genetic but not cultural inheritance of cooperative personalities in wild banded mongooses"
 slug: "a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses"
 description: ""
 year: "2021"

@@ -1,5 +1,5 @@
 ---
-title: "Costly young and reproductive skew in animal societies"
+title: "1999 - Costly young and reproductive skew in animal societies"
 slug: "costly-young-and-reproductive-skew-in-animal-societies"
 description: ""
 year: "1999"

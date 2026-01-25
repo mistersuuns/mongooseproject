@@ -1,5 +1,5 @@
 ---
-title: "Fighting and mating between groups in a cooperatively breeding mammal, the banded mongoose"
+title: "2002 - Fighting and mating between groups in a cooperatively breeding mammal, the banded mongoose"
 slug: "fighting-and-mating-between-groups-in-a-cooperatively-breeding-mammal-the-banded-mongoose"
 description: ""
 year: "2002"

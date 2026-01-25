@@ -1,5 +1,5 @@
 ---
-title: "Eviction and dispersal in co-operatively breeding banded mongooses (Mungos mungo)"
+title: "2001 - Eviction and dispersal in co-operatively breeding banded mongooses (Mungos mungo)"
 slug: "eviction-and-dispersal-in-co-operatively-breeding-banded-mongooses-(mungos-mungo)"
 description: ""
 year: "2001"

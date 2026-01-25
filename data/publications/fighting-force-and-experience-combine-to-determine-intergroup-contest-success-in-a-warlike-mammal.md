@@ -1,5 +1,5 @@
 ---
-title: "Fighting force and experience combine to determine intergroup contest success in a warlike mammal"
+title: "2022 - Fighting force and experience combine to determine intergroup contest success in a warlike mammal"
 slug: "fighting-force-and-experience-combine-to-determine-intergroup-contest-success-in-a-warlike-mammal"
 description: ""
 year: "2022"

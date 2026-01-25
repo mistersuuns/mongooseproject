@@ -1,5 +1,5 @@
 ---
-title: "Helping effort and future fitness in cooperative animal societies"
+title: "2001 - Helping effort and future fitness in cooperative animal societies"
 slug: "helping-effort-and-future-fitness-in-cooperative-animal-societies"
 description: ""
 year: "2001"

@@ -1,5 +1,5 @@
 ---
-title: "Lifetime trajectories of male mating effort under reproductive conflict in a cooperatively breeding mammal"
+title: "2024 - Lifetime trajectories of male mating effort under reproductive conflict in a cooperatively breeding mammal"
 slug: "lifetime-trajectories-of-male-mating-effort-under-reproductive-conflict-in-a-cooperatively-breeding-mammal"
 description: ""
 year: "2024"

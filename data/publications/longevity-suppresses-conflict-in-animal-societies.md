@@ -1,5 +1,5 @@
 ---
-title: "Longevity suppresses conflict in animal societies"
+title: "2013 - Longevity suppresses conflict in animal societies"
 slug: "longevity-suppresses-conflict-in-animal-societies"
 description: ""
 year: "2013"

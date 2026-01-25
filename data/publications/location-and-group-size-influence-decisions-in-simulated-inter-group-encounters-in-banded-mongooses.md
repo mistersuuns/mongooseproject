@@ -1,5 +1,5 @@
 ---
-title: "Location and group size influence decisions in simulated inter-group encounters in banded mongooses"
+title: "2011 - Location and group size influence decisions in simulated inter-group encounters in banded mongooses"
 slug: "location-and-group-size-influence-decisions-in-simulated-inter-group-encounters-in-banded-mongooses"
 description: ""
 year: "2011"

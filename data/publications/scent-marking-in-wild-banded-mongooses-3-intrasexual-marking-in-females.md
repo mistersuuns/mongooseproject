@@ -1,5 +1,5 @@
 ---
-title: "Scent marking in wild banded mongooses: 3. Intrasexual marking in females"
+title: "2011 - Scent marking in wild banded mongooses: 3. Intrasexual marking in females"
 slug: "scent-marking-in-wild-banded-mongooses-3-intrasexual-marking-in-females"
 description: ""
 year: "2011"

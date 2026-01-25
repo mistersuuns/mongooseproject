@@ -1,5 +1,5 @@
 ---
-title: "Female control of paternity in cooperative breeders"
+title: "2002 - Female control of paternity in cooperative breeders"
 slug: "female-control-of-paternity-in-cooperative-breeders"
 description: ""
 year: "2002"

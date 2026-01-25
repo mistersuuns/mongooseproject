@@ -1,5 +1,5 @@
 ---
-title: "Indirect evidence of an early mating advantage in wild cooperatively breeding male banded mongooses"
+title: "2025 - Indirect evidence of an early mating advantage in wild cooperatively breeding male banded mongooses"
 slug: "indirect-evidence-of-an-early-mating-advantage-in-wild-cooperatively-breeding-male-banded-mongooses"
 description: ""
 year: "2025"

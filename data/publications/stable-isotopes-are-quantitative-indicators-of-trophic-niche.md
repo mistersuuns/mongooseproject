@@ -1,5 +1,5 @@
 ---
-title: "Stable isotopes are quantitative indicators of trophic niche"
+title: "2019 - Stable isotopes are quantitative indicators of trophic niche"
 slug: "stable-isotopes-are-quantitative-indicators-of-trophic-niche"
 description: ""
 year: "2019"

@@ -1,5 +1,5 @@
 ---
-title: "A new perspective on fish size hierarchies: patterns, causes, and consequences"
+title: "2006 - A new perspective on fish size hierarchies: patterns, causes, and consequences"
 slug: "a-new-perspective-on-fish-size-hierarchies-patterns-causes-and-consequences"
 description: ""
 year: "2006"

@@ -1,5 +1,5 @@
 ---
-title: "Individual and demographic consequences of mass eviction in cooperative banded mongooses"
+title: "2017 - Individual and demographic consequences of mass eviction in cooperative banded mongooses"
 slug: "individual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses"
 description: ""
 year: "2017"

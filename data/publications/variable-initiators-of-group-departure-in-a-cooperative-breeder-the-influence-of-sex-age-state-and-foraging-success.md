@@ -1,5 +1,5 @@
 ---
-title: "Variable initiators of group departure in a cooperative breeder: the influence of sex, age, state and foraging success"
+title: "2012 - Variable initiators of group departure in a cooperative breeder: the influence of sex, age, state and foraging success"
 slug: "variable-initiators-of-group-departure-in-a-cooperative-breeder-the-influence-of-sex-age-state-and-foraging-success"
 description: ""
 year: "2012"

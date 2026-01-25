@@ -1,5 +1,5 @@
 ---
-title: "Untangling the oxidative cost of reproduction: An analysis in wild banded mongooses"
+title: "2022 - Untangling the oxidative cost of reproduction: An analysis in wild banded mongooses"
 slug: "untangling-the-oxidative-cost-of-reproduction-an-analysis-in-wild-banded-mongooses"
 description: ""
 year: "2022"

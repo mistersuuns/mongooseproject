@@ -1,5 +1,5 @@
 ---
-title: "A tale of two theories: parent-offspring conflict and reproductive skew"
+title: "2006 - A tale of two theories: parent-offspring conflict and reproductive skew"
 slug: "a-tale-of-two-theories-parent-offspring-conflict-and-reproductive-skew"
 description: ""
 year: "2006"

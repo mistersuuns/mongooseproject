@@ -1,5 +1,5 @@
 ---
-title: "Scent marking within and between groups in banded mongooses"
+title: "2010 - Scent marking within and between groups in banded mongooses"
 slug: "scent-marking-within-and-between-groups-in-banded-mongooses"
 description: ""
 year: "2010"

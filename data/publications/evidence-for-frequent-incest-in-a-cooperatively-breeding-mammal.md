@@ -1,5 +1,5 @@
 ---
-title: "Evidence for frequent incest in a cooperatively breeding mammal"
+title: "2014 - Evidence for frequent incest in a cooperatively breeding mammal"
 slug: "evidence-for-frequent-incest-in-a-cooperatively-breeding-mammal"
 description: ""
 year: "2014"

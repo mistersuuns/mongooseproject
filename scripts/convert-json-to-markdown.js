@@ -14,8 +14,11 @@ const dataDir = path.join(__dirname, '../data');
 const outputDir = path.join(__dirname, '../data');
 
 function convertPublicationToMarkdown(pub) {
+  // Format title with year prefix: "2021 - Title"
+  const title = pub.year ? `${pub.year} - ${pub.title}` : pub.title;
+  
   const frontmatter = `---
-title: "${pub.title.replace(/"/g, '\\"')}"
+title: "${title.replace(/"/g, '\\"')}"
 slug: "${pub.slug}"
 description: "${(pub.description || '').replace(/"/g, '\\"')}"
 year: "${pub.year || ''}"

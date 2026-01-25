@@ -1,5 +1,5 @@
 ---
-title: "Live long and prosper: durable benefits of early-life care in banded mongooses"
+title: "2019 - Live long and prosper: durable benefits of early-life care in banded mongooses"
 slug: "live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses"
 description: ""
 year: "2019"

@@ -1,5 +1,5 @@
 ---
-title: "A veil of ignorance can promote fairness in a mammal society"
+title: "2021 - A veil of ignorance can promote fairness in a mammal society"
 slug: "a-veil-of-ignorance-can-promote-fairness-in-a-mammal-society"
 description: ""
 year: "2021"

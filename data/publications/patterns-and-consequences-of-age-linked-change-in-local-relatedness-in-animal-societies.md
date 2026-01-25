@@ -1,5 +1,5 @@
 ---
-title: "Patterns and consequences of age-linked change in local relatedness in animal societies"
+title: "2022 - Patterns and consequences of age-linked change in local relatedness in animal societies"
 slug: "patterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies"
 description: ""
 year: "2022"

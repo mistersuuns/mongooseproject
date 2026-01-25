@@ -1,5 +1,5 @@
 ---
-title: "Inclusive fitness theory and eusociality"
+title: "2011 - Inclusive fitness theory and eusociality"
 slug: "inclusive-fitness-theory-and-eusociality"
 description: ""
 year: "2011"

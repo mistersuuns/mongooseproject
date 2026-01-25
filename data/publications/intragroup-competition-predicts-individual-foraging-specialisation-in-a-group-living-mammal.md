@@ -1,5 +1,5 @@
 ---
-title: "Intragroup competition predicts individual foraging specialisation in a group-living mammal"
+title: "2018 - Intragroup competition predicts individual foraging specialisation in a group-living mammal"
 slug: "intragroup-competition-predicts-individual-foraging-specialisation-in-a-group-living-mammal"
 description: ""
 year: "2018"

@@ -1,5 +1,5 @@
 ---
-title: "Pregnancy is detected via odour in a wild cooperative breeder"
+title: "2017 - Pregnancy is detected via odour in a wild cooperative breeder"
 slug: "pregnancy-is-detected-via-odour-in-a-wild-cooperative-breeder"
 description: ""
 year: "2017"

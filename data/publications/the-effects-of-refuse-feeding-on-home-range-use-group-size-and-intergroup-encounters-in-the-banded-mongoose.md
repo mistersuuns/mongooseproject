@@ -1,5 +1,5 @@
 ---
-title: "The effects of refuse-feeding on home-range use, group size, and intergroup encounters in the banded mongoose"
+title: "2002 - The effects of refuse-feeding on home-range use, group size, and intergroup encounters in the banded mongoose"
 slug: "the-effects-of-refuse-feeding-on-home-range-use-group-size-and-intergroup-encounters-in-the-banded-mongoose"
 description: ""
 year: "2002"

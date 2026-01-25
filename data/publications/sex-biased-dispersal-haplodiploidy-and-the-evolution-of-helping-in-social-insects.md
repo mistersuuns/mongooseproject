@@ -1,5 +1,5 @@
 ---
-title: "Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects"
+title: "2012 - Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects"
 slug: "sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects"
 description: ""
 year: "2012"

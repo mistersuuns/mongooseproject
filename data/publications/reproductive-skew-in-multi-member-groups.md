@@ -1,5 +1,5 @@
 ---
-title: "Reproductive skew in multi-member groups"
+title: "1999 - Reproductive skew in multi-member groups"
 slug: "reproductive-skew-in-multi-member-groups"
 description: ""
 year: "1999"

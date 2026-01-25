@@ -1,5 +1,5 @@
 ---
-title: "Reproductive control via eviction (but not the threat of eviction) in banded mongooses"
+title: "2010 - Reproductive control via eviction (but not the threat of eviction) in banded mongooses"
 slug: "reproductive-control-via-eviction-(but-not-the-threat-of-eviction)-in-banded-mongooses"
 description: ""
 year: "2010"

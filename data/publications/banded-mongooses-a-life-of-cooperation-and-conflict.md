@@ -1,5 +1,5 @@
 ---
-title: "Banded mongooses: a life of cooperation and conflict"
+title: "2007 - Banded mongooses: a life of cooperation and conflict"
 slug: "banded-mongooses-a-life-of-cooperation-and-conflict"
 description: ""
 year: "2007"

@@ -1,5 +1,5 @@
 ---
-title: "Patterns of helping effort in co-operatively breeding banded mongooses (Mungos mungo)"
+title: "2003 - Patterns of helping effort in co-operatively breeding banded mongooses (Mungos mungo)"
 slug: "patterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-(mungos-mungo)"
 description: ""
 year: "2003"

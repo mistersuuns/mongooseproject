@@ -1,5 +1,5 @@
 ---
-title: "Demography and social evolution of banded mongooses"
+title: "2013 - Demography and social evolution of banded mongooses"
 slug: "demography-and-social-evolution-of-banded-mongooses"
 description: ""
 year: "2013"

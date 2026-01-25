@@ -1,5 +1,5 @@
 ---
-title: "The information banded mongooses extract from heterospecific alarm calls"
+title: "2008 - The information banded mongooses extract from heterospecific alarm calls"
 slug: "the-information-banded-mongooses-extract-from-heterospecific-alarm-calls"
 description: ""
 year: "2008"

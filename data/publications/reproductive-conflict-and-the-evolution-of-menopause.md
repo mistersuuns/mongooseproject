@@ -1,5 +1,5 @@
 ---
-title: "Reproductive conflict and the evolution of menopause"
+title: "2009 - Reproductive conflict and the evolution of menopause"
 slug: "reproductive-conflict-and-the-evolution-of-menopause"
 description: ""
 year: "2009"

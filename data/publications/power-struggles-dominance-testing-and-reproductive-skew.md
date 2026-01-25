@@ -1,5 +1,5 @@
 ---
-title: "Power struggles, dominance testing, and reproductive skew"
+title: "2000 - Power struggles, dominance testing, and reproductive skew"
 slug: "power-struggles-dominance-testing-and-reproductive-skew"
 description: ""
 year: "2000"

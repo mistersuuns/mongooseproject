@@ -1,5 +1,5 @@
 ---
-title: "Escalated conflict in a social hierarchy"
+title: "2006 - Escalated conflict in a social hierarchy"
 slug: "escalated-conflict-in-a-social-hierarchy"
 description: ""
 year: "2006"

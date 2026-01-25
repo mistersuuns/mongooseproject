@@ -1,5 +1,5 @@
 ---
-title: "Suppressing subordinate reproduction provides benefits to dominants in cooperative societies of meerkats"
+title: "2014 - Suppressing subordinate reproduction provides benefits to dominants in cooperative societies of meerkats"
 slug: "suppressing-subordinate-reproduction-provides-benefits-to-dominants-in-cooperative-societies-of-meerkats"
 description: ""
 year: "2014"

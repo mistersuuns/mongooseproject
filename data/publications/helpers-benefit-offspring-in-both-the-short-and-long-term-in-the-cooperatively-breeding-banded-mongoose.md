@@ -1,5 +1,5 @@
 ---
-title: "Helpers benefit offspring in both the short and long-term in the cooperatively breeding banded mongoose"
+title: "2005 - Helpers benefit offspring in both the short and long-term in the cooperatively breeding banded mongoose"
 slug: "helpers-benefit-offspring-in-both-the-short-and-long-term-in-the-cooperatively-breeding-banded-mongoose"
 description: ""
 year: "2005"

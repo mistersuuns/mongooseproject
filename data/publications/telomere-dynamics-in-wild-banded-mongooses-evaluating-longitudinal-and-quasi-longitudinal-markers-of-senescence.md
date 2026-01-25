@@ -1,5 +1,5 @@
 ---
-title: "Telomere dynamics in wild banded mongooses: Evaluating longitudinal and quasi-longitudinal markers of senescence"
+title: "2018 - Telomere dynamics in wild banded mongooses: Evaluating longitudinal and quasi-longitudinal markers of senescence"
 slug: "telomere-dynamics-in-wild-banded-mongooses-evaluating-longitudinal-and-quasi-longitudinal-markers-of-senescence"
 description: ""
 year: "2018"

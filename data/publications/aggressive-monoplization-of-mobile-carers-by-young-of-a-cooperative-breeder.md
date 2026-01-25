@@ -1,5 +1,5 @@
 ---
-title: "Aggressive monoplization of mobile carers by young of a cooperative breeder"
+title: "2008 - Aggressive monoplization of mobile carers by young of a cooperative breeder"
 slug: "aggressive-monoplization-of-mobile-carers-by-young-of-a-cooperative-breeder"
 description: ""
 year: "2008"

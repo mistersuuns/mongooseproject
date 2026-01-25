@@ -1,5 +1,5 @@
 ---
-title: "Small increases in ambient temperature reduce offspring body mass in an equatorial mammal"
+title: "2023 - Small increases in ambient temperature reduce offspring body mass in an equatorial mammal"
 slug: "small-increases-in-ambient-temperature-reduce-offspring-body-mass-in-an-equatorial-mammal"
 description: ""
 year: "2023"

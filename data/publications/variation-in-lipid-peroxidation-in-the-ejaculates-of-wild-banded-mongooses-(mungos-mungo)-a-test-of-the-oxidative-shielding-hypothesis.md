@@ -1,5 +1,5 @@
 ---
-title: "Variation in Lipid Peroxidation in the Ejaculates of Wild Banded Mongooses (Mungos mungo): A Test of the Oxidative Shielding Hypothesis"
+title: "2024 - Variation in Lipid Peroxidation in the Ejaculates of Wild Banded Mongooses (Mungos mungo): A Test of the Oxidative Shielding Hypothesis"
 slug: "variation-in-lipid-peroxidation-in-the-ejaculates-of-wild-banded-mongooses-(mungos-mungo)-a-test-of-the-oxidative-shielding-hypothesis"
 description: ""
 year: "2024"

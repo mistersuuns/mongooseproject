@@ -1,5 +1,5 @@
 ---
-title: "Kin discrimination via odour in the cooperatively breeding banded mongoose"
+title: "2018 - Kin discrimination via odour in the cooperatively breeding banded mongoose"
 slug: "kin-discrimination-via-odour-in-the-cooperatively-breeding-banded-mongoose"
 description: ""
 year: "2018"

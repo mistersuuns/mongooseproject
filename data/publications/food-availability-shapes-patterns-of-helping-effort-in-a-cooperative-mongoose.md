@@ -1,5 +1,5 @@
 ---
-title: "Food availability shapes patterns of helping effort in a cooperative mongoose"
+title: "2012 - Food availability shapes patterns of helping effort in a cooperative mongoose"
 slug: "food-availability-shapes-patterns-of-helping-effort-in-a-cooperative-mongoose"
 description: ""
 year: "2012"

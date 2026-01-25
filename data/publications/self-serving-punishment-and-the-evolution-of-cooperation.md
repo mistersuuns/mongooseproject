@@ -1,5 +1,5 @@
 ---
-title: "Self-serving punishment and the evolution of cooperation"
+title: "2006 - Self-serving punishment and the evolution of cooperation"
 slug: "self-serving-punishment-and-the-evolution-of-cooperation"
 description: ""
 year: "2006"

@@ -1,5 +1,5 @@
 ---
-title: "Policing of reproduction by hidden threats in a cooperative mammal"
+title: "2014 - Policing of reproduction by hidden threats in a cooperative mammal"
 slug: "policing-of-reproduction-by-hidden-threats-in-a-cooperative-mammal"
 description: ""
 year: "2014"

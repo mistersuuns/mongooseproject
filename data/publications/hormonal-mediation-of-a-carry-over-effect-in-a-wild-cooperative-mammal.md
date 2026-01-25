@@ -1,5 +1,5 @@
 ---
-title: "Hormonal mediation of a carry-over effect in a wild cooperative mammal"
+title: "2014 - Hormonal mediation of a carry-over effect in a wild cooperative mammal"
 slug: "hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal"
 description: ""
 year: "2014"

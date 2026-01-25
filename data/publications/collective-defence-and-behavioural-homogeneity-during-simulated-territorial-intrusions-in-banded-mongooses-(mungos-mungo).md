@@ -1,5 +1,5 @@
 ---
-title: "Collective defence and behavioural homogeneity during simulated territorial intrusions in banded mongooses (Mungos mungo)"
+title: "2021 - Collective defence and behavioural homogeneity during simulated territorial intrusions in banded mongooses (Mungos mungo)"
 slug: "collective-defence-and-behavioural-homogeneity-during-simulated-territorial-intrusions-in-banded-mongooses-(mungos-mungo)"
 description: ""
 year: "2021"

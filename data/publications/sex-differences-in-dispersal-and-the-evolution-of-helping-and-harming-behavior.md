@@ -1,5 +1,5 @@
 ---
-title: "Sex differences in dispersal and the evolution of helping and harming behavior"
+title: "2008 - Sex differences in dispersal and the evolution of helping and harming behavior"
 slug: "sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior"
 description: ""
 year: "2008"

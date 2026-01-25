@@ -1,5 +1,5 @@
 ---
-title: "Endogenous timing and competitive interactions among relatives"
+title: "2005 - Endogenous timing and competitive interactions among relatives"
 slug: "endogenous-timing-and-competitive-interactions-among-relatives"
 description: ""
 year: "2005"

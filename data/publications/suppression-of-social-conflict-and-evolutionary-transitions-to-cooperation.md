@@ -1,5 +1,5 @@
 ---
-title: "Suppression of social conflict and evolutionary transitions to cooperation"
+title: "2012 - Suppression of social conflict and evolutionary transitions to cooperation"
 slug: "suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation"
 description: ""
 year: "2012"

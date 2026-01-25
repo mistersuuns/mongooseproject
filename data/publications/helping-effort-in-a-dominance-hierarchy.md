@@ -1,5 +1,5 @@
 ---
-title: "Helping effort in a dominance hierarchy"
+title: "2005 - Helping effort in a dominance hierarchy"
 slug: "helping-effort-in-a-dominance-hierarchy"
 description: ""
 year: "2005"

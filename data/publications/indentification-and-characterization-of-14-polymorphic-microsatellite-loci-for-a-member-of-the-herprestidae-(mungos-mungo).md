@@ -1,5 +1,5 @@
 ---
-title: "Indentification and characterization of 14 polymorphic microsatellite loci for a member of the Herprestidae (Mungos mungo)"
+title: "2003 - Indentification and characterization of 14 polymorphic microsatellite loci for a member of the Herprestidae (Mungos mungo)"
 slug: "indentification-and-characterization-of-14-polymorphic-microsatellite-loci-for-a-member-of-the-herprestidae-(mungos-mungo)"
 description: ""
 year: "2003"

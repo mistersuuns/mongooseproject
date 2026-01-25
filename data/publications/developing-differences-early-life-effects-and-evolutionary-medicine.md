@@ -1,5 +1,5 @@
 ---
-title: "Developing differences: early-life effects and evolutionary medicine"
+title: "2019 - Developing differences: early-life effects and evolutionary medicine"
 slug: "developing-differences-early-life-effects-and-evolutionary-medicine"
 description: ""
 year: "2019"

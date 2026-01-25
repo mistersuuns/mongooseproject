@@ -1,5 +1,5 @@
 ---
-title: "How threats influence the evolutionary resolution of within-group conflict"
+title: "2009 - How threats influence the evolutionary resolution of within-group conflict"
 slug: "how-threats-influence-the-evolutionary-resolution-of-within-group-conflict"
 description: ""
 year: "2009"

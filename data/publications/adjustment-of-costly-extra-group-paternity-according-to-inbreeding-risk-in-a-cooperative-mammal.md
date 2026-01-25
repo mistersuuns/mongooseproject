@@ -1,5 +1,5 @@
 ---
-title: "Adjustment of costly extra-group paternity according to inbreeding risk in a cooperative mammal"
+title: "2015 - Adjustment of costly extra-group paternity according to inbreeding risk in a cooperative mammal"
 slug: "adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal"
 description: ""
 year: "2015"

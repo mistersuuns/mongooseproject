@@ -1,5 +1,5 @@
 ---
-title: "Inbreeding depresses altruism in a cooperative society"
+title: "2020 - Inbreeding depresses altruism in a cooperative society"
 slug: "inbreeding-depresses-altruism-in-a-cooperative-society"
 description: ""
 year: "2020"

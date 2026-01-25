@@ -1,5 +1,5 @@
 ---
-title: "Spontaneous abortion as a response to reproductive conflict in the banded mongoose"
+title: "2019 - Spontaneous abortion as a response to reproductive conflict in the banded mongoose"
 slug: "spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose"
 description: ""
 year: "2019"

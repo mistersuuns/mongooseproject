@@ -1,5 +1,5 @@
 ---
-title: "Top males gain high reproductive success by guarding more successful females in a cooperatively breeding mongoose"
+title: "2010 - Top males gain high reproductive success by guarding more successful females in a cooperatively breeding mongoose"
 slug: "top-males-gain-high-reproductive-success-by-guarding-more-successful-females-in-a-cooperatively-breeding-mongoose"
 description: ""
 year: "2010"

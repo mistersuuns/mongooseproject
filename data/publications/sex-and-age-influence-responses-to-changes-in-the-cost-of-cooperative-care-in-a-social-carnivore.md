@@ -1,5 +1,5 @@
 ---
-title: "Sex and age influence responses to changes in the cost of cooperative care in a social carnivore"
+title: "2010 - Sex and age influence responses to changes in the cost of cooperative care in a social carnivore"
 slug: "sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore"
 description: ""
 year: "2010"

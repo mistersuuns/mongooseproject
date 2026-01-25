@@ -1,5 +1,5 @@
 ---
-title: "Strategic adjustment of begging effort by banded mongoose pups"
+title: "2008 - Strategic adjustment of begging effort by banded mongoose pups"
 slug: "strategic-adjustment-of-begging-effort-by-banded-mongoose-pups"
 description: ""
 year: "2008"

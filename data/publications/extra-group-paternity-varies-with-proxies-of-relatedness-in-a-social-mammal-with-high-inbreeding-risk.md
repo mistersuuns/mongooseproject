@@ -1,5 +1,5 @@
 ---
-title: "Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk"
+title: "2021 - Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk"
 slug: "extra-group-paternity-varies-with-proxies-of-relatedness-in-a-social-mammal-with-high-inbreeding-risk"
 description: ""
 year: "2021"

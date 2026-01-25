@@ -1,5 +1,5 @@
 ---
-title: "Fitness incentives to male fighters undermine fighting performance in intergroup contests"
+title: "2025 - Fitness incentives to male fighters undermine fighting performance in intergroup contests"
 slug: "fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests"
 description: ""
 year: "2025"

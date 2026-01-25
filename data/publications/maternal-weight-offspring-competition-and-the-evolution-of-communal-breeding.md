@@ -1,5 +1,5 @@
 ---
-title: "Maternal weight, offspring competition and the evolution of communal breeding"
+title: "2009 - Maternal weight, offspring competition and the evolution of communal breeding"
 slug: "maternal-weight-offspring-competition-and-the-evolution-of-communal-breeding"
 description: ""
 year: "2009"

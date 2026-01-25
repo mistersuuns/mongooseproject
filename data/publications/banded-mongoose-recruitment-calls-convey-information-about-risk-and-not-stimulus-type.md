@@ -1,5 +1,5 @@
 ---
-title: "Banded mongoose recruitment calls convey information about risk and not stimulus type"
+title: "2009 - Banded mongoose recruitment calls convey information about risk and not stimulus type"
 slug: "banded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type"
 description: ""
 year: "2009"

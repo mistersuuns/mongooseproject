@@ -1,5 +1,5 @@
 ---
-title: "Cooperatively breeding banded mongooses do not avoid inbreeding through familiarity-based kin recognition"
+title: "2021 - Cooperatively breeding banded mongooses do not avoid inbreeding through familiarity-based kin recognition"
 slug: "cooperatively-breeding-banded-mongooses-do-not-avoid-inbreeding-through-familiarity-based-kin-recognition"
 description: ""
 year: "2021"

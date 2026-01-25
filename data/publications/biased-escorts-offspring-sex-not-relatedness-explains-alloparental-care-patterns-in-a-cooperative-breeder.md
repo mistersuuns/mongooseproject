@@ -1,5 +1,5 @@
 ---
-title: "Biased escorts: offspring sex, not relatedness explains alloparental care patterns in a cooperative breeder"
+title: "2017 - Biased escorts: offspring sex, not relatedness explains alloparental care patterns in a cooperative breeder"
 slug: "biased-escorts-offspring-sex-not-relatedness-explains-alloparental-care-patterns-in-a-cooperative-breeder"
 description: ""
 year: "2017"

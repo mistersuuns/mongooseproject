@@ -1,5 +1,5 @@
 ---
-title: "Decoupling of Genetic and Cultural Inheritance in a Wild Mammal"
+title: "2018 - Decoupling of Genetic and Cultural Inheritance in a Wild Mammal"
 slug: "decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal"
 description: ""
 year: "2018"

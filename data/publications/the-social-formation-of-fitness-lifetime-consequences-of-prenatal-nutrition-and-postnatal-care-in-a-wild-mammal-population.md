@@ -1,5 +1,5 @@
 ---
-title: "The social formation of fitness: lifetime consequences of prenatal nutrition and postnatal care in a wild mammal population"
+title: "2023 - The social formation of fitness: lifetime consequences of prenatal nutrition and postnatal care in a wild mammal population"
 slug: "the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population"
 description: ""
 year: "2023"

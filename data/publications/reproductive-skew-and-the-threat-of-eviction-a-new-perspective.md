@@ -1,5 +1,5 @@
 ---
-title: "Reproductive skew and the threat of eviction: a new perspective"
+title: "1999 - Reproductive skew and the threat of eviction: a new perspective"
 slug: "reproductive-skew-and-the-threat-of-eviction-a-new-perspective"
 description: ""
 year: "1999"

@@ -1,5 +1,5 @@
 ---
-title: "The role of threats in animal cooperation"
+title: "2010 - The role of threats in animal cooperation"
 slug: "the-role-of-threats-in-animal-cooperation"
 description: ""
 year: "2010"

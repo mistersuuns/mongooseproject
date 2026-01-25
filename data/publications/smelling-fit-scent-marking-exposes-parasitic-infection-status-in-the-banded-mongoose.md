@@ -1,5 +1,5 @@
 ---
-title: "Smelling fit: scent marking exposes parasitic infection status in the banded mongoose"
+title: "2017 - Smelling fit: scent marking exposes parasitic infection status in the banded mongoose"
 slug: "smelling-fit-scent-marking-exposes-parasitic-infection-status-in-the-banded-mongoose"
 description: ""
 year: "2017"

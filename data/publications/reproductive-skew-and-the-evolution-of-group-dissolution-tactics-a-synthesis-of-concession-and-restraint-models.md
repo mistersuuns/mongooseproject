@@ -1,5 +1,5 @@
 ---
-title: "Reproductive skew and the evolution of group dissolution tactics: a synthesis of concession and restraint models"
+title: "2007 - Reproductive skew and the evolution of group dissolution tactics: a synthesis of concession and restraint models"
 slug: "reproductive-skew-and-the-evolution-of-group-dissolution-tactics-a-synthesis-of-concession-and-restraint-models"
 description: ""
 year: "2007"

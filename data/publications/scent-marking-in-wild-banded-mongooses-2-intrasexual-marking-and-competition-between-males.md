@@ -1,5 +1,5 @@
 ---
-title: "Scent marking in wild banded mongooses: 2. Intrasexual marking and competition between males"
+title: "2011 - Scent marking in wild banded mongooses: 2. Intrasexual marking and competition between males"
 slug: "scent-marking-in-wild-banded-mongooses-2-intrasexual-marking-and-competition-between-males"
 description: ""
 year: "2011"

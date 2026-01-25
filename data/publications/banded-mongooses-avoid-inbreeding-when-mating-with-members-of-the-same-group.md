@@ -1,5 +1,5 @@
 ---
-title: "Banded mongooses avoid inbreeding when mating with members of the same group"
+title: "2015 - Banded mongooses avoid inbreeding when mating with members of the same group"
 slug: "banded-mongooses-avoid-inbreeding-when-mating-with-members-of-the-same-group"
 description: ""
 year: "2015"

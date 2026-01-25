@@ -1,5 +1,5 @@
 ---
-title: "Data collection and storage in long-term ecological and evolutionary studies: the Mongoose 2000 system"
+title: "2018 - Data collection and storage in long-term ecological and evolutionary studies: the Mongoose 2000 system"
 slug: "data-collection-and-storage-in-long-term-ecological-and-evolutionary-studies-the-mongoose-2000-system"
 description: ""
 year: "2018"

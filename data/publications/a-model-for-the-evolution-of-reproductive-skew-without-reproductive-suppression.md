@@ -1,5 +1,5 @@
 ---
-title: "A model for the evolution of reproductive skew without reproductive suppression"
+title: "1998 - A model for the evolution of reproductive skew without reproductive suppression"
 slug: "a-model-for-the-evolution-of-reproductive-skew-without-reproductive-suppression"
 description: ""
 year: "1998"

@@ -1,5 +1,5 @@
 ---
-title: "Indiscriminate infanticide and reproductive skew"
+title: "1999 - Indiscriminate infanticide and reproductive skew"
 slug: "indiscriminate-infanticide-and-reproductive-skew"
 description: ""
 year: "1999"

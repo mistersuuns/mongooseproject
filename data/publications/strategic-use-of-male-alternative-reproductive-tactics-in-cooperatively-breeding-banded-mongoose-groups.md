@@ -1,5 +1,5 @@
 ---
-title: "Strategic use of male alternative reproductive tactics in cooperatively breeding banded mongoose groups"
+title: "2025 - Strategic use of male alternative reproductive tactics in cooperatively breeding banded mongoose groups"
 slug: "strategic-use-of-male-alternative-reproductive-tactics-in-cooperatively-breeding-banded-mongoose-groups"
 description: ""
 year: "2025"

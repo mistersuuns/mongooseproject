@@ -1,5 +1,5 @@
 ---
-title: "How do banded mongoose locate and select anvils for cracking encased food items?"
+title: "2012 - How do banded mongoose locate and select anvils for cracking encased food items?"
 slug: "how-do-banded-mongoose-locate-and-select-anvils-for-cracking-encased-food-items"
 description: ""
 year: "2012"

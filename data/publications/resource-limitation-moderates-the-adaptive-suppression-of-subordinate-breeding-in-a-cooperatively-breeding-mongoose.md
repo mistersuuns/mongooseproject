@@ -1,5 +1,5 @@
 ---
-title: "Resource limitation moderates the adaptive suppression of subordinate breeding in a cooperatively breeding mongoose"
+title: "2012 - Resource limitation moderates the adaptive suppression of subordinate breeding in a cooperatively breeding mongoose"
 slug: "resource-limitation-moderates-the-adaptive-suppression-of-subordinate-breeding-in-a-cooperatively-breeding-mongoose"
 description: ""
 year: "2012"

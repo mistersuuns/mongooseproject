@@ -1,5 +1,5 @@
 ---
-title: "Testing for vocal individual discrimination in adult banded mongooses"
+title: "2013 - Testing for vocal individual discrimination in adult banded mongooses"
 slug: "testing-for-vocal-individual-discrimination-in-adult-banded-mongooses"
 description: ""
 year: "2013"

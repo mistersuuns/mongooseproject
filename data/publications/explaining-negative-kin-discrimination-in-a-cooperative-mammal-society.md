@@ -1,5 +1,5 @@
 ---
-title: "Explaining negative kin discrimination in a cooperative mammal society"
+title: "2017 - Explaining negative kin discrimination in a cooperative mammal society"
 slug: "explaining-negative-kin-discrimination-in-a-cooperative-mammal-society"
 description: ""
 year: "2017"

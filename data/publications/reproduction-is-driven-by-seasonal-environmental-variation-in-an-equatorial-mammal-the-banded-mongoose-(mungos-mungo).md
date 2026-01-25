@@ -1,5 +1,5 @@
 ---
-title: "Reproduction is driven by seasonal environmental variation in an equatorial mammal, the banded mongoose (Mungos mungo)"
+title: "2025 - Reproduction is driven by seasonal environmental variation in an equatorial mammal, the banded mongoose (Mungos mungo)"
 slug: "reproduction-is-driven-by-seasonal-environmental-variation-in-an-equatorial-mammal-the-banded-mongoose-(mungos-mungo)"
 description: ""
 year: "2025"
