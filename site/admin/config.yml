@@ -30,12 +30,12 @@ collections:
     format: "frontmatter" # Use frontmatter format
     extension: "md" # File extension
     sortable_fields: ["year", "title", "authors", "category"] # Fields available for sorting in CMS
-    summary: "{{title}}" # Display title in list view (year shown in detail view)
+    summary: "{{year}} - {{title}}" # Display year and title in list view
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Year", name: "year", widget: "number", required: false}
+      - {label: "Year", name: "year", widget: "string", required: false, hint: "Publication year (e.g., 2024)"}
       - {label: "Authors", name: "authors", widget: "list", default: []}
       - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by year, then title)."}
       - {label: "Content", name: "body", widget: "markdown"}
