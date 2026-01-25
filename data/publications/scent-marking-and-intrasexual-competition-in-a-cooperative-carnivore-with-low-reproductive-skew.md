@@ -4,6 +4,7 @@ slug: "scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with
 description: ""
 year: "2008"
 authors: ["Muller, C. A., Manser, M. B."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew"
 category: "publication"
 ---

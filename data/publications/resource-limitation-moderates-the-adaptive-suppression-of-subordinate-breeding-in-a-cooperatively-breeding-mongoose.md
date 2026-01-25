@@ -4,6 +4,7 @@ slug: "resource-limitation-moderates-the-adaptive-suppression-of-subordinate-bre
 description: ""
 year: "2012"
 authors: ["Jordan, N. R., Manser, M. B., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/resource-limitation-moderates-the-adaptive-suppression-of-subordinate-breeding-in-a-cooperatively-breeding-mongoose"
 category: "publication"
 ---

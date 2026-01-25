@@ -4,6 +4,7 @@ slug: "intragroup-competition-predicts-individual-foraging-specialisation-in-a-g
 description: ""
 year: "2018"
 authors: ["Mitchell J, Kyabulima S, Businge R, Cant MA, Nichols HJ"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/intragroup-competition-predicts-individual-foraging-specialisation-in-a-group-living-mammal"
 category: "publication"
 ---

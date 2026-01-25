@@ -4,6 +4,7 @@ slug: "telomere-dynamics-in-wild-banded-mongooses-evaluating-longitudinal-and-qu
 description: ""
 year: "2018"
 authors: ["Vitikainen EIK, Marshall HH, Thompson FJ, Sanderson JL, Bell MBV, Gilchrist JS, Hodge SJ, Nichols HJ, Cant MA"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/telomere-dynamics-in-wild-banded-mongooses-evaluating-longitudinal-and-quasi-longitudinal-markers-of-senescence"
 category: "publication"
 ---

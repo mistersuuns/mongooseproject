@@ -114,6 +114,57 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
                 description = ''; // Remove generic boilerplate
             }
 
+            // Extract PDF/file links and other metadata from HTML
+            let pdfUrl = null;
+            let doi = null;
+            let externalLinks = [];
+            
+            const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
+            if (fs.existsSync(htmlPath)) {
+                try {
+                    const html = fs.readFileSync(htmlPath, 'utf8');
+                    
+                    // Extract all external links
+                    const allLinks = Array.from(html.matchAll(/href="([^"]+)"/g));
+                    for (const match of allLinks) {
+                        const href = match[1];
+                        if (href.startsWith('http')) {
+                            externalLinks.push(href);
+                            
+                            // Check for PDF (prioritize direct PDF links)
+                            if (!pdfUrl && (href.includes('.pdf') || href.toLowerCase().includes('download'))) {
+                                pdfUrl = href;
+                            }
+                            
+                            // Check for DOI (prioritize doi.org links)
+                            if (!doi && href.includes('doi.org')) {
+                                doi = href;
+                            }
+                        }
+                    }
+                    
+                    // Also check for relative PDF links
+                    if (!pdfUrl) {
+                        const relativePdfMatch = html.match(/href="([^"]+\.pdf[^"]*)"/i);
+                        if (relativePdfMatch) {
+                            pdfUrl = relativePdfMatch[1];
+                            if (pdfUrl.startsWith('/')) {
+                                pdfUrl = `https://mongooseproject.org${pdfUrl}`;
+                            }
+                        }
+                    }
+                    
+                    // Filter external links - remove PDF and DOI if we extracted them separately
+                    externalLinks = externalLinks.filter(link => 
+                        link !== pdfUrl && link !== doi && 
+                        !link.includes('framerusercontent.com') && // Exclude Framer CDN images
+                        !link.includes('mongooseproject.org') // Exclude internal links
+                    );
+                } catch (e) {
+                    // Ignore errors
+                }
+            }
+
             publications.push({
                 id: slug,
                 title: title,
@@ -122,6 +173,9 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
                 year: year ? String(year) : null,
                 authors: validAuthors,
                 url: url,
+                pdf: pdfUrl || null,
+                doi: doi || null,
+                externalLinks: externalLinks.length > 0 ? externalLinks : null,
                 date: year ? `${year}-01-01` : null,
                 category: 'publication',
                 body: ''

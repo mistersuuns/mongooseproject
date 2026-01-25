@@ -4,6 +4,7 @@ slug: "live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongo
 description: ""
 year: "2019"
 authors: ["Wells DA, Cant MA, Nichols HJ, Hoffman JI"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses"
 category: "publication"
 ---

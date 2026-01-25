@@ -4,6 +4,7 @@ slug: "self-serving-punishment-and-the-evolution-of-cooperation"
 description: ""
 year: "2006"
 authors: ["Cant, M. A., English, S."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/self-serving-punishment-and-the-evolution-of-cooperation"
 category: "publication"
 ---

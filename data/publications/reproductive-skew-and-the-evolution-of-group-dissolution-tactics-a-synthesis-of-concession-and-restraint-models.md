@@ -4,6 +4,7 @@ slug: "reproductive-skew-and-the-evolution-of-group-dissolution-tactics-a-synthe
 description: ""
 year: "2007"
 authors: ["Cant, M. A., English, S., Reeve, H. K., Field, J."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/reproductive-skew-and-the-evolution-of-group-dissolution-tactics-a-synthesis-of-concession-and-restraint-models"
 category: "publication"
 ---

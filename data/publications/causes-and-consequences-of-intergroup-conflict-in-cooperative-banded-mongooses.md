@@ -4,6 +4,7 @@ slug: "causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mong
 description: ""
 year: "2017"
 authors: ["Thompson FJ, Cant MA, Marshall HH, Vitikainen EIK, Sanderson JL, Nichols HJ, Gilchrist JS, Bell MBV, Young AJ, Hodge SJ, Johnstone, RA"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses"
 category: "publication"
 ---

@@ -4,6 +4,7 @@ slug: "patterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-(m
 description: ""
 year: "2003"
 authors: ["Otali, E., Gilchrist, J. S."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/patterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-(mungos-mungo)"
 category: "publication"
 ---

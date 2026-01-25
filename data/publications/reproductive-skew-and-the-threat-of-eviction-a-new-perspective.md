@@ -4,6 +4,7 @@ slug: "reproductive-skew-and-the-threat-of-eviction-a-new-perspective"
 description: ""
 year: "1999"
 authors: ["Cant, M. A."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/reproductive-skew-and-the-threat-of-eviction-a-new-perspective"
 category: "publication"
 ---

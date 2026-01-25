@@ -4,6 +4,7 @@ slug: "cooperatively-breeding-banded-mongooses-do-not-avoid-inbreeding-through-f
 description: ""
 year: "2021"
 authors: ["Nichols, H.J., Arbuckle, K., Sanderson, J. L., Vitikainen, E I.K., Marshall, H.H., Thompson, F. J., . . . Wells, D. A."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/cooperatively-breeding-banded-mongooses-do-not-avoid-inbreeding-through-familiarity-based-kin-recognition"
 category: "publication"
 ---

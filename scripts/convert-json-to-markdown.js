@@ -17,13 +17,17 @@ function convertPublicationToMarkdown(pub) {
   // Format title with year prefix: "2021 - Title"
   const title = pub.year ? `${pub.year} - ${pub.title}` : pub.title;
   
+  const pdfField = pub.pdf ? `pdf: "${pub.pdf.replace(/"/g, '\\"')}"` : '';
+  const doiField = pub.doi ? `doi: "${pub.doi.replace(/"/g, '\\"')}"` : '';
+  const linksField = pub.externalLinks ? `externalLinks: ${JSON.stringify(pub.externalLinks)}` : '';
+  
   const frontmatter = `---
 title: "${title.replace(/"/g, '\\"')}"
 slug: "${pub.slug}"
 description: "${(pub.description || '').replace(/"/g, '\\"')}"
 year: "${pub.year || ''}"
 authors: ${JSON.stringify(pub.authors || [])}
-url: "${pub.url}"
+${pdfField ? pdfField + '\n' : ''}${doiField ? doiField + '\n' : ''}${linksField ? linksField + '\n' : ''}url: "${pub.url}"
 category: "${pub.category || 'publication'}"
 ---
 

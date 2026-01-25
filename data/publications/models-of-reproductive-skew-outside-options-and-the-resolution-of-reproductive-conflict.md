@@ -4,6 +4,7 @@ slug: "models-of-reproductive-skew-outside-options-and-the-resolution-of-reprodu
 description: ""
 year: "2009"
 authors: ["Johnstone, R. A., Cant, M. A."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/models-of-reproductive-skew-outside-options-and-the-resolution-of-reproductive-conflict"
 category: "publication"
 ---

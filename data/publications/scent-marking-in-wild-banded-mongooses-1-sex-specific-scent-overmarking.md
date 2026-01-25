@@ -4,6 +4,7 @@ slug: "scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking"
 description: ""
 year: "2011"
 authors: ["Furrer, R., Kyabulima, S., Willems, E., Cant, M. A., Manser, M."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking"
 category: "publication"
 ---

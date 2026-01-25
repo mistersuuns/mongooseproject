@@ -4,6 +4,7 @@ slug: "eviction-and-dispersal-in-co-operatively-breeding-banded-mongooses-(mungo
 description: ""
 year: "2001"
 authors: ["Gilchrist, J. S., Otali, E."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/eviction-and-dispersal-in-co-operatively-breeding-banded-mongooses-(mungos-mungo)"
 category: "publication"
 ---

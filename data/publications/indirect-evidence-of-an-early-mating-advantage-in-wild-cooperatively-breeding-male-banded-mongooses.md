@@ -4,6 +4,7 @@ slug: "indirect-evidence-of-an-early-mating-advantage-in-wild-cooperatively-bree
 description: ""
 year: "2025"
 authors: ["Monil Khera, Kevin Arbuckle, Francis Mwanguhya, Michael A Cant, Hazel J Nichols"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/indirect-evidence-of-an-early-mating-advantage-in-wild-cooperatively-breeding-male-banded-mongooses"
 category: "publication"
 ---

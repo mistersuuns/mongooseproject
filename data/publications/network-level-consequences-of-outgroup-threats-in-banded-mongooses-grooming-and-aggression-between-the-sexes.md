@@ -4,6 +4,7 @@ slug: "network-level-consequences-of-outgroup-threats-in-banded-mongooses-groomi
 description: ""
 year: "2020"
 authors: ["Inzani, E., Marshall, H. H., Thompson, F. J., Kalema-Zikusoka, G., Cant, M. A., & Vitikainen, E. I. K."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/network-level-consequences-of-outgroup-threats-in-banded-mongooses-grooming-and-aggression-between-the-sexes"
 category: "publication"
 ---

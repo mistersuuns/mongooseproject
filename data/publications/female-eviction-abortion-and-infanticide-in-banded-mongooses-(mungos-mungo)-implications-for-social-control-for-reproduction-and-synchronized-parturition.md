@@ -4,6 +4,7 @@ slug: "female-eviction-abortion-and-infanticide-in-banded-mongooses-(mungos-mung
 description: ""
 year: "2006"
 authors: ["Gilchrist, J. S."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/female-eviction-abortion-and-infanticide-in-banded-mongooses-(mungos-mungo)-implications-for-social-control-for-reproduction-and-synchronized-parturition"
 category: "publication"
 ---

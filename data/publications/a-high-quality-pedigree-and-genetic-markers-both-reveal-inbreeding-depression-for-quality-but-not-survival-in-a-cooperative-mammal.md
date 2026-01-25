@@ -4,6 +4,7 @@ slug: "a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depres
 description: ""
 year: "2018"
 authors: ["Marshall HH, Griffiths DJ, Mwanguhya F, Businge R, Griffiths AGF, Kyabulima S, Mwesige K, Sanderson JL, Thompson FJ, Vitikainen EIK"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depression-for-quality-but-not-survival-in-a-cooperative-mammal"
 category: "publication"
 ---

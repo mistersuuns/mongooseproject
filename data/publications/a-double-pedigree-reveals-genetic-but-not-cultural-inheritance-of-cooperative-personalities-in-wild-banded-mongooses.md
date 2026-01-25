@@ -4,6 +4,7 @@ slug: "a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-coopera
 description: ""
 year: "2021"
 authors: ["Croft, D. P., Weiss, M. N., Nielsen, M L.K., Grimes, C., Cant, M. A., Ellis, S., . . . Johnstone, R. A."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses"
 category: "publication"
 ---

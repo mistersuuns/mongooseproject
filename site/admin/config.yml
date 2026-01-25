@@ -39,6 +39,9 @@ collections:
       - {label: "Authors", name: "authors", widget: "list", default: []}
       - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by year, then title)."}
       - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "PDF File", name: "pdf", widget: "file", required: false, hint: "Upload or link to PDF file"}
+      - {label: "DOI", name: "doi", widget: "string", required: false, hint: "DOI link (e.g., https://doi.org/...)"}
+      - {label: "External Links", name: "externalLinks", widget: "list", required: false, hint: "Additional external links"}
       - {label: "URL", name: "url", widget: "string", required: false}
       - {label: "Category", name: "category", widget: "string", default: "publication"}
 

@@ -4,6 +4,7 @@ slug: "suppression-of-social-conflict-and-evolutionary-transitions-to-cooperatio
 description: ""
 year: "2012"
 authors: ["Johnstone, R. A., Cant, M. A., Field, J."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation"
 category: "publication"
 ---

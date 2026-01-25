@@ -4,6 +4,7 @@ slug: "scent-marking-in-wild-banded-mongooses-3-intrasexual-marking-in-females"
 description: ""
 year: "2011"
 authors: ["Nichols, H. J., Amos, W., Cant, M. A., MBV, B., Hodge, S. J."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/scent-marking-in-wild-banded-mongooses-3-intrasexual-marking-in-females"
 category: "publication"
 ---

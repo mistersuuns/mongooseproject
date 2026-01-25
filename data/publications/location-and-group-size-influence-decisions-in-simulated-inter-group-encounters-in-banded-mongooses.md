@@ -4,6 +4,7 @@ slug: "location-and-group-size-influence-decisions-in-simulated-inter-group-enco
 description: ""
 year: "2011"
 authors: ["Bell, M. B. V., Nichols, H. J., Gilchrist, J. S., Cant, M. A., Hodge, S. J."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/location-and-group-size-influence-decisions-in-simulated-inter-group-encounters-in-banded-mongooses"
 category: "publication"
 ---

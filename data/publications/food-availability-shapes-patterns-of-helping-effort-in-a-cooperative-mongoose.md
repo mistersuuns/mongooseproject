@@ -4,6 +4,7 @@ slug: "food-availability-shapes-patterns-of-helping-effort-in-a-cooperative-mong
 description: ""
 year: "2012"
 authors: ["Bell, M. B. V."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/food-availability-shapes-patterns-of-helping-effort-in-a-cooperative-mongoose"
 category: "publication"
 ---

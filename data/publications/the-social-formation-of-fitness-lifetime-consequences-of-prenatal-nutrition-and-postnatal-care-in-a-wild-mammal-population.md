@@ -4,6 +4,7 @@ slug: "the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutriti
 description: ""
 year: "2023"
 authors: ["C. Shelafoe, F. J. Thompson, F. Mwanguhya, S. Kyabulima, R. Businge, K. Mwesige, J. L. Sanderson, M. A. Cant, H. H. Marshall & E. I. K. Vitikainen"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population"
 category: "publication"
 ---

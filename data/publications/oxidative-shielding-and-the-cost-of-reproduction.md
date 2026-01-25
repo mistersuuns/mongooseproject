@@ -4,6 +4,7 @@ slug: "oxidative-shielding-and-the-cost-of-reproduction"
 description: ""
 year: "2016"
 authors: ["Cant, M. A., Nichols, H. J., Johnstone, R. A., Hodge, S. J."]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/oxidative-shielding-and-the-cost-of-reproduction"
 category: "publication"
 ---

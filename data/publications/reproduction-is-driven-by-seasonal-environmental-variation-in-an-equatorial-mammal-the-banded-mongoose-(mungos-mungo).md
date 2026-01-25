@@ -4,6 +4,7 @@ slug: "reproduction-is-driven-by-seasonal-environmental-variation-in-an-equatori
 description: ""
 year: "2025"
 authors: ["Graham Birch, Hazel J. Nichols, Francis Mwanguhya, Jonathan D. Blount and Michael A. Cant"]
+externalLinks: ["https://fonts.gstatic.com"]
 url: "/pubs-news-ppl/reproduction-is-driven-by-seasonal-environmental-variation-in-an-equatorial-mammal-the-banded-mongoose-(mungos-mungo)"
 category: "publication"
 ---
