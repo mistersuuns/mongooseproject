@@ -107,11 +107,18 @@ function extractPublications(searchIndex, peopleSlugs, newsSlugs) {
                 if (cleaned.length > 0) validAuthors = [cleaned];
             }
 
+            // Filter out generic boilerplate description
+            let description = data.description || '';
+            const genericText = 'The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.';
+            if (description === genericText || description.trim() === genericText.trim()) {
+                description = ''; // Remove generic boilerplate
+            }
+
             publications.push({
                 id: slug,
                 title: title,
                 slug: slug,
-                description: data.description || '',
+                description: description,
                 year: year ? String(year) : null,
                 authors: validAuthors,
                 url: url,
@@ -509,12 +516,19 @@ function extractPeople(searchIndex, siteDir) {
                 const title = titlesMap[slug] || slugTitle || htmlTitle;
 
 
+                // Filter out generic boilerplate description
+                let description = data.description || '';
+                const genericText = 'The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.';
+                if (description === genericText || description.trim() === genericText.trim()) {
+                    description = ''; // Remove generic boilerplate
+                }
+
                 people.push({
                     id: slug,
                     name: name,
                     slug: slug,
                     title: title || null, // Only set title if found, don't use fallback
-                    description: data.description || '',
+                    description: description,
                     content: bio,
                     url: url,
                     email: null
@@ -558,11 +572,18 @@ function extractNews(searchIndex) {
                     }
                 }
 
+                // Filter out generic boilerplate description
+                let description = data.description || '';
+                const genericText = 'The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.';
+                if (description === genericText || description.trim() === genericText.trim()) {
+                    description = ''; // Remove generic boilerplate
+                }
+
                 news.push({
                     id: slug,
                     title: title,
                     slug: slug,
-                    description: data.description || '',
+                    description: description,
                     content: '',
                     url: url,
                     date: date
