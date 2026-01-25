@@ -337,10 +337,135 @@ function extractPersonDetails(htmlPath, name) {
 }
 
 /**
+ * Extract titles from People listing page
+ * Titles are shown on /people page, not individual person pages
+ */
+function extractTitlesFromPeoplePage() {
+    const titlesMap = {};
+    
+    try {
+        // Download the People listing page
+        const peoplePageUrl = 'https://mongooseproject.org/people';
+        const tempFile = path.join(dataDir, 'people-page-temp.html');
+        
+        execSync(`curl -sL "${peoplePageUrl}" -o "${tempFile}"`, { stdio: 'pipe' });
+        
+        if (fs.existsSync(tempFile)) {
+            const html = fs.readFileSync(tempFile, 'utf8');
+            
+            // Strategy: For each link to a person page, check nearby content for h1/h4 pairs
+            const linkMatches = Array.from(html.matchAll(/href="\.\/pubs-news-ppl\/([^"]+)"/g));
+            
+            for (const linkMatch of linkMatches) {
+                const slug = linkMatch[1];
+                const linkIdx = linkMatch.index;
+                
+                // Look in a window around the link (2000 chars before, 3000 after)
+                const window = html.substring(Math.max(0, linkIdx - 2000), linkIdx + 3000);
+                
+                // Find h1 and h4 in this window
+                const h1Match = window.match(/<h1[^>]*>([^<]+)<\/h1>/);
+                const h4Match = window.match(/<h4[^>]*>([^<]+)<\/h4>/);
+                
+                if (h1Match && h4Match) {
+                    const name = h1Match[1].trim();
+                    const title = h4Match[1].trim();
+                    
+                    // Only if h4 comes after h1 (title should be after name)
+                    const h1Pos = window.indexOf(h1Match[0]);
+                    const h4Pos = window.indexOf(h4Match[0]);
+                    
+                    if (h4Pos > h1Pos && title && title.length > 2 && title !== name) {
+                        titlesMap[slug] = title;
+                    }
+                }
+            }
+            
+            // Also try h6 pattern for Alumni section - but be more careful
+            // Structure: link ... h6 (name) ... h6 (separator or empty) ... h6 (title)
+            const linkMatches2 = Array.from(html.matchAll(/href="\.\/pubs-news-ppl\/([^"]+)"/g));
+            for (const linkMatch of linkMatches2) {
+                const slug = linkMatch[1];
+                if (titlesMap[slug]) continue; // Don't overwrite
+                
+                const linkIdx = linkMatch.index;
+                const window = html.substring(linkIdx, linkIdx + 2000);
+                
+                // Find all h6 tags in this window
+                const h6Matches = Array.from(window.matchAll(/<h6[^>]*>([^<]+)<\/h6>/g));
+                const h6Texts = h6Matches.map(m => m[1].trim());
+                
+                if (h6Texts.length >= 3) {
+                    const firstH6 = h6Texts[0]; // Name
+                    const secondH6 = h6Texts[1];
+                    let title = h6Texts[2]; // Usually the title
+                    
+                    // If second is separator, we already have title in third
+                    // If second looks like a title (not a name), use it
+                    if (secondH6 !== '–' && secondH6 !== '-' && secondH6.length > 2 &&
+                        !secondH6.match(/^[A-Z][a-z]+\s+[A-Z][a-z]+$/) && // Not just a name
+                        !secondH6.includes('@')) {
+                        title = secondH6;
+                    }
+                    
+                    // Validate title - must not be a person name
+                    if (title && 
+                        title !== '–' && 
+                        title !== '-' &&
+                        title.length > 2 && 
+                        title !== firstH6 &&
+                        !title.match(/^[A-Z][a-z]+\s+[A-Z][a-z]+$/) && // Not just "First Last"
+                        !title.includes('@') &&
+                        !title.includes('mailto') &&
+                        (title.toLowerCase().includes('student') || 
+                         title.toLowerCase().includes('professor') ||
+                         title.toLowerCase().includes('researcher') ||
+                         title.toLowerCase().includes('fellow') ||
+                         title.toLowerCase().includes('manager') ||
+                         title.toLowerCase().includes('director') ||
+                         title.toLowerCase().includes('associate') ||
+                         title.toLowerCase().includes('phd') ||
+                         title.toLowerCase().includes('mres') ||
+                         title.toLowerCase().includes('mbyres'))) {
+                        titlesMap[slug] = title;
+                    }
+                }
+            }
+            
+            // Clean up temp file
+            fs.unlinkSync(tempFile);
+        }
+    } catch (e) {
+        console.warn(`⚠️  Could not extract titles from People page: ${e.message}`);
+    }
+    
+    return titlesMap;
+}
+
+/**
+ * Convert slug to title if slug represents a title
+ */
+function slugToTitle(slug) {
+    const titleSlugs = {
+        'assistant-professor': 'Assistant Professor',
+        'professor': 'Professor',
+        'field-manager': 'Field Manager',
+        'chair-of-evolutionary-population-genetics': 'Chair of Evolutionary Population Genetics'
+    };
+    return titleSlugs[slug] || null;
+}
+
+/**
  * Extract people from searchIndex and HTML files
  */
 function extractPeople(searchIndex, siteDir) {
     const people = [];
+    
+    // First, extract titles from People listing page (where they actually are)
+    console.log('🔍 Extracting titles from People listing page...\n');
+    const titlesMap = extractTitlesFromPeoplePage();
+    console.log(`✅ Found ${Object.keys(titlesMap).length} titles from People page\n`);
+    
     const knownPeopleSlugs = [
         'neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
         'monil-khera', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
@@ -374,7 +499,12 @@ function extractPeople(searchIndex, siteDir) {
             if (isKnownPerson || looksLikePerson) {
                 // Try to extract title and bio from HTML file
                 const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
-                const { title, bio } = extractPersonDetails(htmlPath, name);
+                const { title: htmlTitle, bio } = extractPersonDetails(htmlPath, name);
+                
+                // Prioritize title from People listing page (most accurate)
+                // Fall back to slug-to-title mapping, then HTML extraction
+                const slugTitle = slugToTitle(slug);
+                const title = titlesMap[slug] || slugTitle || htmlTitle;
 
 
                 people.push({
