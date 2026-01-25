@@ -386,7 +386,7 @@ function extractPeople(searchIndex, siteDir) {
                     id: slug,
                     name: name,
                     slug: slug,
-                    title: title || 'Team Member', // Default title to ensure CMS visibility
+                    title: title || null, // Only set title if found, don't use fallback
                     description: data.description || '',
                     content: bio,
                     url: url,

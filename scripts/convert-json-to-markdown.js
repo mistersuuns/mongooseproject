@@ -57,11 +57,11 @@ url: "${news.url}"
 }
 
 function convertPersonToMarkdown(person) {
+  const titleField = person.title ? `title: "${person.title.replace(/"/g, '\\"')}"` : '';
   const frontmatter = `---
 name: "${person.name.replace(/"/g, '\\"')}"
 slug: "${person.slug}"
-title: "${(person.title || '').replace(/"/g, '\\"')}"
-description: "${(person.description || '').replace(/"/g, '\\"')}"
+${titleField ? titleField + '\n' : ''}description: "${(person.description || '').replace(/"/g, '\\"')}"
 email: "${person.email || ''}"
 url: "${person.url}"
 ---
