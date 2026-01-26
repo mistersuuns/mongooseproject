@@ -5,6 +5,7 @@ authors: ["Buston, P. M., Cant, M. A."]
 journal: "Philosophical Transactions of the Royal Society B"
 url: "/pubs-news-ppl/escalated-conflict-in-a-social-hierarchy"
 date: "2006-01-01T00:00:00.000Z"
+year: "2006"
 files: [{"file":"publications/pdfs/escalated-conflict-in-a-social-hierarchy.pdf"}]
 ---
 

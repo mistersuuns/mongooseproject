@@ -5,6 +5,7 @@ authors: ["C. Shelafoe, F. J. Thompson, F. Mwanguhya, S. Kyabulima, R. Businge, 
 journal: "Philosophical Transactions of the Royal Society B"
 url: "/pubs-news-ppl/the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population"
 date: "2023-01-01T00:00:00.000Z"
+year: "2023"
 files: [{"file":"publications/pdfs/the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population.pdf"}]
 ---
 

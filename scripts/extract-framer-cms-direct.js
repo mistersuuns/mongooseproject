@@ -77,6 +77,29 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
             }
         }
         
+        // Extract images from raw HTML (person photos can be jpg, jpeg, png, webp)
+        // Do this early so we can find person-specific images before default og:image
+        const htmlImageMatches = Array.from(html.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)[^\s"'>)]*/gi));
+        if (htmlImageMatches.length > 0) {
+            // Find images that are NOT in meta tags (person photos, not site icons)
+            // Prefer JPG/JPEG over PNG (person photos vs icons)
+            const jpgMatches = htmlImageMatches.filter(m => m[0].match(/\.(jpg|jpeg)$/i));
+            const matchesToCheck = jpgMatches.length > 0 ? jpgMatches : htmlImageMatches;
+            
+            for (const match of matchesToCheck) {
+                const url = match[0];
+                const urlPos = html.indexOf(url);
+                // Check if it's in a meta tag (skip those - they're site icons)
+                const beforeUrl = html.substring(Math.max(0, urlPos - 200), urlPos);
+                if (!beforeUrl.includes('<meta') && !beforeUrl.includes('og:image') && !beforeUrl.includes('twitter:image') && 
+                    !beforeUrl.includes('rel="icon"') && !beforeUrl.includes('apple-touch-icon')) {
+                    const cleanUrl = url.split('?')[0];
+                    allFields.image = cleanUrl;
+                    break; // Use first person photo found
+                }
+            }
+        }
+        
         // Extract ALL links - check for PDFs and files
         const allLinks = Array.from(html.matchAll(/href="([^"]+)"/g));
         for (const match of allLinks) {
@@ -118,6 +141,54 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
                     type: 'pdf',
                     originalUrl: url
                 });
+            }
+        }
+        
+        // Extract images - look for framerusercontent.com/images/ URLs
+        // We'll extract images AFTER we have description/content, so we can find person photos embedded there
+        // This placeholder will be filled after content extraction
+        
+        // DYNAMIC EXTRACTION: Extract ALL fields from handover JSON
+        try {
+            const handoverMatch = html.match(/<script type="framer\/handover"[^>]*>([\s\S]+?)<\/script>/);
+            if (handoverMatch) {
+                const jsonData = JSON.parse(handoverMatch[1]);
+                extractAllFieldsFromHandover(jsonData, allFields);
+            }
+        } catch (e) {
+            // Ignore JSON parsing errors
+        }
+        
+        // Also check for images in handover JSON (if not found in HTML)
+        // This is important - Framer CMS stores images in the "img - news / person" field
+        if (!allFields.image) {
+            try {
+                const jsonMatch = html.match(/<script type="framer\/handover"[^>]*>([\s\S]+?)<\/script>/);
+                if (jsonMatch) {
+                    const jsonData = JSON.parse(jsonMatch[1]);
+                    const jsonStr = JSON.stringify(jsonData);
+                    
+                    // Search for all image URLs in the JSON string
+                    const imgMatches = jsonStr.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi);
+                    if (imgMatches && imgMatches.length > 0) {
+                        // Filter out default site icons (common PNGs)
+                        const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                        const personImages = imgMatches.filter(url => {
+                            const filename = url.split('/').pop().split('?')[0];
+                            return !siteIcons.includes(filename);
+                        });
+                        
+                        // Prefer JPG/JPEG over PNG
+                        const jpgImages = personImages.filter(url => url.match(/\.(jpg|jpeg)$/i));
+                        const imagesToUse = jpgImages.length > 0 ? jpgImages : personImages;
+                        
+                        if (imagesToUse.length > 0) {
+                            allFields.image = imagesToUse[0].split('?')[0]; // Remove query params
+                        }
+                    }
+                }
+            } catch (e) {
+                // Ignore JSON parsing errors
             }
         }
         
@@ -163,6 +234,28 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
         // Fallback: use paragraph extraction if body extraction didn't work
         if (!allFields.content && paragraphs.length > 0) {
             allFields.content = paragraphs.join('\n\n');
+        }
+        
+        // NOW extract images from description/content (AFTER they're extracted)
+        // Images are often embedded in the description text as URLs
+        if (!allFields.image) {
+            // Check description field
+            if (allFields.description) {
+                const descImageMatch = allFields.description.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)[^\s"']*/i);
+                if (descImageMatch) {
+                    const cleanUrl = descImageMatch[0].split('?')[0];
+                    allFields.image = cleanUrl;
+                }
+            }
+            
+            // Check content/body field
+            if (!allFields.image && allFields.content) {
+                const contentImageMatch = allFields.content.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)[^\s"']*/i);
+                if (contentImageMatch) {
+                    const cleanUrl = contentImageMatch[0].split('?')[0];
+                    allFields.image = cleanUrl;
+                }
+            }
         }
         
         // Extract journal from paragraphs - journal is often a short paragraph (50-200 chars) with journal names
@@ -231,6 +324,142 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
     }
     
     return { fields: allFields, files };
+}
+
+/**
+ * Recursively extract ALL fields from Framer handover JSON
+ * This ensures we capture every field that Framer CMS has, not just known ones
+ */
+function extractAllFieldsFromHandover(obj, allFields, depth = 0, path = '') {
+    if (depth > 15) return; // Prevent infinite recursion
+    
+    if (Array.isArray(obj)) {
+        obj.forEach((item, index) => {
+            extractAllFieldsFromHandover(item, allFields, depth + 1, `${path}[${index}]`);
+        });
+    } else if (typeof obj === 'object' && obj !== null) {
+        for (const [key, value] of Object.entries(obj)) {
+            const currentPath = path ? `${path}.${key}` : key;
+            
+            // Skip internal Framer keys (encoded keys, references)
+            if (typeof key === 'string' && key.length > 20 && /^[A-Za-z0-9]+$/.test(key)) {
+                // Likely an encoded Framer key - try to resolve value
+                if (typeof value === 'string' && value.length > 0) {
+                    // Store as potential field
+                    const fieldName = inferFieldNameFromValue(value, currentPath);
+                    if (fieldName && !allFields[fieldName]) {
+                        allFields[fieldName] = value;
+                    }
+                }
+            } else if (typeof value === 'string' && value.length > 0) {
+                // Direct string value - use key as field name (normalized)
+                const fieldName = normalizeFieldName(key);
+                if (fieldName && !allFields[fieldName]) {
+                    // Check if it's a meaningful value (not just encoded data)
+                    if (isMeaningfulValue(value)) {
+                        allFields[fieldName] = value;
+                    }
+                }
+            } else if (typeof value === 'number' || typeof value === 'boolean') {
+                const fieldName = normalizeFieldName(key);
+                if (fieldName && !allFields[fieldName]) {
+                    allFields[fieldName] = value;
+                }
+            }
+            
+            // Recurse into nested objects
+            extractAllFieldsFromHandover(value, allFields, depth + 1, currentPath);
+        }
+    } else if (typeof obj === 'string' && obj.length > 0 && depth === 0) {
+        // Top-level string - might be a field value
+        const fieldName = inferFieldNameFromValue(obj, '');
+        if (fieldName && !allFields[fieldName]) {
+            allFields[fieldName] = obj;
+        }
+    }
+}
+
+/**
+ * Normalize field names (remove special chars, convert to lowercase)
+ */
+function normalizeFieldName(key) {
+    if (!key || typeof key !== 'string') return null;
+    
+    // Skip encoded Framer keys
+    if (key.length > 20 && /^[A-Za-z0-9]+$/.test(key)) return null;
+    
+    // Normalize: lowercase, replace spaces/special chars with underscores
+    let normalized = key.toLowerCase()
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_+|_+$/g, '');
+    
+    // Skip if too short or generic
+    if (normalized.length < 2 || ['id', 'key', 'value', 'data', 'obj'].includes(normalized)) {
+        return null;
+    }
+    
+    return normalized;
+}
+
+/**
+ * Infer field name from value content
+ */
+function inferFieldNameFromValue(value, path) {
+    if (typeof value !== 'string' || value.length === 0) return null;
+    
+    // Check for URLs
+    if (value.match(/^https?:\/\//)) {
+        if (value.includes('framerusercontent.com/images/')) {
+            return 'image';
+        }
+        if (value.includes('.pdf') || value.includes('framerusercontent.com/assets/')) {
+            return 'file_url';
+        }
+        return 'url';
+    }
+    
+    // Check for dates
+    if (value.match(/^\d{4}-\d{2}-\d{2}/) || value.match(/T\d{2}:\d{2}:\d{2}/)) {
+        return 'date';
+    }
+    
+    // Check for emails
+    if (value.includes('@') && value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        return 'email';
+    }
+    
+    // Check path for hints
+    if (path) {
+        const pathLower = path.toLowerCase();
+        if (pathLower.includes('title') || pathLower.includes('name')) return 'title';
+        if (pathLower.includes('description') || pathLower.includes('desc')) return 'description';
+        if (pathLower.includes('image') || pathLower.includes('img')) return 'image';
+        if (pathLower.includes('url') || pathLower.includes('link')) return 'url';
+        if (pathLower.includes('date') || pathLower.includes('time')) return 'date';
+    }
+    
+    return null;
+}
+
+/**
+ * Check if a value is meaningful (not just encoded data or noise)
+ */
+function isMeaningfulValue(value) {
+    if (typeof value !== 'string') return true;
+    
+    // Skip very short values
+    if (value.length < 3) return false;
+    
+    // Skip encoded-looking strings (long alphanumeric)
+    if (value.length > 30 && /^[A-Za-z0-9]+$/.test(value)) return false;
+    
+    // Skip JSON-like fragments
+    if (value.startsWith('{') || value.startsWith('[')) return false;
+    
+    // Must have at least one letter
+    if (!/[a-zA-Z]/.test(value)) return false;
+    
+    return true;
 }
 
 /**
@@ -550,7 +779,8 @@ function extractTitlesFromPeoplePage() {
             'nikita-bedov-panasyuk', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
             'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'joe-hoffman',
             'dan-franks', 'rufus-johnstone', 'zoe-turner', 'olivier-carter',
-            'rahul-jaitly', 'megan-nicholl', 'erica-sininärhi', 'patrick-green'
+            'rahul-jaitly', 'megan-nicholl', 'erica-sininärhi', 'patrick-green',
+            'chair-of-evolutionary-population-genetics'
         ];
         
         // Also get slugs from searchIndex that look like people
@@ -861,6 +1091,94 @@ function extractAllPeople() {
             description = content;
         }
         
+        // Extract image from description if not already found
+        let image = allFields.image || null;
+        
+        // Try description first (most reliable for people)
+        if (!image && description) {
+            const descImageMatch = description.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)[^\s"']*/i);
+            if (descImageMatch) {
+                image = descImageMatch[0].split('?')[0]; // Remove query params
+            }
+        }
+        
+        // Also check content field
+        if (!image && content) {
+            const contentImageMatch = content.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)[^\s"']*/i);
+            if (contentImageMatch) {
+                image = contentImageMatch[0].split('?')[0];
+            }
+        }
+        
+        // Also check the raw HTML file directly (for people without descriptions)
+        if (!image) {
+            const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
+            if (fs.existsSync(htmlPath)) {
+                const html = fs.readFileSync(htmlPath, 'utf8');
+                // Look for JPG/JPEG images first (person photos), then PNG
+                const jpgMatches = Array.from(html.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg)[^\s"'>)]*/gi));
+                if (jpgMatches.length > 0) {
+                    // Find one that's not in meta tags
+                    for (const match of jpgMatches) {
+                        const url = match[0];
+                        const urlPos = html.indexOf(url);
+                        const beforeUrl = html.substring(Math.max(0, urlPos - 200), urlPos);
+                        if (!beforeUrl.includes('<meta') && !beforeUrl.includes('og:image') && 
+                            !beforeUrl.includes('twitter:image') && !beforeUrl.includes('rel="icon"')) {
+                            image = url.split('?')[0];
+                            break;
+                        }
+                    }
+                }
+                // Fallback to PNG if no JPG found
+                if (!image) {
+                    const pngMatches = Array.from(html.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.png[^\s"'>)]*/gi));
+                    for (const match of pngMatches) {
+                        const url = match[0];
+                        const urlPos = html.indexOf(url);
+                        const beforeUrl = html.substring(Math.max(0, urlPos - 200), urlPos);
+                        if (!beforeUrl.includes('<meta') && !beforeUrl.includes('og:image') && 
+                            !beforeUrl.includes('twitter:image') && !beforeUrl.includes('rel="icon"') &&
+                            !beforeUrl.includes('apple-touch-icon')) {
+                            image = url.split('?')[0];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // FINAL FALLBACK: Fetch from live site (images are dynamically loaded, not in exported HTML)
+        // This is needed because Framer CMS images are loaded dynamically
+        if (!image && url && url.includes('/pubs-news-ppl/')) {
+            try {
+                const liveUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+                console.log(`  🔍 Fetching images from live site for ${slug}...`);
+                const liveHtml = execSync(`curl -sL "${liveUrl}"`, { encoding: 'utf8', stdio: 'pipe' });
+                
+                // Find all images, filter out site icons
+                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                const allImages = Array.from(liveHtml.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi));
+                const personImages = allImages
+                    .map(m => m[0])
+                    .filter(url => {
+                        const filename = url.split('/').pop().split('?')[0];
+                        return !siteIcons.includes(filename);
+                    });
+                
+                // Prefer JPG/JPEG over PNG
+                const jpgImages = personImages.filter(url => url.match(/\.(jpg|jpeg)$/i));
+                const imagesToUse = jpgImages.length > 0 ? jpgImages : personImages;
+                
+                if (imagesToUse.length > 0) {
+                    image = imagesToUse[0].split('?')[0]; // Remove query params
+                    console.log(`  ✅ Found image: ${image.split('/').pop()}`);
+                }
+            } catch (e) {
+                // Silently fail - don't spam console
+            }
+        }
+        
         // Build person matching Framer CMS structure EXACTLY: Title, Slug, Link, Position, Category, Description, Image, URL
         const person = {
             id: slug,
@@ -870,7 +1188,7 @@ function extractAllPeople() {
             position: position,
             category: allFields.category || null,
             description: description || '',
-            image: allFields.image || null,
+            image: image,
             url: url,
             body: description || content // Use description as body
         };

@@ -5,6 +5,7 @@ authors: ["Marshall, H. H., Sanderson, J. L., Mwanghuya, F., Businge, R., Kyabul
 journal: "Frontiers in Ecology and Evolution"
 url: "/pubs-news-ppl/evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal"
 date: "2016-01-01T00:00:00.000Z"
+year: "2016"
 files: [{"file":"publications/pdfs/evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal.pdf"}]
 ---
 

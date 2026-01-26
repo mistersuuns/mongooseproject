@@ -5,6 +5,7 @@ authors: ["Johnstone, R. A., Cant, M. A."]
 journal: "Project Media"
 url: "/pubs-news-ppl/how-threats-influence-the-evolutionary-resolution-of-within-group-conflict"
 date: "2009-01-01T00:00:00.000Z"
+year: "2009"
 files: [{"file":"publications/pdfs/how-threats-influence-the-evolutionary-resolution-of-within-group-conflict.pdf"}]
 ---
 

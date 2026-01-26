@@ -20,15 +20,38 @@ function convertPublicationToMarkdown(pub) {
   fields.push(`slug: "${pub.slug}"`);
   fields.push(`authors: ${JSON.stringify(pub.authors || [])}`);
   
-  if (pub.journal) {
-    fields.push(`journal: "${pub.journal.replace(/"/g, '\\"')}"`);
+  // Extract year from date if available
+  let year = null;
+  if (pub.date) {
+    const yearMatch = pub.date.match(/(\d{4})/);
+    if (yearMatch) year = yearMatch[1];
+  } else if (pub.year) {
+    year = pub.year;
   }
+  
+  // Clean journal - remove embedded years (e.g., "Ecology Letters 2021" -> "Ecology Letters")
+  let journal = pub.journal || null;
+  if (journal) {
+    // Remove year at end (e.g., "Journal Name 2021" -> "Journal Name")
+    journal = journal.replace(/\s+(19|20)\d{2}\s*$/, '').trim();
+    // Also remove year at start
+    journal = journal.replace(/^(19|20)\d{2}\s+/, '').trim();
+    if (journal.length > 0) {
+      fields.push(`journal: "${journal.replace(/"/g, '\\"')}"`);
+    }
+  }
+  
   if (pub.url) {
     fields.push(`url: "${pub.url}"`);
   }
-  if (pub.date || pub.year) {
-    const date = pub.date || (pub.year ? `${pub.year}-01-01T00:00:00.000Z` : null);
+  if (pub.date || year) {
+    const date = pub.date || (year ? `${year}-01-01T00:00:00.000Z` : null);
     if (date) fields.push(`date: "${date}"`);
+  }
+  
+  // Add year field for summary display
+  if (year) {
+    fields.push(`year: "${year}"`);
   }
   if (pub.files && pub.files.length > 0) {
     fields.push(`files: ${JSON.stringify(pub.files)}`);
