@@ -32,7 +32,7 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: "frontmatter" # Use frontmatter format
     extension: "md" # File extension
-    summary: "{{date}} | {{title}} | {{authors}} | {{journal}}" # Table-like summary: Year first, then title, authors, journal
+    summary: "{{title}} | {{journal}}" # Title and journal only - date/authors show as raw ISO/List values in summary
     sortable_fields: ["title", "date", "authors", "journal"]
     view_filters:
       - {label: "All", field: "title", pattern: ".*"}
