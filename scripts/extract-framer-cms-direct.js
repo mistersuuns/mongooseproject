@@ -540,20 +540,34 @@ function extractTitlesFromPeoplePage() {
         }
         
         // Extract descriptions from People page
-        // Descriptions are near person names, not necessarily in the link itself
-        // Pattern: Look for person name/slug followed by "I am" description text
-        
-        // First, get all person slugs from links (try multiple link patterns)
-        const linkPatterns = [
-            /href="\.\/pubs-news-ppl\/([^"]+)"/g,
-            /href="\/pubs-news-ppl\/([^"]+)"/g
+        // Descriptions are in the HTML near person slugs in JSON structure
+        // Get person slugs from searchIndex (more reliable than link patterns)
+        const searchIndex = getSearchIndex();
+        const knownPeopleSlugs = [
+            'mike-cant', 'field-manager', 'assistant-professor', 'professor',
+            'hazel-nichols', 'faye-thompson', 'emma-vitikainen', 'laura-labarge',
+            'leela-channer', 'graham-birch', 'neil-jordan', 'monil-khera',
+            'nikita-bedov-panasyuk', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
+            'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'joe-hoffman',
+            'dan-franks', 'rufus-johnstone', 'zoe-turner', 'olivier-carter',
+            'rahul-jaitly', 'megan-nicholl', 'erica-sininärhi', 'patrick-green'
         ];
         
-        const allSlugs = new Set();
-        linkPatterns.forEach(pattern => {
-            const matches = Array.from(html.matchAll(pattern));
-            matches.forEach(m => allSlugs.add(m[1]));
-        });
+        // Also get slugs from searchIndex that look like people
+        const searchIndexSlugs = Object.entries(searchIndex)
+            .filter(([url]) => url.includes('/pubs-news-ppl/'))
+            .map(([url]) => url.replace('/pubs-news-ppl/', '').replace('.html', ''))
+            .filter(slug => {
+                const data = searchIndex[`/pubs-news-ppl/${slug}.html`];
+                if (!data) return false;
+                const h1 = data.h1?.[0] || '';
+                const hasAuthors = data.h2?.some(h => h.includes('‹') && h.length > 5);
+                const hasYear = data.p?.some(p => /\b(19|20)\d{2}\b/.test(p));
+                // People: short name, no authors, no year
+                return h1.length < 50 && !hasAuthors && !hasYear;
+            });
+        
+        const allSlugs = new Set([...knownPeopleSlugs, ...searchIndexSlugs]);
         
         // For each slug, find description nearby in HTML
         // Descriptions appear BEFORE the slug in the JSON structure
