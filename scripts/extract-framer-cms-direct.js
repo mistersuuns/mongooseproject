@@ -578,10 +578,14 @@ function extractTitlesFromPeoplePage() {
             if (slugIdx < 0) slugIdx = html.indexOf(slug);
             
             if (slugIdx > 0) {
-                // Look for "I am" text within 5000 chars BEFORE the slug (description comes first)
-                const beforeWindow = html.substring(Math.max(0, slugIdx - 5000), slugIdx);
-                const descMatch = beforeWindow.match(/(I am[^<]{50,2000})/i);
-                if (descMatch) {
+                // Look for "I am" text within 3000 chars BEFORE the slug (description comes first)
+                // Use smaller window to avoid matching wrong person's description
+                const beforeWindow = html.substring(Math.max(0, slugIdx - 3000), slugIdx);
+                // Find the CLOSEST "I am" match (last one before slug)
+                const descMatches = Array.from(beforeWindow.matchAll(/(I am[^<]{50,2000})/gi));
+                if (descMatches.length > 0) {
+                    // Use the last (closest) match
+                    const descMatch = descMatches[descMatches.length - 1];
                     let desc = descMatch[1];
                     // Clean up HTML entities and tags
                     desc = desc.replace(/&nbsp;/g, ' ');
@@ -592,7 +596,14 @@ function extractTitlesFromPeoplePage() {
                     desc = desc.replace(/\[[^\]]*\]/g, '');
                     desc = desc.replace(/"[^"]*"/g, '');
                     desc = desc.replace(/\s+/g, ' ').trim();
-                    if (desc.length > 50 && !desc.match(/^[^a-z]*$/)) {
+                    // Verify this description is actually for this person (check for person name keywords)
+                    const personName = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                    const slugWords = slug.split('-');
+                    const hasPersonContext = slugWords.some(word => 
+                        desc.toLowerCase().includes(word) || 
+                        desc.toLowerCase().includes(personName.toLowerCase())
+                    );
+                    if (desc.length > 50 && !desc.match(/^[^a-z]*$/) && (hasPersonContext || descMatches.length === 1)) {
                         descriptionsMap[slug] = desc;
                     }
                 }
