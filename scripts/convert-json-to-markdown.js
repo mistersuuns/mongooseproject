@@ -82,12 +82,27 @@ ${fields.join('\n')}
 }
 
 function convertNewsToMarkdown(news) {
+  // Extract year from date for display
+  let year = null;
+  if (news.date) {
+    const yearMatch = news.date.match(/(\d{4})/);
+    if (yearMatch) year = yearMatch[1];
+  }
+  
+  const fields = [];
+  fields.push(`title: "${news.title.replace(/"/g, '\\"')}"`);
+  fields.push(`slug: "${news.slug}"`);
+  fields.push(`description: "${(news.description || '').replace(/"/g, '\\"')}"`);
+  if (news.date) {
+    fields.push(`date: "${news.date}"`);
+  }
+  if (year) {
+    fields.push(`year: "${year}"`);
+  }
+  fields.push(`url: "${news.url}"`);
+  
   const frontmatter = `---
-title: "${news.title.replace(/"/g, '\\"')}"
-slug: "${news.slug}"
-description: "${(news.description || '').replace(/"/g, '\\"')}"
-date: "${news.date || new Date().toISOString()}"
-url: "${news.url}"
+${fields.join('\n')}
 ---
 
 `;
