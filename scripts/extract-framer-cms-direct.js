@@ -596,17 +596,23 @@ function extractTitlesFromPeoplePage() {
                     desc = desc.replace(/\[[^\]]*\]/g, '');
                     desc = desc.replace(/"[^"]*"/g, '');
                     desc = desc.replace(/\s+/g, ' ').trim();
+                    
+                    // Calculate distance from description to slug
+                    const windowStart = Math.max(0, slugIdx - 3000);
+                    const descPosInWindow = descMatch.index;
+                    const descPosInHtml = windowStart + descPosInWindow;
+                    const distance = slugIdx - descPosInHtml;
+                    
                     // Verify this description is actually for this person
                     // If there's only one match, it's definitely for this person
-                    // Otherwise, check if description contains person-specific keywords
+                    // Otherwise, check if description contains person-specific keywords or is close
                     const slugWords = slug.split('-').filter(w => w.length > 3); // Filter out short words like "of", "the"
                     const hasPersonContext = slugWords.some(word => 
                         desc.toLowerCase().includes(word)
                     );
                     
-                    // Accept if: only one match (definitely for this person) OR has context OR description is very close to slug (< 1000 chars)
-                    const descDistance = slugIdx - (descMatch.index + Math.max(0, slugIdx - 3000));
-                    const isClose = descDistance < 1000;
+                    // Accept if: only one match OR has context OR description is very close to slug (< 1500 chars)
+                    const isClose = distance < 1500;
                     
                     if (desc.length > 50 && !desc.match(/^[^a-z]*$/) && 
                         (descMatches.length === 1 || hasPersonContext || isClose)) {
