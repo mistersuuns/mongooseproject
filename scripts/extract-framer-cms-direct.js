@@ -611,9 +611,11 @@ function extractTitlesFromPeoplePage() {
                         desc.toLowerCase().includes(word)
                     );
                     
-                    // Accept if: only one match OR has context OR description is very close to slug (< 1500 chars)
-                    const isClose = distance < 1500;
+                    // Accept if: only one match (definitely for this person) OR has context OR description is close
+                    // Increase distance threshold since descriptions can be further in JSON structure
+                    const isClose = distance < 3000;
                     
+                    // Accept description if it passes all checks
                     if (desc.length > 50 && !desc.match(/^[^a-z]*$/) && 
                         (descMatches.length === 1 || hasPersonContext || isClose)) {
                         descriptionsMap[slug] = desc;
