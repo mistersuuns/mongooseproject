@@ -121,6 +121,16 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
             }
         }
         
+        // Extract paragraphs first (needed for both content and journal extraction)
+        const pMatches = Array.from(html.matchAll(/<p[^>]*>([^<]+)<\/p>/g));
+        const paragraphs = pMatches.map(m => m[1].trim()).filter(t => 
+            t.length > 20 && 
+            !t.includes('The Banded Mongoose Research Project consists') &&
+            !t.match(/^(About|People|Research|News|Publications|Contact)$/i) &&
+            !t.includes('Mongoose videos by') &&
+            !t.includes('BMPR. All rights reserved')
+        );
+        
         // Extract content - get ALL text content, not just paragraphs
         // Framer uses complex HTML structure, so extract from body text
         const bodyMatch = html.match(/<body[^>]*>([\s\S]+?)<\/body>/);
@@ -150,23 +160,12 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
             }
         }
         
-        // Fallback: also try paragraph extraction for publications
-        if (!allFields.content) {
-            const pMatches = Array.from(html.matchAll(/<p[^>]*>([^<]+)<\/p>/g));
-            const paragraphs = pMatches.map(m => m[1].trim()).filter(t => 
-                t.length > 20 && 
-                !t.includes('The Banded Mongoose Research Project consists') &&
-                !t.match(/^(About|People|Research|News|Publications|Contact)$/i) &&
-                !t.includes('Mongoose videos by') &&
-                !t.includes('BMPR. All rights reserved')
-            );
-            if (paragraphs.length > 0) {
-                allFields.content = paragraphs.join('\n\n');
-            }
+        // Fallback: use paragraph extraction if body extraction didn't work
+        if (!allFields.content && paragraphs.length > 0) {
+            allFields.content = paragraphs.join('\n\n');
         }
         
-        // Extract journal from content - journal is often a short paragraph (50-200 chars) with journal names
-        // Look for common journal patterns in paragraphs
+        // Extract journal from paragraphs - journal is often a short paragraph (50-200 chars) with journal names
         const journalPatterns = [
             /Nature\s+(Ecology\s+&)?\s*Evolution/i,
             /Philosophical\s+Transactions/i,
@@ -183,22 +182,24 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
         ];
         
         // Check paragraphs for journal names - journal is usually a short standalone paragraph
-        for (const para of paragraphs) {
-            if (para.length > 30 && para.length < 200) {
-                for (const pattern of journalPatterns) {
-                    if (pattern.test(para)) {
-                        // Found journal - clean it up
-                        let journal = para.trim();
-                        // Remove common prefixes/suffixes
-                        journal = journal.replace(/^(Published in|In|Journal:?)\s*/i, '');
-                        journal = journal.replace(/\s*\.$/, '');
-                        if (journal.length > 5 && journal.length < 150) {
-                            allFields.journal = journal;
-                            break;
+        if (paragraphs.length > 0) {
+            for (const para of paragraphs) {
+                if (para.length > 30 && para.length < 200) {
+                    for (const pattern of journalPatterns) {
+                        if (pattern.test(para)) {
+                            // Found journal - clean it up
+                            let journal = para.trim();
+                            // Remove common prefixes/suffixes
+                            journal = journal.replace(/^(Published in|In|Journal:?)\s*/i, '');
+                            journal = journal.replace(/\s*\.$/, '');
+                            if (journal.length > 5 && journal.length < 150) {
+                                allFields.journal = journal;
+                                break;
+                            }
                         }
                     }
+                    if (allFields.journal) break;
                 }
-                if (allFields.journal) break;
             }
         }
         
