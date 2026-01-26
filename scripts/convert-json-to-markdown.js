@@ -111,7 +111,7 @@ ${fields.join('\n')}
 
 `;
 
-  let body = person.content || '';
+  let body = person.body || person.content || '';
   body = body.replace(/<[^>]+>/g, '');
   body = body.replace(/&nbsp;/g, ' ');
 

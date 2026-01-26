@@ -720,12 +720,17 @@ function extractAllPeople() {
             description = '';
         }
         
-        // Clean content
+        // Clean content - this is the person's bio/description
         let content = allFields.content || '';
         content = content.replace(/Mongoose videos by[^\n]+/g, '');
         content = content.replace(/\d{4} BMPR\. All rights reserved\./g, '');
         content = content.replace(/\n{3,}/g, '\n\n');
         content = content.trim();
+        
+        // If description is empty but we have content, use content as description
+        if (!description && content) {
+            description = content;
+        }
         
         // Get position - prioritize People page, then HTML extraction
         const position = titlesMap[slug] || allFields.position || null;
@@ -740,7 +745,8 @@ function extractAllPeople() {
             category: allFields.category || null,
             description: description,
             image: allFields.image || null,
-            url: url
+            url: url,
+            body: content // Also include body for markdown conversion
         };
         
         people.push(person);
@@ -757,6 +763,20 @@ function extractAllNews() {
     console.log('🔍 Extracting ALL news data from Framer CMS...\n');
     
     const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
+    
+    // Known people slugs - EXCLUDE these from news
+    const knownPeopleSlugs = [
+        'neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
+        'monil-khera', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
+        'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'mike-cant',
+        'field-manager', 'hazel-nichols', 'faye-thompson', 'professor',
+        'assistant-professor', 'chair-of-evolutionary-population-genetics',
+        'emma-vitikainen', 'laura-labarge', 'leela-channer', 'patrick-green',
+        'joe-hoffman', 'dan-franks', 'francis-mwanguhya', 'rufus-johnstone',
+        'zoe-turner', 'olivier-carter', 'rahul-jaitly', 'megan-nicholl',
+        'erica-sininärhi', 'variable-ecological-conditions-promote-male-helping-by-changing-banded-mongoose-group-composition'
+    ];
+    
     const news = [];
     const searchIndex = getSearchIndex();
     
@@ -765,17 +785,9 @@ function extractAllNews() {
         
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
         
-        // Check if it's news (known news slugs or check characteristics)
+        // ONLY include known news slugs - be very strict
         if (!knownNews.includes(slug)) {
-            // News items typically have: h1 (title), date, but no authors with ‹›
-            const name = data.h1 && data.h1[0];
-            if (!name) continue;
-            const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
-            if (hasAuthors) continue; // Publications have authors
-            // Check if it's a person (short name, no year)
-            if (name.length < 30 && !data.p?.some(p => /\b(19|20)\d{2}\b/.test(p))) {
-                continue; // Likely a person
-            }
+            continue; // Skip everything that's not explicitly known news
         }
         
         const title = data.h1 && data.h1[0];
