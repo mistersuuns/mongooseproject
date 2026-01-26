@@ -540,22 +540,38 @@ function extractTitlesFromPeoplePage() {
         }
         
         // Extract descriptions from People page
-        // Pattern: Name (in link) followed by "I am" or description text
-        const linkMatches = Array.from(html.matchAll(/href="\.\/pubs-news-ppl\/([^"]+)">([\s\S]{0,5000}?)<\/a>/g));
-        for (const linkMatch of linkMatches) {
-            const slug = linkMatch[1];
-            const linkBlock = linkMatch[2];
-            
-            // Find "I am" or description text in the link block
-            const descMatch = linkBlock.match(/(I am[^<]{50,2000})/i);
-            if (descMatch) {
-                let desc = descMatch[1];
-                // Clean up HTML entities and tags
-                desc = desc.replace(/&nbsp;/g, ' ');
-                desc = desc.replace(/<[^>]+>/g, ' ');
-                desc = desc.replace(/\s+/g, ' ').trim();
-                if (desc.length > 50) {
-                    descriptionsMap[slug] = desc;
+        // Descriptions are near person names, not necessarily in the link itself
+        // Pattern: Look for person name/slug followed by "I am" description text
+        
+        // First, get all person slugs from links (try multiple link patterns)
+        const linkPatterns = [
+            /href="\.\/pubs-news-ppl\/([^"]+)"/g,
+            /href="\/pubs-news-ppl\/([^"]+)"/g
+        ];
+        
+        const allSlugs = new Set();
+        linkPatterns.forEach(pattern => {
+            const matches = Array.from(html.matchAll(pattern));
+            matches.forEach(m => allSlugs.add(m[1]));
+        });
+        
+        // For each slug, find description nearby in HTML
+        for (const slug of allSlugs) {
+            // Find the slug in HTML
+            const slugIdx = html.indexOf(slug);
+            if (slugIdx > 0) {
+                // Look for "I am" text within 5000 chars after the slug
+                const window = html.substring(slugIdx, slugIdx + 5000);
+                const descMatch = window.match(/(I am[^<]{50,2000})/i);
+                if (descMatch) {
+                    let desc = descMatch[1];
+                    // Clean up HTML entities and tags
+                    desc = desc.replace(/&nbsp;/g, ' ');
+                    desc = desc.replace(/<[^>]+>/g, ' ');
+                    desc = desc.replace(/\s+/g, ' ').trim();
+                    if (desc.length > 50) {
+                        descriptionsMap[slug] = desc;
+                    }
                 }
             }
         }
