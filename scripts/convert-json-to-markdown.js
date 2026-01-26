@@ -144,8 +144,12 @@ if (fs.existsSync(pubsFile)) {
   console.log(`✅ Converted ${publications.length} publications to Markdown`);
 }
 
-// Convert news
-const newsFile = path.join(dataDir, 'news.json');
+// Convert news - try news-all-fields.json first, then fallback to news.json
+let newsFile = path.join(dataDir, 'news-all-fields.json');
+if (!fs.existsSync(newsFile)) {
+  newsFile = path.join(dataDir, 'news.json');
+}
+
 if (fs.existsSync(newsFile)) {
   const news = JSON.parse(fs.readFileSync(newsFile, 'utf-8'));
   const newsDir = path.join(outputDir, 'news');

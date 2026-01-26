@@ -134,6 +134,66 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
             allFields.content = paragraphs.join('\n\n');
         }
         
+        // Extract journal from content - journal is often a short paragraph (50-200 chars) with journal names
+        // Look for common journal patterns in paragraphs
+        const journalPatterns = [
+            /Nature\s+(Ecology\s+&)?\s*Evolution/i,
+            /Philosophical\s+Transactions/i,
+            /Proceedings\s+of\s+the\s+Royal\s+Society/i,
+            /Royal\s+Society/i,
+            /Journal\s+of\s+[A-Z][a-z]+/i,
+            /[A-Z][a-z]+\s+[A-Z][a-z]+\s+Journal/i,
+            /[A-Z][a-z]+\s+Ecology/i,
+            /[A-Z][a-z]+\s+Evolution/i,
+            /Science\s+Advances/i,
+            /Current\s+Biology/i,
+            /Behavioral\s+Ecology/i,
+            /Animal\s+Behaviour/i
+        ];
+        
+        // Check paragraphs for journal names - journal is usually a short standalone paragraph
+        for (const para of paragraphs) {
+            if (para.length > 30 && para.length < 200) {
+                for (const pattern of journalPatterns) {
+                    if (pattern.test(para)) {
+                        // Found journal - clean it up
+                        let journal = para.trim();
+                        // Remove common prefixes/suffixes
+                        journal = journal.replace(/^(Published in|In|Journal:?)\s*/i, '');
+                        journal = journal.replace(/\s*\.$/, '');
+                        if (journal.length > 5 && journal.length < 150) {
+                            allFields.journal = journal;
+                            break;
+                        }
+                    }
+                }
+                if (allFields.journal) break;
+            }
+        }
+        
+        // Also check if journal is in the body field we extracted (sometimes it's there)
+        if (!allFields.journal && allFields.content) {
+            for (const pattern of journalPatterns) {
+                const match = allFields.content.match(pattern);
+                if (match) {
+                    // Extract the sentence or phrase containing the journal
+                    const context = allFields.content.substring(
+                        Math.max(0, allFields.content.indexOf(match[0]) - 50),
+                        Math.min(allFields.content.length, allFields.content.indexOf(match[0]) + 100)
+                    );
+                    // Clean up
+                    let journal = context.trim();
+                    journal = journal.replace(/^[^A-Z]*/, '');
+                    journal = journal.replace(/[^A-Za-z0-9\s&,\.\-:;].*$/, '');
+                    journal = journal.trim();
+                    if (journal.length > 5 && journal.length < 150) {
+                        allFields.journal = journal;
+                        break;
+                    }
+                }
+            }
+        }
+        
     } catch (e) {
         console.warn(`⚠️  Error extracting from ${htmlPath}: ${e.message}`);
     }
@@ -394,12 +454,15 @@ function extractAllPublications() {
             });
         }
         
+        // Extract journal from allFields (now extracted in extractAllFieldsFromHTML)
+        const journal = allFields.journal || null;
+        
         const pub = {
             id: slug,
             slug: slug,
             title: allFields.title || title,
             authors: allFields.authors || [authors],
-            journal: allFields.journal || null,
+            journal: journal,
             url: url,
             date: allFields.date || (year ? `${year}-01-01T00:00:00.000Z` : null),
             files: publicationFiles.length > 0 ? publicationFiles : null,
@@ -448,40 +511,63 @@ function extractTitlesFromPeoplePage() {
             const jsonMatch = html.match(/<script type="framer\/handover"[^>]*>([\s\S]+?)<\/script>/);
             if (jsonMatch) {
                 const jsonData = JSON.parse(jsonMatch[1]);
+                
+                // Resolve references - if value is a number, look it up in jsonData
+                function resolveRef(ref) {
+                    if (typeof ref === 'number' && jsonData[ref] !== undefined) {
+                        const obj = jsonData[ref];
+                        if (obj && typeof obj === 'object' && obj.value !== undefined) {
+                            return resolveRef(obj.value);
+                        }
+                        return typeof obj === 'string' ? obj : ref;
+                    }
+                    return typeof ref === 'string' ? ref : null;
+                }
+                
                 // Recursively search for people objects (has TAIvpALDu=slug, Hohw1kgab=name, MY38jWI86=position)
-                function findPeople(obj) {
+                function findPeople(obj, depth = 0) {
+                    if (depth > 15) return; // Prevent infinite recursion
                     if (Array.isArray(obj)) {
-                        obj.forEach(item => findPeople(item));
+                        obj.forEach(item => findPeople(item, depth + 1));
                     } else if (typeof obj === 'object' && obj !== null) {
-                        if (obj.TAIvpALDu && obj.Hohw1kgab && obj.MY38jWI86) {
-                            const slug = obj.TAIvpALDu;
-                            const name = obj.Hohw1kgab;
-                            const position = obj.MY38jWI86;
-                            // Only add if position is different from name and looks like a position
+                        if (obj.TAIvpALDu && obj.Hohw1kgab) {
+                            const slugRef = obj.TAIvpALDu;
+                            const nameRef = obj.Hohw1kgab;
+                            const positionRef = obj.MY38jWI86;
+                            
+                            // Resolve references
+                            const slug = resolveRef(slugRef);
+                            const name = resolveRef(nameRef);
+                            const position = positionRef ? resolveRef(positionRef) : null;
+                            
+                            // Only add if we have valid slug and name
                             if (slug && typeof slug === 'string' && slug.includes('-') && 
-                                name && typeof name === 'string' && name.length > 2 &&
-                                position && typeof position === 'string' && position.length > 2 && 
-                                position !== name && position.length < 100) {
-                                // Validate it's a position (not just another name)
-                                const hasPositionKeyword = position.toLowerCase().includes('student') || 
-                                    position.toLowerCase().includes('professor') ||
-                                    position.toLowerCase().includes('researcher') ||
-                                    position.toLowerCase().includes('fellow') ||
-                                    position.toLowerCase().includes('manager') ||
-                                    position.toLowerCase().includes('director') ||
-                                    position.toLowerCase().includes('associate') ||
-                                    position.toLowerCase().includes('phd') ||
-                                    position.toLowerCase().includes('mres') ||
-                                    position.toLowerCase().includes('mbyres') ||
-                                    position.toLowerCase().includes('chair') ||
-                                    position.toLowerCase().includes('lecturer');
+                                name && typeof name === 'string' && name.length > 2) {
                                 
-                                if (hasPositionKeyword) {
-                                    titlesMap[slug] = position;
+                                // If we have a position, validate it
+                                if (position && typeof position === 'string' && position.length > 2 && 
+                                    position !== name && position.length < 100) {
+                                    // Validate it's a position (not just another name)
+                                    const hasPositionKeyword = position.toLowerCase().includes('student') || 
+                                        position.toLowerCase().includes('professor') ||
+                                        position.toLowerCase().includes('researcher') ||
+                                        position.toLowerCase().includes('fellow') ||
+                                        position.toLowerCase().includes('manager') ||
+                                        position.toLowerCase().includes('director') ||
+                                        position.toLowerCase().includes('associate') ||
+                                        position.toLowerCase().includes('phd') ||
+                                        position.toLowerCase().includes('mres') ||
+                                        position.toLowerCase().includes('mbyres') ||
+                                        position.toLowerCase().includes('chair') ||
+                                        position.toLowerCase().includes('lecturer');
+                                    
+                                    if (hasPositionKeyword) {
+                                        titlesMap[slug] = position;
+                                    }
                                 }
                             }
                         }
-                        Object.values(obj).forEach(val => findPeople(val));
+                        Object.values(obj).forEach(val => findPeople(val, depth + 1));
                     }
                 }
                 findPeople(jsonData);
@@ -664,9 +750,117 @@ function extractAllPeople() {
     return people;
 }
 
+/**
+ * Extract ALL news items with ALL fields
+ */
+function extractAllNews() {
+    console.log('🔍 Extracting ALL news data from Framer CMS...\n');
+    
+    const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
+    const news = [];
+    const searchIndex = getSearchIndex();
+    
+    for (const [url, data] of Object.entries(searchIndex)) {
+        if (!url.includes('/pubs-news-ppl/')) continue;
+        
+        const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
+        
+        // Check if it's news (known news slugs or check characteristics)
+        if (!knownNews.includes(slug)) {
+            // News items typically have: h1 (title), date, but no authors with ‹›
+            const name = data.h1 && data.h1[0];
+            if (!name) continue;
+            const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
+            if (hasAuthors) continue; // Publications have authors
+            // Check if it's a person (short name, no year)
+            if (name.length < 30 && !data.p?.some(p => /\b(19|20)\d{2}\b/.test(p))) {
+                continue; // Likely a person
+            }
+        }
+        
+        const title = data.h1 && data.h1[0];
+        if (!title) continue;
+        
+        // Extract ALL fields from HTML
+        const htmlPath = path.join(siteDir, 'pubs-news-ppl', `${slug}.html`);
+        let allFields = {};
+        
+        if (fs.existsSync(htmlPath)) {
+            const extracted = extractAllFieldsFromHTML(htmlPath, slug);
+            allFields = extracted.fields;
+        }
+        
+        // Extract date
+        let date = null;
+        if (data.p) {
+            for (const p of data.p) {
+                const yearMatch = p.match(/\b(19|20)\d{2}\b/);
+                if (yearMatch) {
+                    date = `${yearMatch[0]}-01-01T00:00:00.000Z`;
+                    break;
+                }
+            }
+        }
+        if (!date && allFields.year) {
+            date = `${allFields.year}-01-01T00:00:00.000Z`;
+        }
+        
+        // Filter boilerplate description
+        let description = allFields.description || data.description || '';
+        const genericText = 'The Banded Mongoose Research Project consists of a team of researchers working in Uganda, Exeter and Liverpool in the UK. The main project is based at the University of Exeter (Penryn Campus) and is directed by Professor Michael Cant.';
+        if (description === genericText || description.trim() === genericText.trim() || description.includes('The Banded Mongoose Research Project consists')) {
+            description = '';
+        }
+        
+        // Clean content
+        let content = allFields.content || '';
+        content = content.replace(/Mongoose videos by[^\n]+/g, '');
+        content = content.replace(/\d{4} BMPR\. All rights reserved\./g, '');
+        content = content.replace(/\n{3,}/g, '\n\n');
+        content = content.trim();
+        
+        // Build news item matching Framer CMS structure: Title, Slug, Date, Description, Content, URL, Image
+        const newsItem = {
+            id: slug,
+            slug: slug,
+            title: title,
+            date: date,
+            description: description,
+            body: content,
+            url: url,
+            image: allFields.image || null
+        };
+        
+        news.push(newsItem);
+    }
+    
+    console.log(`✅ Extracted ${news.length} news items with ALL fields\n`);
+    return news;
+}
+
+/**
+ * Extract ALL media items with ALL fields
+ */
+function extractAllMedia() {
+    console.log('🔍 Extracting ALL media data from Framer CMS...\n');
+    
+    // Media items are typically images/videos referenced in the site
+    // For now, we'll extract from any pages that have media references
+    // This is a placeholder - actual media extraction would need to scan for images/videos
+    const media = [];
+    
+    // TODO: Implement proper media extraction by scanning HTML for images/videos
+    // For now, return empty array - user can add media manually or we can enhance this later
+    
+    console.log(`✅ Extracted ${media.length} media items with ALL fields\n`);
+    return media;
+}
+
 // Main
 const allPublications = extractAllPublications();
 const allPeople = extractAllPeople();
+const allNews = extractAllNews();
+const allMedia = extractAllMedia();
 
 fs.writeFileSync(
     path.join(dataDir, 'publications-all-fields.json'),
@@ -678,5 +872,17 @@ fs.writeFileSync(
     JSON.stringify(allPeople, null, 2)
 );
 
+fs.writeFileSync(
+    path.join(dataDir, 'news-all-fields.json'),
+    JSON.stringify(allNews, null, 2)
+);
+
+fs.writeFileSync(
+    path.join(dataDir, 'media-all-fields.json'),
+    JSON.stringify(allMedia, null, 2)
+);
+
 console.log('✅ Saved to data/publications-all-fields.json');
 console.log('✅ Saved to data/people-all-fields.json');
+console.log('✅ Saved to data/news-all-fields.json');
+console.log('✅ Saved to data/media-all-fields.json');
