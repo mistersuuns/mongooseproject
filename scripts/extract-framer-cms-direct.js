@@ -1099,11 +1099,17 @@ function extractAllPeople() {
             // Remove ",," artifacts
             description = description.replace(/",,/g, '');
             description = description.replace(/,,/g, '');
+            // Remove slug-like patterns (e.g., "chair-of-evolutionary-")
+            description = description.replace(/[a-z]+(-[a-z]+){2,}-?\s*/gi, '');
             // Remove encoded Framer data patterns (slug + encoded)
             description = description.replace(/[a-z]+-[a-z]+[A-Za-z0-9]{12,}/gi, '');
+            // Fix merged words (e.g., "GreenAssistant" -> "Green Assistant")
+            description = description.replace(/([a-z])([A-Z][a-z]+)/g, '$1 $2');
             // Remove broken word patterns (like "chair--" or "word--")
             description = description.replace(/\b\w+--\s*/g, '');
             description = description.replace(/\b\w+\s*--/g, '');
+            // Remove "am an" type artifacts
+            description = description.replace(/\b(am|an|the|a)\s+(am|an|the|a)\b/gi, '$1');
             // Remove query params
             description = description.replace(/\?[^\s"']*/gi, '');
             // Remove backslash artifacts
@@ -1114,9 +1120,8 @@ function extractAllPeople() {
             description = description.replace(/^[,\s\.\"']+|[,\s\.\"']+$/g, '');
             // Remove standalone quotes
             description = description.replace(/^["']|["']$/g, '');
-            
-            // DON'T remove name/position - they might be part of valid sentences
-            // The artifacts are already removed above
+            // Remove any remaining leading non-letter characters
+            description = description.replace(/^[^A-Za-z]*/, '');
         }
         
         // Extract image from description if not already found
