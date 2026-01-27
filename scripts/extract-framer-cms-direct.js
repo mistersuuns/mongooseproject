@@ -1131,9 +1131,22 @@ function extractAllPeople() {
             }
         }
         
-        // Use clean description from individual page, or clean the existing one
+        // Use clean description from individual page, or use content field, or clean the existing one
         if (cleanDescription && cleanDescription.length > 100) {
             description = cleanDescription;
+        } else if (content && content.length > 100) {
+            // Use content field as description (it's usually cleaner)
+            let cleanContent = content;
+            // Remove image URLs
+            cleanContent = cleanContent.replace(/https?:\/\/framerusercontent\.com\/images\/[^\s"']*/gi, '');
+            // Remove artifacts
+            cleanContent = cleanContent.replace(/",,/g, '').replace(/,,/g, '');
+            cleanContent = cleanContent.replace(/\?[^\s"']*/gi, '');
+            cleanContent = cleanContent.replace(/\\\s+/g, ' ');
+            cleanContent = cleanContent.replace(/\s+/g, ' ').trim();
+            if (cleanContent.length > 100) {
+                description = cleanContent;
+            }
         } else if (description) {
             // Clean the existing description (from People page)
             // Remove image URLs
