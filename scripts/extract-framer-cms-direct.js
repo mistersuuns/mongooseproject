@@ -1092,25 +1092,31 @@ function extractAllPeople() {
         }
         
         // CLEAN description: remove image URLs, artifacts, encoded data
+        // But be conservative - preserve valid sentences
         if (description) {
             // Remove image URLs
             description = description.replace(/https?:\/\/framerusercontent\.com\/images\/[^\s"']*/gi, '');
             // Remove ",," artifacts
             description = description.replace(/",,/g, '');
             description = description.replace(/,,/g, '');
-            // Remove encoded Framer data (long alphanumeric strings)
-            description = description.replace(/[a-z]+-[a-z]+[A-Za-z0-9]{10,}/g, '');
-            // Remove position/name duplicates that appear in description
-            description = description.replace(new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '');
-            if (position) {
-                description = description.replace(new RegExp(position.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '');
-            }
-            // Remove query params artifacts
-            description = description.replace(/\?width=\d+&height=\d+/gi, '');
+            // Remove encoded Framer data patterns (slug + encoded)
+            description = description.replace(/[a-z]+-[a-z]+[A-Za-z0-9]{12,}/gi, '');
+            // Remove broken word patterns (like "chair--" or "word--")
+            description = description.replace(/\b\w+--\s*/g, '');
+            description = description.replace(/\b\w+\s*--/g, '');
+            // Remove query params
+            description = description.replace(/\?[^\s"']*/gi, '');
+            // Remove backslash artifacts
+            description = description.replace(/\\\s+/g, ' ');
             // Clean up multiple spaces
             description = description.replace(/\s+/g, ' ').trim();
-            // Remove leading/trailing punctuation artifacts
-            description = description.replace(/^[,\s\.]+|[,\s\.]+$/g, '');
+            // Remove leading/trailing punctuation
+            description = description.replace(/^[,\s\.\"']+|[,\s\.\"']+$/g, '');
+            // Remove standalone quotes
+            description = description.replace(/^["']|["']$/g, '');
+            
+            // DON'T remove name/position - they might be part of valid sentences
+            // The artifacts are already removed above
         }
         
         // Extract image from description if not already found
