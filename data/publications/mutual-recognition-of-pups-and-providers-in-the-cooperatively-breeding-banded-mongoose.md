@@ -4,7 +4,6 @@ slug: "mutual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-ba
 authors: ["Muller, C. A., Manser, M. B."]
 journal: "Animal Behaviour"
 url: "/pubs-news-ppl/mutual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-banded-mongoose"
-date: "2008-01-01T00:00:00.000Z"
 year: "2008"
 files: [{"file":"publications/pdfs/mutual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-banded-mongoose.pdf"}]
 ---

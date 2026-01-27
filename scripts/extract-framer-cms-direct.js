@@ -766,7 +766,10 @@ function extractAllPublications() {
             authors: allFields.authors || [authors],
             journal: journal,
             url: url,
-            date: allFields.date || (year ? `${year}-01-01T00:00:00.000Z` : null),
+            // Only use date if we have a real date, not just a year
+            // Don't fabricate "01-01" when we only know the year
+            date: allFields.date || null,
+            year: year || null,
             files: publicationFiles.length > 0 ? publicationFiles : null,
             description: description,
             body: content

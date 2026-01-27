@@ -4,7 +4,6 @@ slug: "biased-escorts-offspring-sex-not-relatedness-explains-alloparental-care-p
 authors: ["Thompson FJ, Marshall HH, Vitikainen EIK, Cant MA"]
 journal: "Proceedings of the Royal Society B"
 url: "/pubs-news-ppl/biased-escorts-offspring-sex-not-relatedness-explains-alloparental-care-patterns-in-a-cooperative-breeder"
-date: "2017-01-01T00:00:00.000Z"
 year: "2017"
 files: [{"file":"publications/pdfs/biased-escorts-offspring-sex-not-relatedness-explains-alloparental-care-patterns-in-a-cooperative-breeder.pdf"}]
 ---

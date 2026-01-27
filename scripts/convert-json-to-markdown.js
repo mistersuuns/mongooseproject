@@ -44,12 +44,12 @@ function convertPublicationToMarkdown(pub) {
   if (pub.url) {
     fields.push(`url: "${pub.url}"`);
   }
-  if (pub.date || year) {
-    const date = pub.date || (year ? `${year}-01-01T00:00:00.000Z` : null);
-    if (date) fields.push(`date: "${date}"`);
+  // Only output date if we have a real date, not fabricated from year
+  if (pub.date) {
+    fields.push(`date: "${pub.date}"`);
   }
-  
-  // Add year field for summary display
+
+  // Year field for display - don't pretend we know the full date
   if (year) {
     fields.push(`year: "${year}"`);
   }

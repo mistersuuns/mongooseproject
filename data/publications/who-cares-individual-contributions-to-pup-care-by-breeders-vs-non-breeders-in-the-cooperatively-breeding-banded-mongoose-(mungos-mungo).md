@@ -4,7 +4,6 @@ slug: "who-cares-individual-contributions-to-pup-care-by-breeders-vs-non-breeder
 authors: ["Hodge, S. J."]
 journal: "Behavioral Ecology and Sociobiology"
 url: "/pubs-news-ppl/who-cares-individual-contributions-to-pup-care-by-breeders-vs-non-breeders-in-the-cooperatively-breeding-banded-mongoose-(mungos-mungo)"
-date: "2007-01-01T00:00:00.000Z"
 year: "2007"
 files: [{"file":"publications/pdfs/who-cares-individual-contributions-to-pup-care-by-breeders-vs-non-breeders-in-the-cooperatively-breeding-banded-mongoose-(mungos-mungo).pdf"}]
 ---
