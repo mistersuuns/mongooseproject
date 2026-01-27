@@ -592,15 +592,10 @@ function getSearchIndex() {
  */
 function extractAllPublications() {
     console.log('🔍 Extracting ALL publication data from Framer CMS...\n');
-    
-    // Known exclusions
-    const knownPeople = ['neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
-        'monil-khera', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
-        'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'mike-cant',
-        'field-manager', 'hazel-nichols', 'faye-thompson', 'professor',
-        'assistant-professor', 'chair-of-evolutionary-population-genetics',
-        'emma-vitikainen', 'laura-labarge', 'leela-channer'];
-    
+
+    // Get people slugs from People page as source of truth for exclusions
+    const { peopleSlugs } = extractTitlesFromPeoplePage();
+
     const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
     
     // Get searchIndex to find all publications
@@ -613,7 +608,7 @@ function extractAllPublications() {
     for (const [url, data] of Object.entries(searchIndex)) {
         if (!url.includes('/pubs-news-ppl/')) continue;
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-        if (knownPeople.includes(slug) || knownNews.includes(slug)) continue;
+        if (peopleSlugs.has(slug) || knownNews.includes(slug)) continue;
         if (data.h1 && data.h1.length > 0) {
             const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
             if (hasAuthors) {
@@ -640,7 +635,7 @@ function extractAllPublications() {
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
         
         // Skip people and news
-        if (knownPeople.includes(slug) || knownNews.includes(slug)) continue;
+        if (peopleSlugs.has(slug) || knownNews.includes(slug)) continue;
         
         // Check if it's a publication (has h1 title and h2 authors)
         if (!data.h1 || data.h1.length === 0) continue;
@@ -759,16 +754,18 @@ function extractAllPublications() {
 
 /**
  * Extract titles AND descriptions from People listing page
+ * Returns: { titles: {slug: position}, descriptions: {slug: description}, peopleSlugs: Set<slug> }
  */
 function extractTitlesFromPeoplePage() {
     const titlesMap = {};
     const descriptionsMap = {};
-    
+    const peopleSlugs = new Set(); // Track ALL people slugs, including those without positions
+
     try {
         // Try local file first
         let html = null;
         const peoplePagePath = path.join(siteDir, 'people.html');
-        
+
         if (fs.existsSync(peoplePagePath)) {
             html = fs.readFileSync(peoplePagePath, 'utf8');
         } else {
@@ -781,10 +778,10 @@ function extractTitlesFromPeoplePage() {
                 fs.unlinkSync(tempFile);
             }
         }
-        
+
         if (!html) {
             console.warn('  ⚠️  Could not get People page');
-            return { titles: titlesMap, descriptions: descriptionsMap };
+            return { titles: titlesMap, descriptions: descriptionsMap, peopleSlugs };
         }
         
         // Extract descriptions from People page
@@ -908,14 +905,18 @@ function extractTitlesFromPeoplePage() {
                             const position = positionRef ? resolveRef(positionRef) : null;
                             
                             // Only add if we have valid slug and name
-                            if (slug && typeof slug === 'string' && slug.includes('-') && 
+                            // Validate slug (allow slugs with or without hyphens, e.g., "professor")
+                            if (slug && typeof slug === 'string' && slug.length > 2 &&
                                 name && typeof name === 'string' && name.length > 2) {
-                                
+
+                                // Track this as a person (source of truth from People page JSON)
+                                peopleSlugs.add(slug);
+
                                 // If we have a position, validate it
-                                if (position && typeof position === 'string' && position.length > 2 && 
+                                if (position && typeof position === 'string' && position.length > 2 &&
                                     position !== name && position.length < 100) {
                                     // Validate it's a position (not just another name)
-                                    const hasPositionKeyword = position.toLowerCase().includes('student') || 
+                                    const hasPositionKeyword = position.toLowerCase().includes('student') ||
                                         position.toLowerCase().includes('professor') ||
                                         position.toLowerCase().includes('researcher') ||
                                         position.toLowerCase().includes('fellow') ||
@@ -927,7 +928,7 @@ function extractTitlesFromPeoplePage() {
                                         position.toLowerCase().includes('mbyres') ||
                                         position.toLowerCase().includes('chair') ||
                                         position.toLowerCase().includes('lecturer');
-                                    
+
                                     if (hasPositionKeyword) {
                                         titlesMap[slug] = position;
                                     }
@@ -1023,7 +1024,7 @@ function extractTitlesFromPeoplePage() {
         console.warn(`⚠️  Error extracting from People page: ${e.message}`);
     }
     
-    return { titles: titlesMap, descriptions: descriptionsMap };
+    return { titles: titlesMap, descriptions: descriptionsMap, peopleSlugs };
 }
 
 /**
@@ -1031,40 +1032,27 @@ function extractTitlesFromPeoplePage() {
  */
 function extractAllPeople() {
     console.log('🔍 Extracting ALL people data from Framer CMS...\n');
-    
-    // Get titles and descriptions from People listing page
-    console.log('📄 Extracting titles and descriptions from People listing page...');
-    const { titles: titlesMap, descriptions: descriptionsMap } = extractTitlesFromPeoplePage();
-    console.log(`✅ Found ${Object.keys(titlesMap).length} titles and ${Object.keys(descriptionsMap).length} descriptions from People page\n`);
-    
+
+    // Get titles, descriptions, and people slugs from People listing page
+    // peopleSlugs is the source of truth - extracted from the Framer handover JSON
+    console.log('📄 Extracting people from People listing page...');
+    const { titles: titlesMap, descriptions: descriptionsMap, peopleSlugs } = extractTitlesFromPeoplePage();
+    console.log(`✅ Found ${peopleSlugs.size} people, ${Object.keys(titlesMap).length} positions, ${Object.keys(descriptionsMap).length} descriptions from People page\n`);
+
     const people = [];
     const searchIndex = getSearchIndex();
-    
-    const knownPeopleSlugs = [
-        'neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
-        'monil-khera', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
-        'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'mike-cant',
-        'field-manager', 'hazel-nichols', 'faye-thompson', 'professor',
-        'assistant-professor', 'chair-of-evolutionary-population-genetics',
-        'emma-vitikainen', 'laura-labarge', 'leela-channer', 'patrick-green',
-        'joe-hoffman', 'dan-franks', 'francis-mwanguhya'
-    ];
-    
+
     for (const [url, data] of Object.entries(searchIndex)) {
         if (!url.includes('/pubs-news-ppl/')) continue;
-        
+
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-        
-        // Check if it's a person
-        if (!knownPeopleSlugs.includes(slug)) {
-            // Check if it looks like a person (short name, no year, no authors)
-            const name = data.h1 && data.h1[0];
-            if (!name || name.length > 50) continue;
-            const hasYear = data.p && data.p.some(p => /\b(19|20)\d{2}\b/.test(p));
-            const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
-            if (hasYear || hasAuthors) continue;
+
+        // Use peopleSlugs from People page JSON as the source of truth
+        // This replaces the old hardcoded list and flawed heuristic
+        if (!peopleSlugs.has(slug)) {
+            continue; // Skip if not a person according to the People page
         }
-        
+
         const name = data.h1 && data.h1[0];
         if (!name) continue;
         
@@ -1229,11 +1217,12 @@ function extractAllPeople() {
             description = description.replace(/\bGreen\s+(Assistant\s+Professor|Professor|Lecturer)/gi, '$1');
             // Remove duplicate position patterns: "Green Assistant Professor am an Assistant Professor" -> "Assistant Professor"
             // Keep the more specific position (Assistant Professor > Professor)
-            description = description.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,50}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, (match, p1, p2, p3, p4, p5) => {
+            // Regex has 4 capture groups: p1=leading word, p2=first position, p3="am an", p4=second position
+            description = description.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,50}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, (match, p1, p2, p3, p4) => {
                 // Prefer "Assistant Professor" over "Professor"
-                if (p5 && p5.includes('Assistant')) return p5;
+                if (p4 && p4.includes('Assistant')) return p4;
                 if (p2 && p2.includes('Assistant')) return p2;
-                return p5 || p2;
+                return p4 || p2;
             });
             // Remove query params
             description = description.replace(/\?[^\s"']*/gi, '');
@@ -1356,22 +1345,10 @@ function extractAllPeople() {
  */
 function extractAllNews() {
     console.log('🔍 Extracting ALL news data from Framer CMS...\n');
-    
+
+    // News uses a strict whitelist - only these slugs are considered news
     const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
-    
-    // Known people slugs - EXCLUDE these from news
-    const knownPeopleSlugs = [
-        'neil-jordan', 'emma-inzani', 'graham-birch', 'nikita-bedov-panasyuk',
-        'monil-khera', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
-        'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'mike-cant',
-        'field-manager', 'hazel-nichols', 'faye-thompson', 'professor',
-        'assistant-professor', 'chair-of-evolutionary-population-genetics',
-        'emma-vitikainen', 'laura-labarge', 'leela-channer', 'patrick-green',
-        'joe-hoffman', 'dan-franks', 'francis-mwanguhya', 'rufus-johnstone',
-        'zoe-turner', 'olivier-carter', 'rahul-jaitly', 'megan-nicholl',
-        'erica-sininärhi', 'variable-ecological-conditions-promote-male-helping-by-changing-banded-mongoose-group-composition'
-    ];
-    
+
     const news = [];
     const searchIndex = getSearchIndex();
     
