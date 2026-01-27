@@ -1091,6 +1091,28 @@ function extractAllPeople() {
             description = content;
         }
         
+        // CLEAN description: remove image URLs, artifacts, encoded data
+        if (description) {
+            // Remove image URLs
+            description = description.replace(/https?:\/\/framerusercontent\.com\/images\/[^\s"']*/gi, '');
+            // Remove ",," artifacts
+            description = description.replace(/",,/g, '');
+            description = description.replace(/,,/g, '');
+            // Remove encoded Framer data (long alphanumeric strings)
+            description = description.replace(/[a-z]+-[a-z]+[A-Za-z0-9]{10,}/g, '');
+            // Remove position/name duplicates that appear in description
+            description = description.replace(new RegExp(name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '');
+            if (position) {
+                description = description.replace(new RegExp(position.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '');
+            }
+            // Remove query params artifacts
+            description = description.replace(/\?width=\d+&height=\d+/gi, '');
+            // Clean up multiple spaces
+            description = description.replace(/\s+/g, ' ').trim();
+            // Remove leading/trailing punctuation artifacts
+            description = description.replace(/^[,\s\.]+|[,\s\.]+$/g, '');
+        }
+        
         // Extract image from description if not already found
         let image = allFields.image || null;
         
@@ -1275,6 +1297,73 @@ function extractAllNews() {
         content = content.replace(/\n{3,}/g, '\n\n');
         content = content.trim();
         
+        // Extract image for news (if not already found)
+        let image = allFields.image || null;
+        if (!image) {
+            // Try to get from live site (news images are dynamically loaded)
+            try {
+                const liveUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+                const liveHtml = execSync(`curl -sL "${liveUrl}"`, { encoding: 'utf8', stdio: 'pipe' });
+                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                const allImages = Array.from(liveHtml.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi));
+                const newsImages = allImages
+                    .map(m => m[0])
+                    .filter(url => {
+                        const filename = url.split('/').pop().split('?')[0];
+                        return !siteIcons.includes(filename);
+                    });
+                if (newsImages.length > 0) {
+                    image = newsImages[0].split('?')[0];
+                }
+            } catch (e) {
+                // Silently fail
+            }
+        }
+        
+        // If no content, try to extract from live site
+        if (!content || content.trim().length < 50) {
+            try {
+                const liveUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
+                const liveHtml = execSync(`curl -sL "${liveUrl}"`, { encoding: 'utf8', stdio: 'pipe' });
+                const bodyMatch = liveHtml.match(/<body[^>]*>([\s\S]+?)<\/body>/);
+                if (bodyMatch) {
+                    let body = bodyMatch[1];
+                    // Remove scripts, styles, nav, footer
+                    body = body.replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '');
+                    body = body.replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '');
+                    body = body.replace(/←\s*Back to Home/gi, '');
+                    body = body.replace(/Mongoose videos by[^\n]+/gi, '');
+                    body = body.replace(/\d{4} BMPR\. All rights reserved\./gi, '');
+                    // Remove navigation links
+                    body = body.replace(/<nav[^>]*>[\s\S]*?<\/nav>/gi, '');
+                    body = body.replace(/<header[^>]*>[\s\S]*?<\/header>/gi, '');
+                    body = body.replace(/<footer[^>]*>[\s\S]*?<\/footer>/gi, '');
+                    // Remove common navigation text
+                    body = body.replace(/Banded Mongoose Research Project/gi, '');
+                    body = body.replace(/About\s+People\s+Research\s+Themes\s+News/gi, '');
+                    // Extract paragraphs (more reliable than sentences)
+                    const pMatches = Array.from(body.matchAll(/<p[^>]*>([^<]+)<\/p>/g));
+                    const paragraphs = pMatches.map(m => m[1].trim())
+                        .filter(p => p.length > 50 && 
+                            !p.includes('Banded Mongoose Research Project') &&
+                            !p.match(/^(About|People|Research|News|Publications|Contact)$/i));
+                    if (paragraphs.length > 0) {
+                        content = paragraphs.join('\n\n').trim();
+                    } else {
+                        // Fallback to sentence extraction
+                        let text = body.replace(/<[^>]+>/g, ' ');
+                        text = text.replace(/\s+/g, ' ').trim();
+                        const sentences = text.match(/[^.!?]{50,}[.!?]/g) || [];
+                        if (sentences.length > 0) {
+                            content = sentences.join(' ').trim();
+                        }
+                    }
+                }
+            } catch (e) {
+                // Silently fail
+            }
+        }
+        
         // Build news item matching Framer CMS structure: Title, Slug, Date, Description, Content, URL, Image
         const newsItem = {
             id: slug,
@@ -1284,7 +1373,7 @@ function extractAllNews() {
             description: description,
             body: content,
             url: url,
-            image: allFields.image || null
+            image: image
         };
         
         news.push(newsItem);
