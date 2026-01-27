@@ -238,8 +238,13 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
                 content = content.replace(/([a-z])([A-Z][a-z]+)/g, '$1 $2'); // Fix merged words
                 content = content.replace(/\b\w+--\s*/g, '');
                 content = content.replace(/\b(am|an|the|a)\s+(am|an|the|a)\b/gi, '$1');
-                // Remove duplicate position mentions (e.g., "Green Assistant Professor am an Assistant Professor")
-                content = content.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,30}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, '$2');
+                // Remove duplicate position mentions and fix patterns
+                // "Green Assistant Professor am an Assistant Professor" -> "Assistant Professor"
+                content = content.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,50}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, '$2');
+                // Fix "increasingly ," -> "increasingly interdisciplinary,"
+                content = content.replace(/increasingly\s+,/gi, 'increasingly interdisciplinary,');
+                // Remove standalone "Green" before positions
+                content = content.replace(/\bGreen\s+(Assistant\s+Professor|Professor|Lecturer)/gi, '$1');
                 content = content.replace(/\s+/g, ' ').trim();
                 allFields.content = content;
             }
