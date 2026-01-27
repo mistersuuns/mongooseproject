@@ -138,58 +138,14 @@ function convertPersonToMarkdown(person) {
     fields.push(`category: "${person.category.replace(/"/g, '\\"')}"`);
   }
   
-  // CLEAN description: remove image URLs, artifacts, encoded data
+  // Description should already be clean from extraction - only minimal cleanup
   let description = person.description || '';
   if (description) {
-    // Remove image URLs (with query params)
+    // Only remove obvious artifacts that definitely shouldn't be there
     description = description.replace(/https?:\/\/framerusercontent\.com\/images\/[^\s"']*/gi, '');
-    // Remove ",," and quote artifacts
     description = description.replace(/",,/g, '');
     description = description.replace(/,,/g, '');
-    description = description.replace(/\\"/g, '');
-    // Remove encoded Framer data patterns
-    description = description.replace(/[a-z]+-[a-z]+[A-Za-z0-9]{8,}/gi, ''); // slug + encoded
-    description = description.replace(/\b[A-Za-z0-9]{10,}\b/g, (match) => {
-      // Remove if it's all caps/nums or very long (encoded data)
-      if (match.length > 12 && !match.match(/[aeiouAEIOU]{2,}/i)) return '';
-      return match;
-    });
-    // Remove position/name duplicates (but be careful not to remove from sentences)
-    if (name && name.length > 3) {
-      // Only remove if it appears as standalone (not in a sentence)
-      const nameWords = name.split(/\s+/);
-      if (nameWords.length === 2) {
-        // Remove if both words appear together
-        description = description.replace(new RegExp(`\\b${nameWords[0]}\\s+${nameWords[1]}\\b`, 'gi'), '');
-      }
-    }
-    if (person.position && person.position.length > 5) {
-      // Only remove if it's a standalone mention, not part of a sentence
-      description = description.replace(new RegExp(`\\b${person.position.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'), '');
-    }
-    // Remove query params
-    description = description.replace(/\?[^\s"']*/gi, '');
-    // Remove backslash artifacts
-    description = description.replace(/\\\s+/g, ' ');
-    // Remove broken words and artifacts
-    description = description.replace(/\b\w+--\s*/g, ''); // "chair--"
-    description = description.replace(/\b\w+\s*--/g, ''); // "word--"
-    description = description.replace(/\b(am|an|the|a)\s+(am|an|the|a)\b/gi, '$1'); // "am an"
-    description = description.replace(/\b([A-Z][a-z]+)\s+([a-z]+)\s+([A-Z][a-z]+)\b/g, (match, p1, p2, p3) => {
-      // Remove patterns like "chair-- Green am an" -> keep only if it makes sense
-      if (p2 === 'am' || p2 === 'an' || p2 === 'the') return `${p1} ${p3}`;
-      return match;
-    });
-    // Remove orphaned words that don't make sense
-    description = description.replace(/\b(am|an|the|a|in|on|at)\s+(am|an|the|a|in|on|at)\b/gi, '');
-    // Clean up multiple spaces and trim
     description = description.replace(/\s+/g, ' ').trim();
-    // Remove leading/trailing punctuation
-    description = description.replace(/^[,\s\.\"']+|[,\s\.\"']+$/g, '');
-    // Remove standalone quotes
-    description = description.replace(/^["']|["']$/g, '');
-    // Final cleanup - remove any remaining artifacts at start
-    description = description.replace(/^[^A-Za-z]*/, '');
   }
   
   if (description && description.length > 10) {
