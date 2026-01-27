@@ -227,7 +227,21 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
                 // Remove position if it appears at the start (common in person pages)
                 const positionPattern = /^(Professor|Assistant Professor|Lecturer|Field Manager|PhD Student|MRes Student|MbyRes Student|Chair of|Postdoctoral|Associate|Director|Manager)[^.!?]{0,50}[.!?]\s*/i;
                 content = content.replace(positionPattern, '');
-                allFields.content = content.trim();
+                // Clean artifacts from content
+                content = content.replace(/https?:\/\/framerusercontent\.com\/images\/[^\s"']*/gi, '');
+                content = content.replace(/",,/g, '').replace(/,,/g, '');
+                content = content.replace(/[a-z]+(-[a-z]+){2,}-?\s*/gi, ''); // slug patterns
+                content = content.replace(/\b[A-Za-z0-9]{12,}\b/g, (match) => {
+                    if (match.length > 15 && !match.match(/[aeiouAEIOU]{2,}/i)) return '';
+                    return match;
+                });
+                content = content.replace(/([a-z])([A-Z][a-z]+)/g, '$1 $2'); // Fix merged words
+                content = content.replace(/\b\w+--\s*/g, '');
+                content = content.replace(/\b(am|an|the|a)\s+(am|an|the|a)\b/gi, '$1');
+                // Remove duplicate position mentions (e.g., "Green Assistant Professor am an Assistant Professor")
+                content = content.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,30}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, '$2');
+                content = content.replace(/\s+/g, ' ').trim();
+                allFields.content = content;
             }
         }
         
