@@ -1223,6 +1223,12 @@ function extractAllPeople() {
             description = description.replace(/\b\w+--\s*/g, '');
             // Fix merged words
             description = description.replace(/([a-z])([A-Z][a-z]+)/g, '$1 $2');
+            // Fix "increasingly ," -> "increasingly interdisciplinary,"
+            description = description.replace(/increasingly\s+,/gi, 'increasingly interdisciplinary,');
+            // Remove "Green" before positions
+            description = description.replace(/\bGreen\s+(Assistant\s+Professor|Professor|Lecturer)/gi, '$1');
+            // Remove duplicate position patterns: "Green Assistant Professor am an Assistant Professor" -> "Assistant Professor"
+            description = description.replace(/\b([A-Z][a-z]+\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)[^.!?]{0,50}(am\s+an?\s+)?(Assistant\s+Professor|Professor|Lecturer|PhD\s+Student)/gi, '$2');
             // Remove query params
             description = description.replace(/\?[^\s"']*/gi, '');
             description = description.replace(/\\\s+/g, ' ');
