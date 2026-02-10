@@ -51,7 +51,7 @@ function convertPublicationToMarkdown(pub) {
 
   // Year field for display - don't pretend we know the full date
   if (year) {
-    fields.push(`year: "${year}"`);
+    fields.push(`year: ${year}`);
   }
   if (pub.files && pub.files.length > 0) {
     fields.push(`files: ${JSON.stringify(pub.files)}`);
@@ -97,7 +97,7 @@ function convertNewsToMarkdown(news) {
     fields.push(`date: "${news.date}"`);
   }
   if (year) {
-    fields.push(`year: "${year}"`);
+    fields.push(`year: ${year}`);
   }
   if (news.image) {
     fields.push(`image: "${news.image}"`);

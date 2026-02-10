@@ -4,7 +4,7 @@ slug: "decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal"
 authors: ["Sheppard CE, Inger R, McDonald RA, Barker S, Jackson AL, Thompson FJ, Vitikainen EIK, Cant MA, Marshall HH"]
 journal: "Current Biology"
 url: "/pubs-news-ppl/decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal"
-year: "2018"
+year: 2018
 files: [{"file":"publications/pdfs/decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal.pdf"}]
 ---
 

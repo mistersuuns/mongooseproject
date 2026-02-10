@@ -4,7 +4,7 @@ slug: "why-breed-communally-factors-affecting-fecundity-in-a-communal-breeding-m
 authors: ["Cant, M. A."]
 journal: "Behavioral Ecology and Sociobiology"
 url: "/pubs-news-ppl/why-breed-communally-factors-affecting-fecundity-in-a-communal-breeding-mammal-the-banded-mongoose-(mungos-mungo)"
-year: "2004"
+year: 2004
 files: [{"file":"publications/pdfs/why-breed-communally-factors-affecting-fecundity-in-a-communal-breeding-mammal-the-banded-mongoose-(mungos-mungo).pdf"}]
 ---
 

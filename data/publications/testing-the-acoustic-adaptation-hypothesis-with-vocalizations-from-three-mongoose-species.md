@@ -4,7 +4,7 @@ slug: "testing-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-
 authors: ["Birch G, Meniri M, Mitchell C, Mwanguhya F, Businge R, Ahabyona S, Nichols HJ, Cant MA, Blount JD"]
 journal: "Animal Behaviour"
 url: "/pubs-news-ppl/testing-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-mongoose-species"
-year: "2022"
+year: 2022
 files: [{"file":"publications/pdfs/testing-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-mongoose-species.pdf"}]
 ---
 

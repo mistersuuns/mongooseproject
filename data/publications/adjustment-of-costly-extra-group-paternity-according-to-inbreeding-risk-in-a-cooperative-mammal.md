@@ -4,7 +4,7 @@ slug: "adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-i
 authors: ["Bell, M. B. V., Cant, M. A., Borgeaud, C., Thavarajah, N., Samson, J., Clutton-Brock, T. H."]
 journal: "Behavioural Ecology"
 url: "/pubs-news-ppl/adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal"
-year: "2015"
+year: 2015
 files: [{"file":"publications/pdfs/adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal.pdf"}]
 ---
 
