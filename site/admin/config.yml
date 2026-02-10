@@ -44,7 +44,7 @@ collections:
       - {label: "Journal", name: "journal", widget: "string", required: false}
       - {label: "URL", name: "url", widget: "string", required: false}
       - {label: "Date", name: "date", widget: "datetime", required: false}
-      - {label: "Year", name: "year", widget: "string", required: false, hint: "Extracted from date for display"}
+      - {label: "Year", name: "year", widget: "number", value_type: "int", required: false, hint: "Extracted from date for display"}
       - {label: "Files & Media", name: "files", widget: "list", required: false, fields: [{label: "File", name: "file", widget: "file"}]}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Content", name: "body", widget: "markdown", required: false}
@@ -66,7 +66,7 @@ collections:
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Date", name: "date", widget: "datetime", required: false}
-      - {label: "Year", name: "year", widget: "string", required: false, hint: "Extracted from date for display"}
+      - {label: "Year", name: "year", widget: "number", value_type: "int", required: false, hint: "Extracted from date for display"}
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "URL", name: "url", widget: "string", required: false}
 
