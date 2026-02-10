@@ -27,6 +27,7 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - name: "publications" # Used in routes, e.g., /admin/collections/publications
     label: "Publications" # Used in the UI
+    label_singular: "publication" # Create button uses this: "New publication"
     folder: "data/publications" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
@@ -44,7 +45,7 @@ collections:
       - {label: "Authors", name: "authors", widget: "list", default: []}
       - {label: "Journal", name: "journal", widget: "string", required: false}
       - {label: "URL", name: "url", widget: "string", required: false}
-      - {label: "Date", name: "date", widget: "datetime", required: false}
+      - {label: "Date", name: "date", widget: "datetime", required: false, date_format: "YYYY-MM-DD", picker_utc: true}
       - {label: "Year", name: "year", widget: "string", required: false, pattern: ["\\d{4}", "Use a 4-digit year (e.g. 2024)"], hint: "4-digit year (string so it shows in list summary)"}
       - {label: "Files & Media", name: "files", widget: "list", required: false, fields: [{label: "File", name: "file", widget: "file"}]}
       - {label: "Description", name: "description", widget: "text", required: false}
@@ -67,7 +68,7 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Date", name: "date", widget: "datetime", required: false}
+      - {label: "Date", name: "date", widget: "datetime", required: false, date_format: "YYYY-MM-DD", picker_utc: true}
       - {label: "Year", name: "year", widget: "string", required: false, pattern: ["\\d{4}", "Use a 4-digit year (e.g. 2024)"], hint: "4-digit year (string so it shows in list summary)"}
       - {label: "Content", name: "body", widget: "markdown"}
       - {label: "URL", name: "url", widget: "string", required: false}
@@ -114,7 +115,7 @@ collections:
       - {label: "Alt Text", name: "alt", widget: "string", required: false, hint: "Description for screen readers and SEO"}
       - {label: "Caption", name: "caption", widget: "text", required: false}
       - {label: "Category", name: "category", widget: "string", required: false, hint: "e.g., research, team, field-work, etc."}
-      - {label: "Date", name: "date", widget: "datetime", required: false}
+      - {label: "Date", name: "date", widget: "datetime", required: false, date_format: "YYYY-MM-DD", picker_utc: true}
       - {label: "Photographer/Credit", name: "credit", widget: "string", required: false}
       - {label: "Description", name: "description", widget: "text", required: false}
       - {label: "Order", name: "order", widget: "number", required: false, hint: "Lower numbers appear first. Leave blank to use default sorting (by date, then title)."}
