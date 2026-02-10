@@ -4,7 +4,7 @@ slug: "kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatednes
 authors: ["Green, P.A., Preston, E.F.R., Nicholl, M.H., Croft, D. P., Thompson, F. J., & Cant, M. A."]
 journal: "Proceedings of the Royal Society B"
 url: "/pubs-news-ppl/kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness"
-year: 2021
+year: "2021"
 files: [{"file":"publications/pdfs/kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness.pdf"}]
 ---
 

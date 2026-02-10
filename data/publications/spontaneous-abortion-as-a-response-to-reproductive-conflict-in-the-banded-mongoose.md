@@ -4,7 +4,7 @@ slug: "spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded
 authors: ["Marshall, H. H., Inger, R., Jackson, A. L., McDonald, R. A., Thompson, F. J., & Cant, M. A."]
 journal: "Biology Letters"
 url: "/pubs-news-ppl/spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose"
-year: 2019
+year: "2019"
 files: [{"file":"publications/pdfs/spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose.pdf"}]
 ---
 

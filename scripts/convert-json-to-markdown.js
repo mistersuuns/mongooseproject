@@ -49,9 +49,9 @@ function convertPublicationToMarkdown(pub) {
     fields.push(`date: "${pub.date}"`);
   }
 
-  // Year field for display - don't pretend we know the full date
+  // Year as quoted string so Decap CMS summary displays it (number type does not show)
   if (year) {
-    fields.push(`year: ${year}`);
+    fields.push(`year: "${year}"`);
   }
   if (pub.files && pub.files.length > 0) {
     fields.push(`files: ${JSON.stringify(pub.files)}`);

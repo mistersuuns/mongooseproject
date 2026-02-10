@@ -4,7 +4,7 @@ slug: "stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-rep
 authors: ["Cant, M. A., Field, J."]
 journal: "Behavioral Ecology"
 url: "/pubs-news-ppl/stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew"
-year: 2006
+year: "2006"
 files: [{"file":"publications/pdfs/stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew.pdf"}]
 ---
 

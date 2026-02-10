@@ -4,7 +4,7 @@ slug: "endogenous-timing-and-competitive-interactions-among-relatives"
 authors: ["Cant, M. A., Johnstone, R. A."]
 journal: "Philosophical Transactions of the Royal Society B"
 url: "/pubs-news-ppl/endogenous-timing-and-competitive-interactions-among-relatives"
-year: 2005
+year: "2005"
 files: [{"file":"publications/pdfs/endogenous-timing-and-competitive-interactions-among-relatives.pdf"}]
 ---
 

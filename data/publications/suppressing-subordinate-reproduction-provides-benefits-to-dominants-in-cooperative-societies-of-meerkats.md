@@ -4,7 +4,7 @@ slug: "suppressing-subordinate-reproduction-provides-benefits-to-dominants-in-co
 authors: ["Blount, J. D., Vitikainen, E. I. K., Stott, I., Cant, M. A."]
 journal: "Nature Communications"
 url: "/pubs-news-ppl/suppressing-subordinate-reproduction-provides-benefits-to-dominants-in-cooperative-societies-of-meerkats"
-year: 2014
+year: "2014"
 files: [{"file":"publications/pdfs/suppressing-subordinate-reproduction-provides-benefits-to-dominants-in-cooperative-societies-of-meerkats.pdf"}]
 ---
 

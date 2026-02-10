@@ -4,7 +4,7 @@ slug: "do-anvil-using-banded-mongooses-understand-means-end-relationships-a-fiel
 authors: ["Muller, C. A., Cant, M. A."]
 journal: "Animal Cognition"
 url: "/pubs-news-ppl/do-anvil-using-banded-mongooses-understand-means-end-relationships-a-field-experiment"
-year: 2010
+year: "2010"
 files: [{"file":"publications/pdfs/do-anvil-using-banded-mongooses-understand-means-end-relationships-a-field-experiment.pdf"}]
 ---
 
