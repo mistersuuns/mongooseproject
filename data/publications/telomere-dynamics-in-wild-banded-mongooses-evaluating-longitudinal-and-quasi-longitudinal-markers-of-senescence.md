@@ -1,5 +1,6 @@
 ---
 title: "Telomere dynamics in wild banded mongooses: Evaluating longitudinal and quasi-longitudinal markers of senescence"
+list_summary: "2018 | Telomere dynamics in wild banded mongooses: Evaluating longitudinal and quasi-longitudinal markers of senescence | Experimental Gerontology"
 slug: "telomere-dynamics-in-wild-banded-mongooses-evaluating-longitudinal-and-quasi-longitudinal-markers-of-senescence"
 authors: ["Vitikainen EIK, Marshall HH, Thompson FJ, Sanderson JL, Bell MBV, Gilchrist JS, Hodge SJ, Nichols HJ, Cant MA"]
 journal: "Experimental Gerontology"

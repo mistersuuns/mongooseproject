@@ -1,5 +1,6 @@
 ---
 title: "Lifetime fitness consequences of early-life ecological hardship in a wild mammal population"
+list_summary: "2017 | Lifetime fitness consequences of early-life ecological hardship in a wild mammal population | Ecology and Evolution"
 slug: "lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population"
 authors: ["Mitchell J, Cant MA, Nichols HJ"]
 journal: "Ecology and Evolution"

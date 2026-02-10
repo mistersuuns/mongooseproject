@@ -1,5 +1,6 @@
 ---
 title: "Pregnancy is detected via odour in a wild cooperative breeder"
+list_summary: "2017 | Pregnancy is detected via odour in a wild cooperative breeder | Biology Letters"
 slug: "pregnancy-is-detected-via-odour-in-a-wild-cooperative-breeder"
 authors: ["Mitchell J, Cant MA, Vitikainen EIK, Nichols HJ"]
 journal: "Biology Letters"

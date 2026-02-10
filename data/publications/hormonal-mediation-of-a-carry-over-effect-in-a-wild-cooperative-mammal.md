@@ -1,5 +1,6 @@
 ---
 title: "Hormonal mediation of a carry-over effect in a wild cooperative mammal"
+list_summary: "2014 | Hormonal mediation of a carry-over effect in a wild cooperative mammal | Functional Ecology"
 slug: "hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal"
 authors: ["Nichols, J. J., Jordan, N. R., Jamie, G. A., Cant, M. A., Hoffman, J. I."]
 journal: "Functional Ecology"

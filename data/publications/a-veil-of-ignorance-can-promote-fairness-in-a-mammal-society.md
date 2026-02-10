@@ -1,5 +1,6 @@
 ---
 title: "A veil of ignorance can promote fairness in a mammal society"
+list_summary: "2021 | A veil of ignorance can promote fairness in a mammal society | Nature Communications"
 slug: "a-veil-of-ignorance-can-promote-fairness-in-a-mammal-society"
 authors: ["Green, P. A., Briffa, M., & Cant, M. A."]
 journal: "Nature Communications"

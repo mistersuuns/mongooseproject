@@ -1,5 +1,6 @@
 ---
 title: "New grant!"
+list_summary: "2025 | New grant!"
 slug: "new-grant"
 description: ""
 date: "2025-01-01T00:00:00.000Z"

@@ -1,5 +1,6 @@
 ---
 title: "Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects"
+list_summary: "2012 | Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects | Philosophical Transactions of the Royal Society B"
 slug: "sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects"
 authors: ["Jansen, D. A., Cant, M. A., Manser, M. B."]
 journal: "Philosophical Transactions of the Royal Society B"

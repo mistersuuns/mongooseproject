@@ -1,5 +1,6 @@
 ---
 title: "Demography and social evolution of banded mongooses"
+list_summary: "2013 | Demography and social evolution of banded mongooses | Advances in the Study of Behaviour"
 slug: "demography-and-social-evolution-of-banded-mongooses"
 authors: ["Cant, M. A."]
 journal: "Advances in the Study of Behaviour"

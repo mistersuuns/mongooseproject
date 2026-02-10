@@ -1,5 +1,6 @@
 ---
 title: "Resource limitation moderates the adaptive suppression of subordinate breeding in a cooperatively breeding mongoose"
+list_summary: "2012 | Resource limitation moderates the adaptive suppression of subordinate breeding in a cooperatively breeding mongoose | Behavioral Ecology"
 slug: "resource-limitation-moderates-the-adaptive-suppression-of-subordinate-breeding-in-a-cooperatively-breeding-mongoose"
 authors: ["Jordan, N. R., Manser, M. B., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A."]
 journal: "Behavioral Ecology"

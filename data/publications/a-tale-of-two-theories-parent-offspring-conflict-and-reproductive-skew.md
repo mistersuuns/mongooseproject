@@ -1,5 +1,6 @@
 ---
 title: "A tale of two theories: parent-offspring conflict and reproductive skew"
+list_summary: "2006 | A tale of two theories: parent-offspring conflict and reproductive skew | Animal Behaviour"
 slug: "a-tale-of-two-theories-parent-offspring-conflict-and-reproductive-skew"
 authors: ["Cant, M. A."]
 journal: "Animal Behaviour"

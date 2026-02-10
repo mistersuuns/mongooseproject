@@ -1,5 +1,6 @@
 ---
 title: "Erica Sininärhi"
+list_summary: "Erica Sininärhi | PhD student"
 slug: "erica-sininärhi"
 position: "PhD student"
 description: "I am a PhD student at the University of Helsinki. Joining the Banded Mongoose Research Project and studying behaviour in mongooses has been my dream ever since I first read the article about imitation and traditions (Müller & Cant, 2010). My main interest is behavioural ecology, especially consistent individual behavioural differences (animal personality) and social behaviour. In my PhD, I study physiological correlates of variation in personality traits in the banded mongoose. Identifying connections between personality and physiological traits would help us to understand the underlying mechanisms of personality which may offer new tools for e.g., conservation. In my free time, I play football, knit and sew clothes, take pictures of nature, and learn African languages (e.g., Rutooro and Luganda)!Erica Sininärhi 512w, 1024w\",683"

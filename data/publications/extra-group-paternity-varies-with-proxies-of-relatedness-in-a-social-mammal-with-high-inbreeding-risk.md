@@ -1,5 +1,6 @@
 ---
 title: "Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk"
+list_summary: "2021 | Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk | Behavioural Ecology"
 slug: "extra-group-paternity-varies-with-proxies-of-relatedness-in-a-social-mammal-with-high-inbreeding-risk"
 authors: ["Johnstone, R. A., Cant, M. A., Cram, D., & Thompson, F. J."]
 journal: "Behavioural Ecology"

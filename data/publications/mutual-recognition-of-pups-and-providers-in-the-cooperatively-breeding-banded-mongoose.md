@@ -1,5 +1,6 @@
 ---
 title: "Mutual recognition of pups and providers in the cooperatively breeding banded mongoose"
+list_summary: "2008 | Mutual recognition of pups and providers in the cooperatively breeding banded mongoose | Animal Behaviour"
 slug: "mutual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-banded-mongoose"
 authors: ["Muller, C. A., Manser, M. B."]
 journal: "Animal Behaviour"

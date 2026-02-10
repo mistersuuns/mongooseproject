@@ -1,5 +1,6 @@
 ---
 title: "Caregiver's cognitive traits are associated with pup fitness in a cooperatively breeding mammal"
+list_summary: "2023 | Caregiver's cognitive traits are associated with pup fitness in a cooperatively breeding mammal | Nature Scientific Reports"
 slug: "caregiver-s-cognitive-traits-are-associated-with-pup-fitness-in-a-cooperatively-breeding-mammal"
 authors: ["Monil Khera, Kevin Arbuckle, Francis Mwanguhya, Solomon Kyabulima, Kenneth Mwesige, Robert Businge, Jonathan D. Blount, Michael A. Cant and Hazel J. Nichols"]
 journal: "Nature Scientific Reports"

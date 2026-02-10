@@ -1,5 +1,6 @@
 ---
 title: "Reproductive success in a low skew, communal breeding mammal: the banded mongoose, Mungos mungo"
+list_summary: "2006 | Reproductive success in a low skew, communal breeding mammal: the banded mongoose, Mungos mungo | Behavioral Ecology and Sociobiology"
 slug: "reproductive-success-in-a-low-skew-communal-breeding-mammal-the-banded-mongoose-mungos-mungo"
 authors: ["Gilchrist, J. S., Otali, E., Mwanghuya, F."]
 journal: "Behavioral Ecology and Sociobiology"

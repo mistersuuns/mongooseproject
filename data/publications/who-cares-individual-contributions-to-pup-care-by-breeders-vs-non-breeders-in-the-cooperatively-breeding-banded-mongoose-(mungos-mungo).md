@@ -1,5 +1,6 @@
 ---
 title: "Who cares? Individual contributions to pup care by breeders vs non-breeders in the cooperatively breeding banded mongoose (Mungos Mungo)"
+list_summary: "2007 | Who cares? Individual contributions to pup care by breeders vs non-breeders in the cooperatively breeding banded mongoose (Mungos Mungo) | Behavioral Ecology and Sociobiology"
 slug: "who-cares-individual-contributions-to-pup-care-by-breeders-vs-non-breeders-in-the-cooperatively-breeding-banded-mongoose-(mungos-mungo)"
 authors: ["Hodge, S. J."]
 journal: "Behavioral Ecology and Sociobiology"

@@ -1,5 +1,6 @@
 ---
 title: "The origins of consistent individual differences in cooperation in wild banded mongooses"
+list_summary: "2015 | The origins of consistent individual differences in cooperation in wild banded mongooses | Animal Behaviour"
 slug: "the-origins-of-consistent-individual-differences-in-cooperation-in-wild-banded-mongooses"
 authors: ["Nichols, H. J., Cant, M. A., Hoffman, J., Sanderson, J."]
 journal: "Animal Behaviour"

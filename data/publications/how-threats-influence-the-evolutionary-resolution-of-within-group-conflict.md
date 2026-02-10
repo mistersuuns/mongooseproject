@@ -1,5 +1,6 @@
 ---
 title: "How threats influence the evolutionary resolution of within-group conflict"
+list_summary: "2009 | How threats influence the evolutionary resolution of within-group conflict | The American Naturalist"
 slug: "how-threats-influence-the-evolutionary-resolution-of-within-group-conflict"
 authors: ["Johnstone, R. A., Cant, M. A."]
 journal: "The American Naturalist"

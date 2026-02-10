@@ -1,5 +1,6 @@
 ---
 title: "Nasty neighbours’ rather than ‘dear enemies’ in a social carnivore"
+list_summary: "2007 | Nasty neighbours’ rather than ‘dear enemies’ in a social carnivore | Philosophical Transactions of the Royal Society B"
 slug: "nasty-neighbours-rather-than-dear-enemies-in-a-social-carnivore"
 authors: ["Hodge, S. J."]
 journal: "Philosophical Transactions of the Royal Society B"

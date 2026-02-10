@@ -1,5 +1,6 @@
 ---
 title: "Maternal weight, offspring competition and the evolution of communal breeding"
+list_summary: "2009 | Maternal weight, offspring competition and the evolution of communal breeding | Behavioral Ecology"
 slug: "maternal-weight-offspring-competition-and-the-evolution-of-communal-breeding"
 authors: ["Mueller, C. A."]
 journal: "Behavioral Ecology"

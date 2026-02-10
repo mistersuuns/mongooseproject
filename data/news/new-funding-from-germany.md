@@ -1,5 +1,6 @@
 ---
 title: "New funding from Germany"
+list_summary: "2025 | New funding from Germany"
 slug: "new-funding-from-germany"
 description: ""
 date: "2025-01-01T00:00:00.000Z"

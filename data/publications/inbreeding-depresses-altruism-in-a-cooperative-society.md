@@ -1,5 +1,6 @@
 ---
 title: "Inbreeding depresses altruism in a cooperative society"
+list_summary: "2020 | Inbreeding depresses altruism in a cooperative society | Ecology Letters"
 slug: "inbreeding-depresses-altruism-in-a-cooperative-society"
 authors: ["Preston, E. F. R., Thompson, F. J., Ellis, S., Kyambulima, S., Croft, D. P., & Cant, M. A."]
 journal: "Ecology Letters"

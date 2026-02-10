@@ -1,5 +1,6 @@
 ---
 title: "Kin discrimination via odour in the cooperatively breeding banded mongoose"
+list_summary: "2018 | Kin discrimination via odour in the cooperatively breeding banded mongoose | Royal Society Open Science"
 slug: "kin-discrimination-via-odour-in-the-cooperatively-breeding-banded-mongoose"
 authors: ["Hares MC, Vitikainen EIK, Marshall HH, Thompson FJ, Blount JD, Cant MA"]
 journal: "Royal Society Open Science"

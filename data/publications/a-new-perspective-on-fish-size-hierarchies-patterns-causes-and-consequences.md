@@ -1,5 +1,6 @@
 ---
 title: "A new perspective on fish size hierarchies: patterns, causes, and consequences"
+list_summary: "2006 | A new perspective on fish size hierarchies: patterns, causes, and consequences | Oecologia"
 slug: "a-new-perspective-on-fish-size-hierarchies-patterns-causes-and-consequences"
 authors: ["Cant, M. A., Shen, S-F."]
 journal: "Oecologia"

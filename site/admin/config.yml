@@ -32,12 +32,13 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: "frontmatter" # Use frontmatter format
     extension: "md" # File extension
-    summary: "{{year}} | {{title}} | {{journal}}" # Year first to test display
+    summary: "{{list_summary}}" # Single field so Decap always shows it (year/title/journal in one string)
     sortable_fields: ["title", "year", "authors", "journal"]
     view_filters:
       - {label: "All", field: "title", pattern: ".*"}
       - {label: "Recent", field: "year", pattern: "202[4-9]"}
     fields: # Match Framer CMS structure EXACTLY: Title, Slug, Authors, Journal, URL, Date, Files & Media, Description, Content
+      - {label: "List summary", name: "list_summary", widget: "string", required: false, hint: "Shown in list. Format: Year | Title | Journal (auto-filled by script)"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Authors", name: "authors", widget: "list", default: []}
@@ -56,12 +57,13 @@ collections:
     slug: "{{slug}}" # Filename template
     format: "frontmatter"
     extension: "md"
-    summary: "{{title}} | {{year}}" # Title and year - year extracted from date for clean display
+    summary: "{{list_summary}}" # Single field so Decap always shows it
     sortable_fields: ["title", "date"]
     view_filters:
       - {label: "All", field: "title", pattern: ".*"}
       - {label: "Recent", field: "year", pattern: "202[4-9]"}
     fields: # The fields for each document
+      - {label: "List summary", name: "list_summary", widget: "string", required: false, hint: "Shown in list. Format: Year | Title (auto-filled by script)"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Description", name: "description", widget: "text"}
@@ -77,7 +79,7 @@ collections:
     slug: "{{slug}}" # Filename template
     format: "frontmatter"
     extension: "md"
-    summary: "{{title}} | {{position}}" # Shows | even when position missing (Decap limitation)
+    summary: "{{list_summary}}" # Single field so Decap always shows it
     sortable_fields: ["title", "position", "category"]
     view_filters:
       - {label: "All", field: "title", pattern: ".*"}
@@ -86,6 +88,7 @@ collections:
       - {label: "By Category", field: "category"}
       - {label: "By Position", field: "position"}
     fields: # Match Framer CMS structure EXACTLY
+      - {label: "List summary", name: "list_summary", widget: "string", required: false, hint: "Shown in list. Format: Title | Position (auto-filled by script)"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Slug", name: "slug", widget: "string"}
       - {label: "Link", name: "link", widget: "string", required: false}

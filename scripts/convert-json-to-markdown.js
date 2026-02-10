@@ -53,6 +53,11 @@ function convertPublicationToMarkdown(pub) {
   if (year) {
     fields.push(`year: "${year}"`);
   }
+  // Single string for Decap list view (avoids multi-field summary not showing)
+  const listSummary = [year, pub.title, journal].filter(Boolean).join(' | ');
+  if (listSummary) {
+    fields.push(`list_summary: "${listSummary.replace(/"/g, '\\"')}"`);
+  }
   if (pub.files && pub.files.length > 0) {
     fields.push(`files: ${JSON.stringify(pub.files)}`);
   } else if (pub.pdf) {

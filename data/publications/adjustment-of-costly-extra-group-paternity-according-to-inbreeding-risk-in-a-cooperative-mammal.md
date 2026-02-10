@@ -1,5 +1,6 @@
 ---
 title: "Adjustment of costly extra-group paternity according to inbreeding risk in a cooperative mammal"
+list_summary: "2015 | Adjustment of costly extra-group paternity according to inbreeding risk in a cooperative mammal | Behavioural Ecology"
 slug: "adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal"
 authors: ["Bell, M. B. V., Cant, M. A., Borgeaud, C., Thavarajah, N., Samson, J., Clutton-Brock, T. H."]
 journal: "Behavioural Ecology"

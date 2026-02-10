@@ -1,5 +1,6 @@
 ---
 title: "Collective defence and behavioural homogeneity during simulated territorial intrusions in banded mongooses (Mungos mungo)"
+list_summary: "2021 | Collective defence and behavioural homogeneity during simulated territorial intrusions in banded mongooses (Mungos mungo) | Ethology"
 slug: "collective-defence-and-behavioural-homogeneity-during-simulated-territorial-intrusions-in-banded-mongooses-(mungos-mungo)"
 authors: ["Marshall, H. H., Johnstone, R. A., Thompson, F. J., Nichols, H. J., Wells, D., Hoffman, J. I., . . . Cant, M. A."]
 journal: "Ethology"
