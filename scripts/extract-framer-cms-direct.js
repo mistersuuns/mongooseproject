@@ -933,26 +933,11 @@ function extractTitlesFromPeoplePage() {
                                 // Track this as a person (source of truth from People page JSON)
                                 peopleSlugs.add(slug);
 
-                                // If we have a position, validate it
+                                // Accept position from Framer if it's valid (not same as name, reasonable length)
+                                // No hardcoded keyword validation - trust Framer CMS data
                                 if (position && typeof position === 'string' && position.length > 2 &&
                                     position !== name && position.length < 100) {
-                                    // Validate it's a position (not just another name)
-                                    const hasPositionKeyword = position.toLowerCase().includes('student') ||
-                                        position.toLowerCase().includes('professor') ||
-                                        position.toLowerCase().includes('researcher') ||
-                                        position.toLowerCase().includes('fellow') ||
-                                        position.toLowerCase().includes('manager') ||
-                                        position.toLowerCase().includes('director') ||
-                                        position.toLowerCase().includes('associate') ||
-                                        position.toLowerCase().includes('phd') ||
-                                        position.toLowerCase().includes('mres') ||
-                                        position.toLowerCase().includes('mbyres') ||
-                                        position.toLowerCase().includes('chair') ||
-                                        position.toLowerCase().includes('lecturer');
-
-                                    if (hasPositionKeyword) {
-                                        titlesMap[slug] = position;
-                                    }
+                                    titlesMap[slug] = position;
                                 }
                             }
                         }
