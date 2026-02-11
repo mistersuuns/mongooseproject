@@ -157,13 +157,21 @@ function convertPersonToMarkdown(person) {
     fields.push(`description: "${description.replace(/"/g, '\\"')}"`);
   }
   
-  if (person.image) {
+  // Skip placeholder/logo image
+  const placeholderImage = 'wjm8sH3lFWh090l9FoPGRqKKv8';
+  if (person.image && !person.image.includes(placeholderImage)) {
     fields.push(`image: "${person.image}"`);
   }
   if (person.url) {
     fields.push(`url: "${person.url}"`);
   }
-  
+
+  // List summary for Decap display
+  const listSummary = [name, person.position].filter(Boolean).join(' | ');
+  if (listSummary) {
+    fields.push(`list_summary: "${listSummary.replace(/"/g, '\\"')}"`);
+  }
+
   const frontmatter = `---
 ${fields.join('\n')}
 ---

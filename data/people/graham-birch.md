@@ -1,8 +1,7 @@
 ---
 title: "Graham Birch"
-list_summary: "Graham Birch"
 slug: "graham-birch"
-image: "https://framerusercontent.com/images/wjm8sH3lFWh090l9FoPGRqKKv8.png"
 url: "/pubs-news-ppl/graham-birch"
+list_summary: "Graham Birch"
 ---
 

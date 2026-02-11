@@ -1,11 +1,11 @@
 ---
 title: "Causes and consequences of intergroup conflict in cooperative banded mongooses"
-list_summary: "2017 | Causes and consequences of intergroup conflict in cooperative banded mongooses | Animal Behaviour"
 slug: "causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses"
 authors: ["Thompson FJ, Cant MA, Marshall HH, Vitikainen EIK, Sanderson JL, Nichols HJ, Gilchrist JS, Bell MBV, Young AJ, Hodge SJ, Johnstone, RA"]
 journal: "Animal Behaviour"
 url: "/pubs-news-ppl/causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses"
 year: "2017"
+list_summary: "2017 | Causes and consequences of intergroup conflict in cooperative banded mongooses | Animal Behaviour"
 files: [{"file":"publications/pdfs/causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses.pdf"}]
 ---
 
