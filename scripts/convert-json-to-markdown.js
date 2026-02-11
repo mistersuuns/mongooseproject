@@ -157,9 +157,8 @@ function convertPersonToMarkdown(person) {
     fields.push(`description: "${description.replace(/"/g, '\\"')}"`);
   }
   
-  // Skip placeholder/logo image
-  const placeholderImage = 'wjm8sH3lFWh090l9FoPGRqKKv8';
-  if (person.image && !person.image.includes(placeholderImage)) {
+  // Image is already filtered at extraction level (siteIcons list)
+  if (person.image) {
     fields.push(`image: "${person.image}"`);
   }
   if (person.url) {

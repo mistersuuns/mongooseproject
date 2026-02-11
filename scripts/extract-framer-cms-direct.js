@@ -172,7 +172,7 @@ function extractAllFieldsFromHTML(htmlPath, slug) {
                     const imgMatches = jsonStr.match(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi);
                     if (imgMatches && imgMatches.length > 0) {
                         // Filter out default site icons (common PNGs)
-                        const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                        const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png', 'wjm8sH3lFWh090l9FoPGRqKKv8.png', 'BU8VA4avCmnuFgVXV3QN2iGUamc.png'];
                         const personImages = imgMatches.filter(url => {
                             const filename = url.split('/').pop().split('?')[0];
                             return !siteIcons.includes(filename);
@@ -596,8 +596,8 @@ function extractAllPublications() {
     // Get people slugs from People page as source of truth for exclusions
     const { peopleSlugs } = extractTitlesFromPeoplePage();
 
-    const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
-    
+    // No hardcoded news list - the hasAuthors heuristic filters them out
+
     // Get searchIndex to find all publications
     console.log('📥 Downloading searchIndex...');
     const searchIndex = getSearchIndex();
@@ -608,7 +608,7 @@ function extractAllPublications() {
     for (const [url, data] of Object.entries(searchIndex)) {
         if (!url.includes('/pubs-news-ppl/')) continue;
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-        if (peopleSlugs.has(slug) || knownNews.includes(slug)) continue;
+        if (peopleSlugs.has(slug)) continue;
         if (data.h1 && data.h1.length > 0) {
             const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
             if (hasAuthors) {
@@ -634,9 +634,9 @@ function extractAllPublications() {
         
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
         
-        // Skip people and news
-        if (peopleSlugs.has(slug) || knownNews.includes(slug)) continue;
-        
+        // Skip people (news filtered by hasAuthors heuristic below)
+        if (peopleSlugs.has(slug)) continue;
+
         // Check if it's a publication (has h1 title and h2 authors)
         if (!data.h1 || data.h1.length === 0) continue;
         const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
@@ -816,20 +816,10 @@ function extractTitlesFromPeoplePage() {
         
         // Extract descriptions from People page
         // Descriptions are in the HTML near person slugs in JSON structure
-        // Get person slugs from searchIndex (more reliable than link patterns)
+        // NO hardcoded list - rely only on dynamic extraction from Framer data
         const searchIndex = getSearchIndex();
-        const knownPeopleSlugs = [
-            'mike-cant', 'field-manager', 'assistant-professor', 'professor',
-            'hazel-nichols', 'faye-thompson', 'emma-vitikainen', 'laura-labarge',
-            'leela-channer', 'graham-birch', 'neil-jordan', 'monil-khera',
-            'nikita-bedov-panasyuk', 'dave-seager', 'dr-michelle-hares', 'dr-harry-marshall',
-            'beth-preston', 'catherine-sheppard', 'jennifer-sanderson', 'joe-hoffman',
-            'dan-franks', 'rufus-johnstone', 'zoe-turner', 'olivier-carter',
-            'rahul-jaitly', 'megan-nicholl', 'erica-sininärhi', 'patrick-green',
-            'chair-of-evolutionary-population-genetics'
-        ];
-        
-        // Also get slugs from searchIndex that look like people
+
+        // Get slugs from searchIndex that look like people (fallback heuristic)
         const searchIndexSlugs = Object.entries(searchIndex)
             .filter(([url]) => url.includes('/pubs-news-ppl/'))
             .map(([url]) => url.replace('/pubs-news-ppl/', '').replace('.html', ''))
@@ -842,8 +832,9 @@ function extractTitlesFromPeoplePage() {
                 // People: short name, no authors, no year
                 return h1.length < 50 && !hasAuthors && !hasYear;
             });
-        
-        const allSlugs = new Set([...knownPeopleSlugs, ...searchIndexSlugs]);
+
+        // Use only dynamically extracted slugs - no hardcoded list
+        const allSlugs = new Set(searchIndexSlugs);
         
         // For each slug, find description nearby in HTML
         // Descriptions appear BEFORE the slug in the JSON structure
@@ -1327,7 +1318,7 @@ function extractAllPeople() {
                 const liveHtml = execSync(`curl -sL "${liveUrl}"`, { encoding: 'utf8', stdio: 'pipe' });
                 
                 // Find all images, filter out site icons
-                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png', 'wjm8sH3lFWh090l9FoPGRqKKv8.png', 'BU8VA4avCmnuFgVXV3QN2iGUamc.png'];
                 const allImages = Array.from(liveHtml.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi));
                 const personImages = allImages
                     .map(m => m[0])
@@ -1349,6 +1340,16 @@ function extractAllPeople() {
             }
         }
         
+        // Skip incomplete entries (no position, no description, no content, AND no real image)
+        // These are orphaned/stub entries that shouldn't be exported
+        // Keep entries that have real images - they may be legitimate but not yet fully filled in
+        const placeholders = ['wjm8sH3lFWh090l9FoPGRqKKv8', 'BU8VA4avCmnuFgVXV3QN2iGUamc', 'nIdm5gwgwKss3FzGZTTvzKQ3c', 'jix9zazEyVv11s4BHfEjILSE', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0'];
+        const hasRealImage = image && !placeholders.some(p => image.includes(p));
+        if (!position && !description && !content && !hasRealImage) {
+            console.log(`  ⚠️  Skipping incomplete entry: ${slug} (no position, no description, no image)`);
+            continue;
+        }
+
         // Build person matching Framer CMS structure EXACTLY: Title, Slug, Link, Position, Category, Description, Image, URL
         const person = {
             id: slug,
@@ -1362,7 +1363,7 @@ function extractAllPeople() {
             url: url,
             body: description || content // Use description as body
         };
-        
+
         people.push(person);
     }
     
@@ -1376,22 +1377,26 @@ function extractAllPeople() {
 function extractAllNews() {
     console.log('🔍 Extracting ALL news data from Framer CMS...\n');
 
-    // News uses a strict whitelist - only these slugs are considered news
-    const knownNews = ['new-grant', 'new-funding-from-germany', 'pioneering-next-generation-animal-tracking'];
+    // Dynamic detection: News = not people, not publications
+    // Get people slugs for exclusion
+    const { peopleSlugs } = extractTitlesFromPeoplePage();
 
     const news = [];
     const searchIndex = getSearchIndex();
-    
+
     for (const [url, data] of Object.entries(searchIndex)) {
         if (!url.includes('/pubs-news-ppl/')) continue;
-        
+
         const slug = url.replace('/pubs-news-ppl/', '').replace('.html', '');
-        
-        // ONLY include known news slugs - be very strict
-        if (!knownNews.includes(slug)) {
-            continue; // Skip everything that's not explicitly known news
-        }
-        
+
+        // Skip people
+        if (peopleSlugs.has(slug)) continue;
+
+        // Skip publications (have authors in h2 with length > 5)
+        const hasAuthors = data.h2 && data.h2.some(h2 => h2.includes('‹') && h2.length > 5);
+        if (hasAuthors) continue;
+
+        // What remains are news items (have title, no authors)
         const title = data.h1 && data.h1[0];
         if (!title) continue;
         
@@ -1440,7 +1445,7 @@ function extractAllNews() {
             try {
                 const liveUrl = url.startsWith('http') ? url : `${baseUrl}${url}`;
                 const liveHtml = execSync(`curl -sL "${liveUrl}"`, { encoding: 'utf8', stdio: 'pipe' });
-                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png'];
+                const siteIcons = ['nIdm5gwgwKss3FzGZTTvzKQ3c.png', 'jix9zazEyVv11s4BHfEjILSE.png', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0.png', 'wjm8sH3lFWh090l9FoPGRqKKv8.png', 'BU8VA4avCmnuFgVXV3QN2iGUamc.png'];
                 const allImages = Array.from(liveHtml.matchAll(/https?:\/\/framerusercontent\.com\/images\/[A-Za-z0-9]+\.(jpg|jpeg|png|webp)/gi));
                 const newsImages = allImages
                     .map(m => m[0])
