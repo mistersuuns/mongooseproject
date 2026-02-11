@@ -1340,16 +1340,6 @@ function extractAllPeople() {
             }
         }
         
-        // Skip incomplete entries (no position, no description, no content, AND no real image)
-        // These are orphaned/stub entries that shouldn't be exported
-        // Keep entries that have real images - they may be legitimate but not yet fully filled in
-        const placeholders = ['wjm8sH3lFWh090l9FoPGRqKKv8', 'BU8VA4avCmnuFgVXV3QN2iGUamc', 'nIdm5gwgwKss3FzGZTTvzKQ3c', 'jix9zazEyVv11s4BHfEjILSE', 'SWJiRG7AeBVjjbJ1pyzeWjyeAY0'];
-        const hasRealImage = image && !placeholders.some(p => image.includes(p));
-        if (!position && !description && !content && !hasRealImage) {
-            console.log(`  ⚠️  Skipping incomplete entry: ${slug} (no position, no description, no image)`);
-            continue;
-        }
-
         // Build person matching Framer CMS structure EXACTLY: Title, Slug, Link, Position, Category, Description, Image, URL
         const person = {
             id: slug,
