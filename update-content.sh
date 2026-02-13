@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to update Framer site content
+# Script to update Framer site content AND CMS data
 # Usage: ./update-content.sh [framer-site-url]
 
 set -e
@@ -28,13 +28,37 @@ fi
 echo ""
 ./download-site.sh "$SITE_URL"
 
+# Fix directory structure if needed (wget creates mongooseproject.org subdirectory)
+if [ -d "site/mongooseproject.org" ]; then
+    echo ""
+    echo "📁 Fixing directory structure..."
+    rm -f site/index.html 2>/dev/null || true
+    mv site/mongooseproject.org/* site/
+    rmdir site/mongooseproject.org
+fi
+
+# Extract CMS data directly from HTML (Framer embeds it in handover data)
 echo ""
-echo "✅ Update complete!"
+echo "📊 Extracting CMS data from HTML..."
+node scripts/extract-from-html.js
+
+# Update list summaries
+echo ""
+echo "📋 Updating list summaries..."
+npm run list-summary
+
+# Run build to inject CMS data into HTML
+echo ""
+echo "🏗️  Building site..."
+npm run build
+
+echo ""
+echo "✅ Sync complete!"
 echo ""
 echo "📝 Review changes:"
-echo "   git diff site/"
+echo "   git diff site/ data/"
 echo ""
 echo "📤 Commit and push:"
-echo "   git add site/"
-echo "   git commit -m 'Update site content'"
+echo "   git add site/ data/"
+echo "   git commit -m 'Sync from Framer'"
 echo "   git push origin main"
