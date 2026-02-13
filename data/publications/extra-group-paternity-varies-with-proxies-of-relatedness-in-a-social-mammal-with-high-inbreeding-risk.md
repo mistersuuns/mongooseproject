@@ -1,11 +1,7 @@
 ---
-title: "Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk"
+title: "Wells, D. A., Cant, M. A., Thompson, F. J., Marshall, H. H., Vitikainen, E. I. K., Hoffman, J. I., & Nichols, H. J."
 slug: "extra-group-paternity-varies-with-proxies-of-relatedness-in-a-social-mammal-with-high-inbreeding-risk"
-authors: ["Johnstone, R. A., Cant, M. A., Cram, D., & Thompson, F. J."]
 journal: "Behavioural Ecology"
-url: "/pubs-news-ppl/extra-group-paternity-varies-with-proxies-of-relatedness-in-a-social-mammal-with-high-inbreeding-risk"
 year: "2021"
-list_summary: "2021 | Extra-group paternity varies with proxies of relatedness in a social mammal with high inbreeding risk | Behavioural Ecology"
-files: [{"file":"publications/pdfs/extra-group-paternity-varies-with-proxies-of-relatedness-in-a-social-mammal-with-high-inbreeding-risk.pdf"}]
+pdf: "https://framerusercontent.com/assets/149v3uawB5Z99pm2UDK3FEPz8.pdf"
 ---
-

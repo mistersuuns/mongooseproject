@@ -1,11 +1,9 @@
 ---
-title: "Decoupling of Genetic and Cultural Inheritance in a Wild Mammal"
+title: "Sheppard CE, Marshall HH, Inger R, Thompson FJ, Vitikainen EIK, Barker S, Nichols HJ, Wells DA, McDonald RA, Cant MA"
 slug: "decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal"
-authors: ["Sheppard CE, Inger R, McDonald RA, Barker S, Jackson AL, Thompson FJ, Vitikainen EIK, Cant MA, Marshall HH"]
+authors: "Decoupling of Genetic and Cultural Inheritance in a Wild Mammal"
 journal: "Current Biology"
-url: "/pubs-news-ppl/decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal"
 year: "2018"
-list_summary: "2018 | Decoupling of Genetic and Cultural Inheritance in a Wild Mammal | Current Biology"
-files: [{"file":"publications/pdfs/decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal.pdf"}]
+url: "https://doi.org/10.1016/j.cub.2018.05.001"
+pdf: "https://framerusercontent.com/assets/NJ4BdDCOcyM6KFr0VxBZcMpTL4.pdf"
 ---
-

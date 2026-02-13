@@ -1,11 +1,8 @@
 ---
-title: "Evidence of oxidative shielding of offspring in a wild mammal"
+title: "Vitikainen, E. I. K., Cant, M. A., Sanderson, J. L., Mitchell, C., Nichols, H. J., Marshall, H. H., Blount, J. D. "
 slug: "evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal"
-authors: ["Marshall, H. H., Sanderson, J. L., Mwanghuya, F., Businge, R., Kyabulima, S., Hares, M. C., Cant, M. A."]
-journal: "Frontiers in Ecology and Evolution"
-url: "/pubs-news-ppl/evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal"
+authors: "Frontiers in Ecology and Evolution"
 year: "2016"
-list_summary: "2016 | Evidence of oxidative shielding of offspring in a wild mammal | Frontiers in Ecology and Evolution"
-files: [{"file":"publications/pdfs/evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal.pdf"}]
+url: "https://doi.org/10.3389/fevo.2016.00058"
+pdf: "https://framerusercontent.com/assets/7SMp1b6beKKAwMIJZ9kp53DSnE.pdf"
 ---
-

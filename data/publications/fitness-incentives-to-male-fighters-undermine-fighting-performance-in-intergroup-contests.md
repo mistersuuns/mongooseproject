@@ -1,11 +1,8 @@
 ---
-title: "Fitness incentives to male fighters undermine fighting performance in intergroup contests"
+title: "P.A. Green, D.W.E. Sankey, T. Collins, F. Mwanguhya, H.J. Nichols, M.A. Cant, F.J. Thompson"
 slug: "fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests"
-authors: ["Graham Birch, Hazel J. Nichols, Francis Mwanguhya, Faye J. Thompson, Michael A. Cant and Jonathan D. Blount"]
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests"
 year: "2025"
-list_summary: "2025 | Fitness incentives to male fighters undermine fighting performance in intergroup contests | Animal Behaviour"
-files: [{"file":"publications/pdfs/fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests.pdf"}]
+url: "https://doi.org/10.1016/j.anbehav.2025.123194"
+pdf: "https://framerusercontent.com/assets/gDiV9Y07yrJxkGyaQyN1VFlQsLI.pdf"
 ---
-

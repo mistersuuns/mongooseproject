@@ -1,11 +1,7 @@
 ---
-title: "Demography and social evolution of banded mongooses"
+title: "Cant, M. A., Vitikainen, E., Nichols, H. J."
 slug: "demography-and-social-evolution-of-banded-mongooses"
-authors: ["Cant, M. A."]
+authors: "Demography and social evolution of banded mongooses"
 journal: "Advances in the Study of Behaviour"
-url: "/pubs-news-ppl/demography-and-social-evolution-of-banded-mongooses"
-year: "2013"
-list_summary: "2013 | Demography and social evolution of banded mongooses | Advances in the Study of Behaviour"
-files: [{"file":"publications/pdfs/demography-and-social-evolution-of-banded-mongooses.pdf"}]
+pdf: "https://framerusercontent.com/assets/vqhvbNe9AMjUoytQeH8LUaC9uU.pdf"
 ---
-

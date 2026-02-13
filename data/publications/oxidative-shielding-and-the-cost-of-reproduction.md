@@ -1,10 +1,6 @@
 ---
-title: "Oxidative shielding and the cost of reproduction"
+title: "Blount, J. D., Vitikainen, E. I. K., Stott, I., Cant, M. A."
 slug: "oxidative-shielding-and-the-cost-of-reproduction"
-authors: ["Cant, M. A., Nichols, H. J., Johnstone, R. A., Hodge, S. J."]
-journal: "Biological Reviews"
-url: "/pubs-news-ppl/oxidative-shielding-and-the-cost-of-reproduction"
-year: "2016"
-list_summary: "2016 | Oxidative shielding and the cost of reproduction | Biological Reviews"
+authors: "Oxidative shielding and the cost of reproduction"
+pdf: "https://framerusercontent.com/assets/Hl9tWSRPNCXIhHeKIq88SxJEgM.pdf"
 ---
-

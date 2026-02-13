@@ -1,11 +1,8 @@
 ---
-title: "Network-level consequences of outgroup threats in banded mongooses: Grooming and aggression between the sexes"
+title: "Preston, E. F. R., Thompson, F. J., Ellis, S., Kyambulima, S., Croft, D. P., & Cant, M. A. "
 slug: "network-level-consequences-of-outgroup-threats-in-banded-mongooses-grooming-and-aggression-between-the-sexes"
-authors: ["Inzani, E., Marshall, H. H., Thompson, F. J., Kalema-Zikusoka, G., Cant, M. A., & Vitikainen, E. I. K."]
+authors: "Network-level consequences of outgroup threats in banded mongooses: Grooming and aggression between the sexes"
 journal: "Journal of Animal Ecology"
-url: "/pubs-news-ppl/network-level-consequences-of-outgroup-threats-in-banded-mongooses-grooming-and-aggression-between-the-sexes"
 year: "2020"
-list_summary: "2020 | Network-level consequences of outgroup threats in banded mongooses: Grooming and aggression between the sexes | Journal of Animal Ecology"
-files: [{"file":"publications/pdfs/network-level-consequences-of-outgroup-threats-in-banded-mongooses-grooming-and-aggression-between-the-sexes.pdf"}]
+pdf: "https://framerusercontent.com/assets/u8z9CbH6xE3cx2lB5ElKnJRQCo.pdf"
 ---
-

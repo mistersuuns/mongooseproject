@@ -1,11 +1,8 @@
 ---
-title: "Kinship dynamics: patterns and consequences of changes in local relatedness"
+title: "Croft, D. P., Weiss, M. N., Nielsen, M L.K., Grimes, C., Cant, M. A., Ellis, S., . . . Johnstone, R. A. "
 slug: "kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness"
-authors: ["Green, P.A., Preston, E.F.R., Nicholl, M.H., Croft, D. P., Thompson, F. J., & Cant, M. A."]
+authors: "Kinship dynamics: patterns and consequences of changes in local relatedness"
 journal: "Proceedings of the Royal Society B"
-url: "/pubs-news-ppl/kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness"
 year: "2021"
-list_summary: "2021 | Kinship dynamics: patterns and consequences of changes in local relatedness | Proceedings of the Royal Society B"
-files: [{"file":"publications/pdfs/kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness.pdf"}]
+pdf: "https://framerusercontent.com/assets/9sCvnNwUY8fEXTUIPFu6rgPLYZU.pdf"
 ---
-

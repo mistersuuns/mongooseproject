@@ -1,0 +1,116 @@
+[
+  {
+    "title": "Monil Khera",
+    "position": "PhD Student",
+    "slug": "monil-khera"
+  },
+  {
+    "title": "Emma Inzani",
+    "position": "MbyRes Student",
+    "slug": "emma-inzani"
+  },
+  {
+    "title": "Dave Seager",
+    "position": "MbyRes Student",
+    "slug": "dave-seager"
+  },
+  {
+    "title": "Catherine Sheppard",
+    "position": "MRes Student",
+    "slug": "catherine-sheppard"
+  },
+  {
+    "title": "Beth Preston",
+    "position": "PhD Student",
+    "slug": "beth-preston"
+  },
+  {
+    "title": "Postdoctoral Research Associate",
+    "slug": "jennifer-sanderson"
+  },
+  {
+    "title": "Postdoctoral Research Associate",
+    "slug": "dr-michelle-hares"
+  },
+  {
+    "title": "Harry Marshall",
+    "position": "Associate Research Fellow",
+    "slug": "dr-harry-marshall"
+  },
+  {
+    "title": "Neil Jordan",
+    "slug": "neil-jordan"
+  },
+  {
+    "title": "Nikita Bedov Panasyuk",
+    "slug": "nikita-bedov-panasyuk"
+  },
+  {
+    "title": "Graham Birch",
+    "slug": "graham-birch"
+  },
+  {
+    "title": "Michael Cant",
+    "position": "Professor of Evolutionary Biology",
+    "slug": "mike-cant"
+  },
+  {
+    "title": "Francis Mwanguhya",
+    "position": "Field Manager",
+    "slug": "field-manager"
+  },
+  {
+    "title": "Emma Vitikainen",
+    "position": "Lecturer",
+    "slug": "emma-vitikainen"
+  },
+  {
+    "title": "Faye Thompson",
+    "position": "NERC Independent Research Fellow",
+    "slug": "faye-thompson"
+  },
+  {
+    "title": "Hazel Nichols",
+    "position": "Associate Professor",
+    "slug": "hazel-nichols"
+  },
+  {
+    "title": "Joe Hoffman",
+    "position": "Chair of Evolutionary Population Genetics",
+    "slug": "chair-of-evolutionary-population-genetics"
+  },
+  {
+    "title": "Patrick Green",
+    "position": "Assistant Professor",
+    "slug": "assistant-professor"
+  },
+  {
+    "title": "Rufus Johnstone",
+    "position": "Professor",
+    "slug": "rufus-johnstone"
+  },
+  {
+    "title": "Postdoctoral Research Associate",
+    "slug": "laura-labarge"
+  },
+  {
+    "title": "Megan Nicholl",
+    "slug": "megan-nicholl"
+  },
+  {
+    "title": "Zoe Turner",
+    "slug": "zoe-turner"
+  },
+  {
+    "title": "Olivier Carter",
+    "slug": "olivier-carter"
+  },
+  {
+    "title": "Leela Channer",
+    "slug": "leela-channer"
+  },
+  {
+    "title": "Rahul Jaitly",
+    "slug": "rahul-jaitly"
+  }
+]

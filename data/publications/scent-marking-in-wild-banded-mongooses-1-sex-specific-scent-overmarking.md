@@ -1,10 +1,7 @@
 ---
-title: "Scent marking in wild banded mongooses: 1. Sex-specific scent &amp; overmarking"
+title: "Jordan, N. R., Manser, M. B., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A."
 slug: "scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking"
-authors: ["Furrer, R., Kyabulima, S., Willems, E., Cant, M. A., Manser, M."]
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking"
-year: "2011"
-list_summary: "2011 | Scent marking in wild banded mongooses: 1. Sex-specific scent &amp; overmarking | Animal Behaviour"
+url: "https://www.sciencedirect.com/science/article/abs/pii/S0003347210002782"
+pdf: "https://framerusercontent.com/assets/kZZ9UkCsJP9PbDFnxGNQt4maCoE.pdf"
 ---
-

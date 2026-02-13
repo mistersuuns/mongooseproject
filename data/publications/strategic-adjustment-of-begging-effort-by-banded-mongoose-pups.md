@@ -1,11 +1,6 @@
 ---
 title: "Strategic adjustment of begging effort by banded mongoose pups"
 slug: "strategic-adjustment-of-begging-effort-by-banded-mongoose-pups"
-authors: ["Muller, C. A., Bell, M. B. V."]
 journal: "Philosophical Transactions of the Royal Society B"
-url: "/pubs-news-ppl/strategic-adjustment-of-begging-effort-by-banded-mongoose-pups"
-year: "2008"
-list_summary: "2008 | Strategic adjustment of begging effort by banded mongoose pups | Philosophical Transactions of the Royal Society B"
-files: [{"file":"publications/pdfs/strategic-adjustment-of-begging-effort-by-banded-mongoose-pups.pdf"}]
+pdf: "https://framerusercontent.com/assets/hiCVwA7wvnAmUyxgVVYj3d60u8.pdf"
 ---
-

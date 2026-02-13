@@ -1,11 +1,7 @@
 ---
 title: "The information banded mongooses extract from heterospecific alarm calls"
 slug: "the-information-banded-mongooses-extract-from-heterospecific-alarm-calls"
-authors: ["Muller, C. A., Manser, M. B."]
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/the-information-banded-mongooses-extract-from-heterospecific-alarm-calls"
-year: "2008"
-list_summary: "2008 | The information banded mongooses extract from heterospecific alarm calls | Animal Behaviour"
-files: [{"file":"publications/pdfs/the-information-banded-mongooses-extract-from-heterospecific-alarm-calls.pdf"}]
+url: "https://www.sciencedirect.com/science/article/pii/S0003347207004514"
+pdf: "https://framerusercontent.com/assets/buPNOFgrksZ5rI4xo2KwtbMIfRs.pdf"
 ---
-

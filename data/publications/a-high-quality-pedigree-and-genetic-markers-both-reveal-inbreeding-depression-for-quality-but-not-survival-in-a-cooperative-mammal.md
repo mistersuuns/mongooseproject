@@ -1,11 +1,9 @@
 ---
-title: "A high-quality pedigree and genetic markers both reveal inbreeding depression for quality but not survival in a cooperative mammal"
+title: "Wells DA, Cant MA, Nichols HJ, Hoffman JI"
 slug: "a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depression-for-quality-but-not-survival-in-a-cooperative-mammal"
-authors: ["Marshall HH, Griffiths DJ, Mwanguhya F, Businge R, Griffiths AGF, Kyabulima S, Mwesige K, Sanderson JL, Thompson FJ, Vitikainen EIK"]
+authors: "A high-quality pedigree and genetic markers both reveal inbreeding depression for quality but not survival in a cooperative mammal"
 journal: "Molecular Ecology"
-url: "/pubs-news-ppl/a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depression-for-quality-but-not-survival-in-a-cooperative-mammal"
 year: "2018"
-list_summary: "2018 | A high-quality pedigree and genetic markers both reveal inbreeding depression for quality but not survival in a cooperative mammal | Molecular Ecology"
-files: [{"file":"publications/pdfs/a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depression-for-quality-but-not-survival-in-a-cooperative-mammal.pdf"}]
+url: "https://doi.org/10.1111/mec.14570"
+pdf: "https://framerusercontent.com/assets/OA26MEmXU4q7fMGWOjQL8tSHZo.pdf"
 ---
-

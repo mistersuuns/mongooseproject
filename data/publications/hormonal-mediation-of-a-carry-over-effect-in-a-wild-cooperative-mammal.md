@@ -1,11 +1,6 @@
 ---
-title: "Hormonal mediation of a carry-over effect in a wild cooperative mammal"
+title: "Sanderson, J. L., Young, A. J., Hodge, S. J., Kyabulima, S., Walker, S. L., Cant, M. A."
 slug: "hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal"
-authors: ["Nichols, J. J., Jordan, N. R., Jamie, G. A., Cant, M. A., Hoffman, J. I."]
 journal: "Functional Ecology"
-url: "/pubs-news-ppl/hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal"
-year: "2014"
-list_summary: "2014 | Hormonal mediation of a carry-over effect in a wild cooperative mammal | Functional Ecology"
-files: [{"file":"publications/pdfs/hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal.pdf"}]
+pdf: "https://framerusercontent.com/assets/Yy8YJ4ukd84XT4Z1eFh26fqM4k.pdf"
 ---
-

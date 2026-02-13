@@ -1,11 +1,9 @@
 ---
-title: "Developing differences: early-life effects and evolutionary medicine"
+title: "Kuijper ALW, Hanson MA, Vitikainen EIK, Marshall HH, Ozanne SE, Cant MA"
 slug: "developing-differences-early-life-effects-and-evolutionary-medicine"
-authors: ["Vitikainen E, Thompson F, Marshall H, Cant MA"]
+authors: "Developing differences: early-life effects and evolutionary medicine"
 journal: "Proceedings of the Royal Society B"
-url: "/pubs-news-ppl/developing-differences-early-life-effects-and-evolutionary-medicine"
 year: "2019"
-list_summary: "2019 | Developing differences: early-life effects and evolutionary medicine | Proceedings of the Royal Society B"
-files: [{"file":"publications/pdfs/developing-differences-early-life-effects-and-evolutionary-medicine.pdf"}]
+url: "https://doi.org/10.1098/rstb.2019.0039"
+pdf: "https://framerusercontent.com/assets/2D4krdyMJlJQaxPYhWVhNrCasg.pdf"
 ---
-

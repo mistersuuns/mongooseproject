@@ -1,10 +1,8 @@
 ---
 title: "A model for the evolution of reproductive skew without reproductive suppression"
 slug: "a-model-for-the-evolution-of-reproductive-skew-without-reproductive-suppression"
-authors: ["Johnstone, R. A., Cant, M. A."]
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/a-model-for-the-evolution-of-reproductive-skew-without-reproductive-suppression"
 year: "1998"
-list_summary: "1998 | A model for the evolution of reproductive skew without reproductive suppression | Animal Behaviour"
+url: "https://doi.org/10.1006/anbe.1997.0589"
+pdf: "https://framerusercontent.com/assets/rrQFh6QrhZeQOUASyllU9MlElk.pdf"
 ---
-

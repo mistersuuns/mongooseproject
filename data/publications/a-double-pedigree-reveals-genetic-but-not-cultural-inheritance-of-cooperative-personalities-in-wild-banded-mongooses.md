@@ -1,11 +1,7 @@
 ---
-title: "A double pedigree reveals genetic but not cultural inheritance of cooperative personalities in wild banded mongooses"
+title: "Nichols, H.J., Arbuckle, K., Sanderson, J. L., Vitikainen, E I.K., Marshall, H.H., Thompson, F. J., . . . Wells, D. A."
 slug: "a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses"
-authors: ["Croft, D. P., Weiss, M. N., Nielsen, M L.K., Grimes, C., Cant, M. A., Ellis, S., . . . Johnstone, R. A."]
 journal: "Ecology Letters"
-url: "/pubs-news-ppl/a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses"
 year: "2021"
-list_summary: "2021 | A double pedigree reveals genetic but not cultural inheritance of cooperative personalities in wild banded mongooses | Ecology Letters"
-files: [{"file":"publications/pdfs/a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses.pdf"}]
+pdf: "https://framerusercontent.com/assets/wibz1zSO1kEq7TL3Ll0rVczCco.pdf"
 ---
-

@@ -1,11 +1,6 @@
 ---
 title: "The cost of dominance: suppressing subordinate reproduction affects the reproductive success of dominant female banded mongooses"
 slug: "the-cost-of-dominance-suppressing-subordinate-reproduction-affects-the-reproductive-success-of-dominant-female-banded-mongooses"
-authors: ["Jordan, N. R., Mwanguhya, S., Reudi, P., Cant, M. A."]
 journal: "Philosophical Transactions of the Royal Society B"
-url: "/pubs-news-ppl/the-cost-of-dominance-suppressing-subordinate-reproduction-affects-the-reproductive-success-of-dominant-female-banded-mongooses"
-year: "2011"
-list_summary: "2011 | The cost of dominance: suppressing subordinate reproduction affects the reproductive success of dominant female banded mongooses | Philosophical Transactions of the Royal Society B"
-files: [{"file":"publications/pdfs/the-cost-of-dominance-suppressing-subordinate-reproduction-affects-the-reproductive-success-of-dominant-female-banded-mongooses.pdf"}]
+pdf: "https://framerusercontent.com/assets/JCGB5eOFcXScqQHcWfWWHFoWjPc.pdf"
 ---
-

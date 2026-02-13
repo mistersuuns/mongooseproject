@@ -1,10 +1,7 @@
 ---
-title: "Scent marking within and between groups in banded mongooses"
+title: "Jordan, N. R., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A."
 slug: "scent-marking-within-and-between-groups-in-banded-mongooses"
-authors: ["Cant, M. A., Hodge, S. J., Bell, M. B. V., Gilchrist, J. S., Nichols, H. J."]
+authors: "Scent marking within and between groups in banded mongooses"
 journal: "Journal of Zoology"
-url: "/pubs-news-ppl/scent-marking-within-and-between-groups-in-banded-mongooses"
-year: "2010"
-list_summary: "2010 | Scent marking within and between groups in banded mongooses | Journal of Zoology"
+pdf: "https://framerusercontent.com/assets/07z6cEm73l8PJrKmJCDGoAoSw.pdf"
 ---
-

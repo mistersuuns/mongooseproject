@@ -1,11 +1,8 @@
 ---
-title: "Inclusive fitness theory and eusociality"
+title: "Abbot, P., Abe, J., Alcock, J., Alizon, S., Alpedrinha, J. A., Andersson, M., Andre, J. B., van Baalen, M., Balloux, F., Balshine, S."
 slug: "inclusive-fitness-theory-and-eusociality"
-authors: ["Cant, M. A."]
+authors: "Inclusive fitness theory and eusociality"
 journal: "Nature Brief Communications Arising"
-url: "/pubs-news-ppl/inclusive-fitness-theory-and-eusociality"
-year: "2011"
-list_summary: "2011 | Inclusive fitness theory and eusociality | Nature Brief Communications Arising"
-files: [{"file":"publications/pdfs/inclusive-fitness-theory-and-eusociality.pdf"}]
+url: "https://www.nature.com/articles/nature09831"
+pdf: "https://framerusercontent.com/assets/lMvmhZnXyF76CUpnFdHpQ3AePyM.pdf"
 ---
-

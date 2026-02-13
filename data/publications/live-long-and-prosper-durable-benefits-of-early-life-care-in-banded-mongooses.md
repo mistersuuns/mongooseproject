@@ -1,11 +1,9 @@
 ---
-title: "Live long and prosper: durable benefits of early-life care in banded mongooses"
+title: "Vitikainen E, Thompson F, Marshall H, Cant MA"
 slug: "live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses"
-authors: ["Wells DA, Cant MA, Nichols HJ, Hoffman JI"]
+authors: "Live long and prosper: durable benefits of early-life care in banded mongooses"
 journal: "Proceedings of the Royal Society B"
-url: "/pubs-news-ppl/live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses"
 year: "2019"
-list_summary: "2019 | Live long and prosper: durable benefits of early-life care in banded mongooses | Proceedings of the Royal Society B"
-files: [{"file":"publications/pdfs/live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses.pdf"}]
+url: "https://doi.org/10.1098/rstb.2018.0114"
+pdf: "https://framerusercontent.com/assets/oZKDC3YUt0jZpGsAN6iezCv7ypw.pdf"
 ---
-

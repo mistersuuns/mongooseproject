@@ -1,11 +1,7 @@
 ---
-title: "Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects"
+title: "Johnstone, R. A., Cant, M. A., Field, J."
 slug: "sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects"
-authors: ["Jansen, D. A., Cant, M. A., Manser, M. B."]
+authors: "Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects"
 journal: "Philosophical Transactions of the Royal Society B"
-url: "/pubs-news-ppl/sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects"
-year: "2012"
-list_summary: "2012 | Sex-biased dispersal, haplodiploidy and the evolution of helping in social insects | Philosophical Transactions of the Royal Society B"
-files: [{"file":"publications/pdfs/sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects.pdf"}]
+pdf: "https://framerusercontent.com/assets/LQfF3AevrrPNam1tIbtlSKlcc24.pdf"
 ---
-

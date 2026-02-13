@@ -1,11 +1,8 @@
 ---
-title: "Lifetime fitness consequences of early-life ecological hardship in a wild mammal population"
+title: "Marshall HH, Vitikainen EIK, Mwanguhya F, Businge R, Kyabulima S, Hares MC, Inzani E, Kalema-Zikusoka G, Mwesige K, Nichols HJ, Sanderson JL, Tomspon, FJ, Cant, MA"
 slug: "lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population"
-authors: ["Mitchell J, Cant MA, Nichols HJ"]
 journal: "Ecology and Evolution"
-url: "/pubs-news-ppl/lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population"
 year: "2017"
-list_summary: "2017 | Lifetime fitness consequences of early-life ecological hardship in a wild mammal population | Ecology and Evolution"
-files: [{"file":"publications/pdfs/lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population.pdf"}]
+url: "https://doi.org/10.1002/ece3.2747"
+pdf: "https://framerusercontent.com/assets/upmMqCeyXe2Q2u97K5m1exfEE.pdf"
 ---
-

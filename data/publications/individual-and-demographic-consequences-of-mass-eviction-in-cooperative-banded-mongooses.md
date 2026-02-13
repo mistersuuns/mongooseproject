@@ -1,11 +1,9 @@
 ---
-title: "Individual and demographic consequences of mass eviction in cooperative banded mongooses"
+title: "Thompson FJ, Marshall HH, Vitikainen EIK, Young AJ, Cant MA"
 slug: "individual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses"
-authors: ["Marshall HH, Vitikainen EIK, Mwanguhya F, Businge R, Kyabulima S, Hares MC, Inzani E, Kalema-Zikusoka G, Mwesige K, Nichols HJ, Sanderson JL, Tomspon, FJ, Cant, MA"]
+authors: "Individual and demographic consequences of mass eviction in cooperative banded mongooses"
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/individual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses"
 year: "2017"
-list_summary: "2017 | Individual and demographic consequences of mass eviction in cooperative banded mongooses | Animal Behaviour"
-files: [{"file":"publications/pdfs/individual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses.pdf"}]
+url: "https://doi.org/10.1016/j.anbehav.2017.10.009"
+pdf: "https://framerusercontent.com/assets/8sOtCoXoq41wBKqJCOV6KP97pjw.pdf"
 ---
-
