@@ -108,7 +108,7 @@ function processCollection(collectionName, htmlSubDir) {
                     <nav style="margin-bottom: 20px;"><a href="/" style="text-decoration: none; color: #666;">← Back to Home</a></nav>
                     <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;">${title}</h1>
                     ${attributes.year ? `<div style="color: #666; font-size: 1.1rem;">${attributes.year}</div>` : ''}
-                    ${attributes.authors ? `<div style="color: #666; font-style: italic; margin-top: 5px;">${JSON.parse(attributes.authors).join(', ')}</div>` : ''}
+                    ${attributes.authors ? `<div style="color: #666; font-style: italic; margin-top: 5px;">${(() => { try { const a = JSON.parse(attributes.authors); return Array.isArray(a) ? a.join(', ') : attributes.authors; } catch { return attributes.authors; } })()}</div>` : ''}
                 </header>
                 <div class="prose">
                     ${bodyHtml}

@@ -1,11 +1,9 @@
 ---
 title: "The social formation of fitness: lifetime consequences of prenatal nutrition and postnatal care in a wild mammal population"
 slug: "the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population"
-authors: ["C. Shelafoe, F. J. Thompson, F. Mwanguhya, S. Kyabulima, R. Businge, K. Mwesige, J. L. Sanderson, M. A. Cant, H. H. Marshall & E. I. K. Vitikainen"]
+authors: "E. I. K. Vitikainen, M. Meniri, H. H. Marshall, F. J. Thompson, R. Businge, F. Mwanguhya, S. Kyabulima, K. Mwesige, S. Ahabonya, J. L. Sanderson, G. Kalema-Zikusoka, J. I. Hoffman, D. Wells, G. Lewis, S. L. Walker, H. J. Nichols, J. D. Blount and M. A. Cant"
 journal: "Philosophical Transactions of the Royal Society B"
-url: "/pubs-news-ppl/the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population"
 year: "2023"
-list_summary: "2023 | The social formation of fitness: lifetime consequences of prenatal nutrition and postnatal care in a wild mammal population | Philosophical Transactions of the Royal Society B"
-files: [{"file":"publications/pdfs/the-social-formation-of-fitness-lifetime-consequences-of-prenatal-nutrition-and-postnatal-care-in-a-wild-mammal-population.pdf"}]
+url: "https://doi.org/10.1098/rstb.2022.0309"
+pdf: "https://framerusercontent.com/assets/YAenTWDd7OgyT1eqithKETh6pUU.pdf"
 ---
-

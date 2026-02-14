@@ -37,10 +37,10 @@ if [ -d "site/mongooseproject.org" ]; then
     rmdir site/mongooseproject.org
 fi
 
-# Extract CMS data directly from HTML (Framer embeds it in handover data)
+# Extract COMPLETE CMS data from Framer binary (gets ALL items, not just visible)
 echo ""
-echo "📊 Extracting CMS data from HTML..."
-node scripts/extract-from-html.js
+echo "📊 Extracting complete CMS data from Framer binary..."
+python3 scripts/extract-cms-binary.py
 
 # Update list summaries
 echo ""

@@ -1,0 +1,194 @@
+[
+  {
+    "type": "person",
+    "slug": "ufus-johnstone",
+    "title": "Rufus Johnstone",
+    "position": "Professor",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/wujsUH4OndRitlX6PS8cWF9YlI"
+  },
+  {
+    "type": "person",
+    "slug": "onil-khera",
+    "title": "Monil Khera",
+    "position": "PhD Student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "mma-inzani",
+    "title": "Emma Inzani",
+    "position": "MbyRes Student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "ave-seager",
+    "title": "Dave Seager",
+    "position": "MbyRes Student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "atherine-sheppard",
+    "title": "Catherine Sheppard",
+    "position": "MRes Student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "eth-preston",
+    "title": "Beth Preston",
+    "position": "PhD Student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "ennifer-sanderson",
+    "title": "Jennifer Sanderson",
+    "position": "Postdoctoral Research Associate",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "dr-michelle-hares",
+    "title": "Michelle Hares",
+    "position": "Postdoctoral Research Associate",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "dr-harry-marshall",
+    "title": "Harry Marshall",
+    "position": "Associate Research Fellow",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "eil-jordan",
+    "title": "Neil Jordan",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "ikita-bedov-panasyuk",
+    "title": "Nikita Bedov Panasyuk",
+    "position": "PhD student",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "egan-nicholl",
+    "title": "Megan Nicholl",
+    "position": "PhD student",
+    "category": "PostDoc or Grad Student",
+    "image": "https://framerusercontent.com/images/z7VcPnQInOJ24SFkXhz3cpP8F3o"
+  },
+  {
+    "type": "person",
+    "slug": "rica-sinin",
+    "title": "Erica Sinin\u00e4rhi",
+    "position": "PhD student",
+    "category": "PostDoc or Grad Student",
+    "image": "https://framerusercontent.com/images/pJHvUiIAFQvNJ4ylBOKXKbeBs"
+  },
+  {
+    "type": "person",
+    "slug": "ahul-jaitly",
+    "title": "Rahul Jaitly",
+    "category": "PostDoc or Grad Student"
+  },
+  {
+    "type": "person",
+    "slug": "livier-carter",
+    "title": "Olivier Carter",
+    "position": "PhD student",
+    "category": "PostDoc or Grad Student",
+    "image": "https://framerusercontent.com/images/E3DkrNhOXKI1Wl291LulrzhFSM"
+  },
+  {
+    "type": "person",
+    "slug": "eela-channer",
+    "title": "Leela Channer",
+    "position": "PhD student",
+    "category": "PostDoc or Grad Student",
+    "image": "https://framerusercontent.com/images/xE4fj1NFc8q8S2Xhvwq1Q2coo8"
+  },
+  {
+    "type": "person",
+    "slug": "aura-labarge",
+    "title": "Laura LaBarge",
+    "position": "Postdoctoral Research Associate",
+    "category": "PostDoc or Grad Student",
+    "image": "https://framerusercontent.com/images/42etanMdt1JUlqy6xwPIc24Zdc"
+  },
+  {
+    "type": "person",
+    "slug": "raham-birch",
+    "title": "Graham Birch",
+    "category": "Alum"
+  },
+  {
+    "type": "person",
+    "slug": "mma-vitikainen",
+    "title": "Emma Vitikainen",
+    "position": "Lecturer",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/61GZV4awHocFPM6oIawCM38xU8"
+  },
+  {
+    "type": "person",
+    "slug": "hair-of-evolutionary-population-genetics",
+    "title": "Joe Hoffman",
+    "position": "Chair of Evolutionary Population Genetics",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/dtanzqYHg0K6Vrk5Urbs4Gmj2I"
+  },
+  {
+    "type": "person",
+    "slug": "rofessor",
+    "position": "Professor",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/y9fL3injpj8VALEsXgjV3WjtT4"
+  },
+  {
+    "type": "person",
+    "slug": "ssistant-professor",
+    "title": "Patrick Green",
+    "position": "Assistant Professor",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/JBO3C3gX6tnwvHahcjmdLARf1R4"
+  },
+  {
+    "type": "person",
+    "slug": "aye-thompson",
+    "title": "Faye Thompson",
+    "position": "NERC Independent Research Fellow",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/quewMM3krgex2NdqnWgOMWYrYZM"
+  },
+  {
+    "type": "person",
+    "slug": "azel-nichols",
+    "title": "Hazel Nichols",
+    "position": "Associate Professor",
+    "category": "Co-I",
+    "image": "https://framerusercontent.com/images/mF7OvqeBl0L8HMhSzZWj4ZNbY"
+  },
+  {
+    "type": "person",
+    "slug": "ield-manager",
+    "title": "Francis Mwanguhya",
+    "position": "Field Manager",
+    "category": "Director",
+    "image": "https://framerusercontent.com/images/lC75gQr6LZge9GYPDbX3MjAxtN8"
+  },
+  {
+    "type": "person",
+    "slug": "ike-cant",
+    "title": "Michael Cant",
+    "position": "Professor of Evolutionary Biology",
+    "category": "Director",
+    "image": "https://framerusercontent.com/images/QqcbaDJkuYEIwriLhuI3EFL4pE"
+  }
+]

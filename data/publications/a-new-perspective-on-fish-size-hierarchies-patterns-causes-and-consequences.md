@@ -1,11 +1,9 @@
 ---
-title: "A new perspective on fish size hierarchies: patterns, causes, and consequences"
+title: "NA new perspective on fish size hierarchies: patterns, causes, and consequences"
 slug: "a-new-perspective-on-fish-size-hierarchies-patterns-causes-and-consequences"
-authors: ["Cant, M. A., Shen, S-F."]
+authors: "Buston, P. M., Cant, M. A."
 journal: "Oecologia"
-url: "/pubs-news-ppl/a-new-perspective-on-fish-size-hierarchies-patterns-causes-and-consequences"
 year: "2006"
-list_summary: "2006 | A new perspective on fish size hierarchies: patterns, causes, and consequences | Oecologia"
-files: [{"file":"publications/pdfs/a-new-perspective-on-fish-size-hierarchies-patterns-causes-and-consequences.pdf"}]
+url: "https://link.springer.com/article/10.1007/s00442-006-0442-z"
+pdf: "https://framerusercontent.com/assets/9KXcf5OPd05qZ6oixHrLfeD36QE.pdf"
 ---
-

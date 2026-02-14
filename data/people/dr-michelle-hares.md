@@ -1,5 +1,5 @@
 ---
-title: "Harry Marshall"
+title: "Michelle Hares"
 slug: "dr-michelle-hares"
 position: "Postdoctoral Research Associate"
 category: "Alum"

@@ -1,0 +1,9 @@
+---
+title: "AExploitative leaders incite intergroup warfare in a social mammal"
+slug: "xploitative-leaders-incite-intergroup-warfare-in-a-social-mammal"
+authors: "Johnstone, R. A., Cant, M. A., Cram, D., & Thompson, F. J."
+journal: "PNAS"
+year: "2020"
+url: "https://doi.org/10.1073/pnas.2003745117"
+pdf: "https://framerusercontent.com/assets/s9RcYwyVsuoKtTcm3kZn2Y3wly8.pdf"
+---
