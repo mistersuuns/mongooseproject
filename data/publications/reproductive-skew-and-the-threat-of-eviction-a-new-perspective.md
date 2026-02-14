@@ -2,7 +2,7 @@
 title: "Reproductive skew and the threat of eviction: a new perspective"
 list_summary: "1999 | Reproductive skew and the threat of eviction: a new perspective | Philosophical Transactions of the Royal Society B"
 slug: "reproductive-skew-and-the-threat-of-eviction-a-new-perspective"
-authors: "Johnstone, R. A., Cant, M. A."
+authors: ["Johnstone, R. A., Cant, M. A."]
 journal: "Philosophical Transactions of the Royal Society B"
 year: "1999"
 url: "https://royalsocietypublishing.org/doi/abs/10.1098/rspb.1999.0633"

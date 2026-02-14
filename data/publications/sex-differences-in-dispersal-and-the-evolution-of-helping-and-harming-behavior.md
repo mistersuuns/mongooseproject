@@ -1,8 +1,8 @@
 ---
-title: "NSex differences in dispersal and the evolution of helping and harming behavior"
-list_summary: "2008 | NSex differences in dispersal and the evolution of helping and harming behavior | The American Naturalist"
+title: "Sex differences in dispersal and the evolution of helping and harming behavior"
+list_summary: "2008 | Sex differences in dispersal and the evolution of helping and harming behavior | The American Naturalist"
 slug: "sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior"
-authors: "Johnstone, R. A., Cant, M. A."
+authors: ["Johnstone, R. A., Cant, M. A."]
 journal: "The American Naturalist"
 year: "2008"
 url: "https://www.journals.uchicago.edu/doi/abs/10.1086/589899"

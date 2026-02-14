@@ -1,8 +1,8 @@
 ---
-title: "BPolicing of reproduction by hidden threats in a cooperative mammal"
-list_summary: "2014 | BPolicing of reproduction by hidden threats in a cooperative mammal | PNAS"
+title: "Policing of reproduction by hidden threats in a cooperative mammal"
+list_summary: "2014 | Policing of reproduction by hidden threats in a cooperative mammal | PNAS"
 slug: "policing-of-reproduction-by-hidden-threats-in-a-cooperative-mammal"
-authors: "Cant, M. A., Nichols, H. J., Johnstone, R. A., Hodge, S. J."
+authors: ["Cant, M. A., Nichols, H. J., Johnstone, R. A., Hodge, S. J."]
 journal: "PNAS"
 year: "2014"
 url: "https://www.pnas.org/doi/abs/10.1073/pnas.1312626111"

@@ -1,8 +1,8 @@
 ---
-title: "YTesting the acoustic adaptation hypothesis with vocalizations from three mongoose species"
-list_summary: "2022 | YTesting the acoustic adaptation hypothesis with vocalizations from three mongoose species | Animal Behaviour"
+title: "Testing the acoustic adaptation hypothesis with vocalizations from three mongoose species"
+list_summary: "2022 | Testing the acoustic adaptation hypothesis with vocalizations from three mongoose species | Animal Behaviour"
 slug: "testing-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-mongoose-species"
-authors: "IArasco AG, Manser M, Wtson SK, Kyabulima S, Radford AN, Cant MA, Garcia M"
+authors: ["IArasco AG, Manser M, Wtson SK, Kyabulima S, Radford AN, Cant MA, Garcia M"]
 journal: "Animal Behaviour"
 year: "2022"
 url: "https://doi.org/10.1016/j.anbehav.2022.02.016"

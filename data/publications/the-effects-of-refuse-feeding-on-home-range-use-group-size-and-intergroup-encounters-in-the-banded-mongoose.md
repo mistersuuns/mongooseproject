@@ -2,7 +2,7 @@
 title: "The effects of refuse-feeding on home-range use, group size, and intergroup encounters in the banded mongoose"
 list_summary: "2002 | The effects of refuse-feeding on home-range use, group size, and intergroup encounters in the banded mongoose | Canadian Journal of Zoology"
 slug: "the-effects-of-refuse-feeding-on-home-range-use-group-size-and-intergroup-encounters-in-the-banded-mongoose"
-authors: "Gilchrist, J. S., Otali, E."
+authors: ["Gilchrist, J. S., Otali, E."]
 journal: "Canadian Journal of Zoology"
 year: "2002"
 url: "https://cdnsciencepub.com/doi/abs/10.1139/z02-113"

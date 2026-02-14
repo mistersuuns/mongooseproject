@@ -1,8 +1,8 @@
 ---
-title: "XThe origins of consistent individual differences in cooperation in wild banded mongooses"
-list_summary: "2015 | XThe origins of consistent individual differences in cooperation in wild banded mongooses | Animal Behaviour"
+title: "The origins of consistent individual differences in cooperation in wild banded mongooses"
+list_summary: "2015 | The origins of consistent individual differences in cooperation in wild banded mongooses | Animal Behaviour"
 slug: "the-origins-of-consistent-individual-differences-in-cooperation-in-wild-banded-mongooses"
-authors: "TSanderson, J. L., Stott, I., Young, A. J., Vitikainen, E., Hodge, S. J., Cant, M. A."
+authors: ["TSanderson, J. L., Stott, I., Young, A. J., Vitikainen, E., Hodge, S. J., Cant, M. A."]
 journal: "Animal Behaviour"
 year: "2015"
 url: "https://www.sciencedirect.com/science/article/pii/S0003347215002390"

@@ -1,8 +1,8 @@
 ---
-title: "ETesting for vocal individual discrimination in adult banded mongooses"
-list_summary: "2013 | ETesting for vocal individual discrimination in adult banded mongooses | Journal of Zoology"
+title: "Testing for vocal individual discrimination in adult banded mongooses"
+list_summary: "2013 | Testing for vocal individual discrimination in adult banded mongooses | Journal of Zoology"
 slug: "testing-for-vocal-individual-discrimination-in-adult-banded-mongooses"
-authors: "Jansen, D. A. W. A. M., Cant, M. A., Manser, M. B."
+authors: ["Jansen, D. A. W. A. M., Cant, M. A., Manser, M. B."]
 journal: "Journal of Zoology"
 year: "2013"
 url: "https://zslpublications.onlinelibrary.wiley.com/doi/abs/10.1111/jzo.12054"

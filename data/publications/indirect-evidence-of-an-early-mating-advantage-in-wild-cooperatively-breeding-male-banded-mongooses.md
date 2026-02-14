@@ -2,7 +2,7 @@
 title: "Indirect evidence of an early mating advantage in wild cooperatively breeding male banded mongooses"
 list_summary: "2025 | Indirect evidence of an early mating advantage in wild cooperatively breeding male banded mongooses | Nature Scientific Reports"
 slug: "indirect-evidence-of-an-early-mating-advantage-in-wild-cooperatively-breeding-male-banded-mongooses"
-authors: "Graham Birch, Michael A. Cant, Hazel J. Nichols, Magali Meniri, Robert Businge, Francis Mwanguhya & Jonathan D. Blount"
+authors: ["Graham Birch, Michael A. Cant, Hazel J. Nichols, Magali Meniri, Robert Businge, Francis Mwanguhya & Jonathan D. Blount"]
 journal: "Nature Scientific Reports"
 year: "2025"
 url: "https://www.nature.com/articles/s41598-024-80518-8"
