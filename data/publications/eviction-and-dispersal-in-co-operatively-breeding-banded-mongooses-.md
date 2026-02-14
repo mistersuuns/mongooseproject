@@ -1,6 +1,6 @@
 ---
 title: "QEviction and dispersal in co-operatively breeding banded mongooses (Mungos mungo)"
-slug: "viction-and-dispersal-in-co-operatively-breeding-banded-mongooses-"
+slug: "eviction-and-dispersal-in-co-operatively-breeding-banded-mongooses-"
 authors: "Cant, M. A., Otali, E., Mwanguhya, F."
 journal: "Journal of Zoology"
 year: "2001"

@@ -1,11 +1,9 @@
 ---
-title: "Stable group size in cooperative breeders: the role of inheritance and reproductive skew"
+title: "XStable group size in cooperative breeders: the role of inheritance and reproductive skew"
 slug: "stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew"
-authors: ["Cant, M. A., Field, J."]
+authors: "Cant, M. A., English, S."
 journal: "Behavioral Ecology"
-url: "/pubs-news-ppl/stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew"
 year: "2006"
-list_summary: "2006 | Stable group size in cooperative breeders: the role of inheritance and reproductive skew | Behavioral Ecology"
-files: [{"file":"publications/pdfs/stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew.pdf"}]
+url: "https://academic.oup.com/beheco/article-abstract/17/4/560/215523"
+pdf: "https://framerusercontent.com/assets/VodIBsTp8LmMVO3ogkEsgsKDUy0.pdf"
 ---
-

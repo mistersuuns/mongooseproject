@@ -1,11 +1,9 @@
 ---
 title: "Power struggles, dominance testing, and reproductive skew"
 slug: "power-struggles-dominance-testing-and-reproductive-skew"
-authors: ["Cant, M. A."]
+authors: "Cant, M. A., Johnstone, R. A."
 journal: "The American Naturalist"
-url: "/pubs-news-ppl/power-struggles-dominance-testing-and-reproductive-skew"
 year: "2000"
-list_summary: "2000 | Power struggles, dominance testing, and reproductive skew | The American Naturalist"
-files: [{"file":"publications/pdfs/power-struggles-dominance-testing-and-reproductive-skew.pdf"}]
+url: "https://www.journals.uchicago.edu/doi/abs/10.1086/303328"
+pdf: "https://framerusercontent.com/assets/y1tVraVYWEc5DPU4zpSLu218.pdf"
 ---
-

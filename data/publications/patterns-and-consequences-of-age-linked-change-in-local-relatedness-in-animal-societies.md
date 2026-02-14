@@ -1,11 +1,9 @@
 ---
-title: "Patterns and consequences of age-linked change in local relatedness in animal societies"
+title: "WPatterns and consequences of age-linked change in local relatedness in animal societies"
 slug: "patterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies"
-authors: ["E. I. K. Vitikainen, M. Meniri, H. H. Marshall, F. J. Thompson, R. Businge, F. Mwanguhya, S. Kyabulima, K. Mwesige, S. Ahabonya, J. L. Sanderson, G. Kalema-Zikusoka, J. I. Hoffman, D. Wells, G. Lewis, S. L. Walker, H. J. Nichols, J. D. Blount and M. A. Cant"]
+authors: "Samuel Ellis, Rufus A. Johnstone, Michael A. Cant, Daniel W. Franks, Michael N. Weiss, Susan C. Alberts, Kenneth C. Balcomb, Claire H. Benton, Lauren J. N. Brent, Catherine Crockford, Eve Davidian, Richard J. Delahay, David K. Ellifrit, Oliver P. Höner, Magali Meniri, Robbie A. McDonald, Hazel J. Nichols, Faye J. Thompson, Linda Vigilant, Roman M. Wittig, Darren P. Croft"
 journal: "Nature Ecology & Evolution"
-url: "/pubs-news-ppl/patterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies"
 year: "2022"
-list_summary: "2022 | Patterns and consequences of age-linked change in local relatedness in animal societies | Nature Ecology & Evolution"
-files: [{"file":"publications/pdfs/patterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies.pdf"}]
+url: "https://www.nature.com/articles/s41559-022-01872-2"
+pdf: "https://framerusercontent.com/assets/wQwAKR4i3PId4frKlsaJFz9fRk.pdf"
 ---
-

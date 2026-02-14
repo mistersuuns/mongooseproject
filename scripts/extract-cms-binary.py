@@ -64,8 +64,10 @@ def parse_records(data):
                 record['type'] = type_name
                 break
 
-        # Slug
-        slug_match = re.search(r'TAIvpALDu.{1,15}?([a-z][a-z0-9-]+)', text)
+        # Slug - pattern is: TAIvpALDu + \x0c\x00\x00\x00 + length_byte + slug
+        # The length byte can be any value (including 0x61-0x7a which are 'a'-'z')
+        # So we need to skip exactly 5 bytes, not match until first lowercase
+        slug_match = re.search(r'TAIvpALDu.{5}([a-z][a-z0-9-]+)', text)
         if slug_match:
             record['slug'] = slug_match.group(1)
 

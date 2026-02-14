@@ -1,11 +1,9 @@
 ---
 title: "Sex and age influence responses to changes in the cost of cooperative care in a social carnivore"
 slug: "sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore"
-authors: ["Nichols, H. J., Bell, M. B. B., Hodge, S. J., Cant, M. A."]
+authors: "Bell, M. B. V."
 journal: "Behavioral Ecology"
-url: "/pubs-news-ppl/sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore"
 year: "2010"
-list_summary: "2010 | Sex and age influence responses to changes in the cost of cooperative care in a social carnivore | Behavioral Ecology"
-files: [{"file":"publications/pdfs/sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore.pdf"}]
+url: "https://academic.oup.com/beheco/article-abstract/21/5/1118/198969?redirectedFrom=fulltext"
+pdf: "https://framerusercontent.com/assets/5wRi8VHKjWGTu63xHs0SnFJEl8.pdf"
 ---
-

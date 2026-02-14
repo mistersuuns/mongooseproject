@@ -1,10 +1,9 @@
 ---
-title: "Suppression of social conflict and evolutionary transitions to cooperation"
+title: "JSuppression of social conflict and evolutionary transitions to cooperation"
 slug: "suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation"
-authors: ["Johnstone, R. A., Cant, M. A., Field, J."]
+authors: "Cant, M. A."
 journal: "The American Naturalist"
-url: "/pubs-news-ppl/suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation"
 year: "2012"
-list_summary: "2012 | Suppression of social conflict and evolutionary transitions to cooperation | The American Naturalist"
+url: "https://www.journals.uchicago.edu/doi/abs/10.1086/663679"
+pdf: "https://framerusercontent.com/assets/8hdmL8KrAgHRbd81IhKDEMoTyU.pdf"
 ---
-

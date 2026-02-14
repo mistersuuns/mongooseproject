@@ -1,11 +1,9 @@
 ---
 title: "Scent-marking and intrasexual competition in a cooperative carnivore with low reproductive skew"
 slug: "scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew"
-authors: ["Muller, C. A., Manser, M. B."]
+authors: "Muller, C. A., Manser, M. B."
 journal: "Ethology"
-url: "/pubs-news-ppl/scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew"
 year: "2008"
-list_summary: "2008 | Scent-marking and intrasexual competition in a cooperative carnivore with low reproductive skew | Ethology"
-files: [{"file":"publications/pdfs/scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew.pdf"}]
+url: "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1439-0310.2007.01455.x"
+pdf: "https://framerusercontent.com/assets/RFuKS0ugot4738rucMTUyyZdM0.pdf"
 ---
-

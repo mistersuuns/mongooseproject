@@ -1,10 +1,9 @@
 ---
-title: "Banded mongoose recruitment calls convey information about risk and not stimulus type"
+title: "UBanded mongoose recruitment calls convey information about risk and not stimulus type"
 slug: "banded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type"
-authors: ["Bell, M. B. V."]
+authors: "Furrer, R. D., Manser, M. B."
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/banded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type"
 year: "2009"
-list_summary: "2009 | Banded mongoose recruitment calls convey information about risk and not stimulus type | Animal Behaviour"
+url: "https://www.sciencedirect.com/science/article/abs/pii/S0003347209002061"
+pdf: "https://framerusercontent.com/assets/URDYJlhm24YImJ05KvsrDwItbc.pdf"
 ---
-

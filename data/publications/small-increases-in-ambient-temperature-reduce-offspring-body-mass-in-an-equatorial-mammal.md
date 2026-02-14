@@ -1,5 +1,5 @@
 ---
-title: "Small increases in ambient temperature reduce offspring body mass in an equatorial mammal"
+title: "YSmall increases in ambient temperature reduce offspring body mass in an equatorial mammal"
 slug: "small-increases-in-ambient-temperature-reduce-offspring-body-mass-in-an-equatorial-mammal"
 authors: "Monil Khera, Kevin Arbuckle, Francis Mwanguhya, Solomon Kyabulima, Kenneth Mwesige, Robert Businge, Jonathan D. Blount, Michael A. Cant and Hazel J. Nichols"
 journal: "Biology Letters"

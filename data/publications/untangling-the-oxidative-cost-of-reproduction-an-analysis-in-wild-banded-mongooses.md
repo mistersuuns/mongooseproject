@@ -1,5 +1,5 @@
 ---
-title: "Untangling the oxidative cost of reproduction: An analysis in wild banded mongooses"
+title: "SUntangling the oxidative cost of reproduction: An analysis in wild banded mongooses"
 slug: "untangling-the-oxidative-cost-of-reproduction-an-analysis-in-wild-banded-mongooses"
 authors: "Meniri, M., Evans, E., Thompson, F.J., Marshall, H.H., Nichols, H.J., Lewis, G., Holt, L., Davey, E., Mitchell, C., Johnstone, R.A. and Cant, M.A."
 journal: "Ecology and Evolution"

@@ -1,11 +1,9 @@
 ---
 title: "Kidnapping and infanticide between groups of banded mongooses"
 slug: "kidnapping-and-infanticide-between-groups-of-banded-mongooses"
-authors: ["Gilchrist, J. S., Otali, E., Mwanghuya, F."]
+authors: "Muller, C. A., Bell, M. B. V."
 journal: "Mammalian Biology"
-url: "/pubs-news-ppl/kidnapping-and-infanticide-between-groups-of-banded-mongooses"
 year: "2009"
-list_summary: "2009 | Kidnapping and infanticide between groups of banded mongooses | Mammalian Biology"
-files: [{"file":"publications/pdfs/kidnapping-and-infanticide-between-groups-of-banded-mongooses.pdf"}]
+url: "https://www.zora.uzh.ch/id/eprint/20870/11/mueller_kidnapping2009V.pdf"
+pdf: "https://framerusercontent.com/assets/8EBLDnjJyvImmOLXmnvD5BozqDg.pdf"
 ---
-

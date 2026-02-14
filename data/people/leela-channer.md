@@ -3,5 +3,5 @@ title: "Leela Channer"
 slug: "leela-channer"
 position: "PhD student"
 category: "PostDoc or Grad Student"
-image: "https://framerusercontent.com/images/xE4fj1NFc8q8S2Xhvwq1Q2coo8.jpg"
+image: "https://framerusercontent.com/images/xE4fj1NFc8q8S2Xhvwq1Q2coo8"
 ---

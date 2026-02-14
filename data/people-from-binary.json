@@ -1,7 +1,7 @@
 [
   {
     "type": "person",
-    "slug": "ufus-johnstone",
+    "slug": "rufus-johnstone",
     "title": "Rufus Johnstone",
     "position": "Professor",
     "category": "Co-I",
@@ -9,42 +9,42 @@
   },
   {
     "type": "person",
-    "slug": "onil-khera",
+    "slug": "monil-khera",
     "title": "Monil Khera",
     "position": "PhD Student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "mma-inzani",
+    "slug": "emma-inzani",
     "title": "Emma Inzani",
     "position": "MbyRes Student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "ave-seager",
+    "slug": "dave-seager",
     "title": "Dave Seager",
     "position": "MbyRes Student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "atherine-sheppard",
+    "slug": "catherine-sheppard",
     "title": "Catherine Sheppard",
     "position": "MRes Student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "eth-preston",
+    "slug": "beth-preston",
     "title": "Beth Preston",
     "position": "PhD Student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "ennifer-sanderson",
+    "slug": "jennifer-sanderson",
     "title": "Jennifer Sanderson",
     "position": "Postdoctoral Research Associate",
     "category": "Alum"
@@ -65,20 +65,20 @@
   },
   {
     "type": "person",
-    "slug": "eil-jordan",
+    "slug": "neil-jordan",
     "title": "Neil Jordan",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "ikita-bedov-panasyuk",
+    "slug": "nikita-bedov-panasyuk",
     "title": "Nikita Bedov Panasyuk",
     "position": "PhD student",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "egan-nicholl",
+    "slug": "megan-nicholl",
     "title": "Megan Nicholl",
     "position": "PhD student",
     "category": "PostDoc or Grad Student",
@@ -86,7 +86,7 @@
   },
   {
     "type": "person",
-    "slug": "rica-sinin",
+    "slug": "erica-sinin",
     "title": "Erica Sinin\u00e4rhi",
     "position": "PhD student",
     "category": "PostDoc or Grad Student",
@@ -94,13 +94,13 @@
   },
   {
     "type": "person",
-    "slug": "ahul-jaitly",
+    "slug": "rahul-jaitly",
     "title": "Rahul Jaitly",
     "category": "PostDoc or Grad Student"
   },
   {
     "type": "person",
-    "slug": "livier-carter",
+    "slug": "olivier-carter",
     "title": "Olivier Carter",
     "position": "PhD student",
     "category": "PostDoc or Grad Student",
@@ -108,7 +108,7 @@
   },
   {
     "type": "person",
-    "slug": "eela-channer",
+    "slug": "leela-channer",
     "title": "Leela Channer",
     "position": "PhD student",
     "category": "PostDoc or Grad Student",
@@ -116,7 +116,7 @@
   },
   {
     "type": "person",
-    "slug": "aura-labarge",
+    "slug": "laura-labarge",
     "title": "Laura LaBarge",
     "position": "Postdoctoral Research Associate",
     "category": "PostDoc or Grad Student",
@@ -124,13 +124,13 @@
   },
   {
     "type": "person",
-    "slug": "raham-birch",
+    "slug": "graham-birch",
     "title": "Graham Birch",
     "category": "Alum"
   },
   {
     "type": "person",
-    "slug": "mma-vitikainen",
+    "slug": "emma-vitikainen",
     "title": "Emma Vitikainen",
     "position": "Lecturer",
     "category": "Co-I",
@@ -138,7 +138,7 @@
   },
   {
     "type": "person",
-    "slug": "hair-of-evolutionary-population-genetics",
+    "slug": "chair-of-evolutionary-population-genetics",
     "title": "Joe Hoffman",
     "position": "Chair of Evolutionary Population Genetics",
     "category": "Co-I",
@@ -146,14 +146,14 @@
   },
   {
     "type": "person",
-    "slug": "rofessor",
+    "slug": "professor",
     "position": "Professor",
     "category": "Co-I",
     "image": "https://framerusercontent.com/images/y9fL3injpj8VALEsXgjV3WjtT4"
   },
   {
     "type": "person",
-    "slug": "ssistant-professor",
+    "slug": "assistant-professor",
     "title": "Patrick Green",
     "position": "Assistant Professor",
     "category": "Co-I",
@@ -161,7 +161,7 @@
   },
   {
     "type": "person",
-    "slug": "aye-thompson",
+    "slug": "faye-thompson",
     "title": "Faye Thompson",
     "position": "NERC Independent Research Fellow",
     "category": "Co-I",
@@ -169,7 +169,7 @@
   },
   {
     "type": "person",
-    "slug": "azel-nichols",
+    "slug": "hazel-nichols",
     "title": "Hazel Nichols",
     "position": "Associate Professor",
     "category": "Co-I",
@@ -177,7 +177,7 @@
   },
   {
     "type": "person",
-    "slug": "ield-manager",
+    "slug": "field-manager",
     "title": "Francis Mwanguhya",
     "position": "Field Manager",
     "category": "Director",
@@ -185,7 +185,7 @@
   },
   {
     "type": "person",
-    "slug": "ike-cant",
+    "slug": "mike-cant",
     "title": "Michael Cant",
     "position": "Professor of Evolutionary Biology",
     "category": "Director",

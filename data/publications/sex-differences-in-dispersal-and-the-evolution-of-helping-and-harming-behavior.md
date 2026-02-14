@@ -1,11 +1,9 @@
 ---
-title: "Sex differences in dispersal and the evolution of helping and harming behavior"
+title: "NSex differences in dispersal and the evolution of helping and harming behavior"
 slug: "sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior"
-authors: ["Buston, P. M., Reeve, H. K., Cant, M. A., Vehrencamp, S. L., Emien, S. T."]
+authors: "Johnstone, R. A., Cant, M. A."
 journal: "The American Naturalist"
-url: "/pubs-news-ppl/sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior"
 year: "2008"
-list_summary: "2008 | Sex differences in dispersal and the evolution of helping and harming behavior | The American Naturalist"
-files: [{"file":"publications/pdfs/sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior.pdf"}]
+url: "https://www.journals.uchicago.edu/doi/abs/10.1086/589899"
+pdf: "https://framerusercontent.com/assets/t747j7K06dvcdl1zHi0PYnUybE.pdf"
 ---
-

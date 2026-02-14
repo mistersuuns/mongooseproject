@@ -1,6 +1,6 @@
 ---
 title: "VReproductive control via eviction (but not the threat of eviction) in banded mongooses"
-slug: "eproductive-control-via-eviction-"
+slug: "reproductive-control-via-eviction-"
 authors: "KCant, M. A., Hodge, S. J., Bell, M. B. V., Gilchrist, J. S., Nichols, H. J."
 journal: "Philosophical Transactions of the Royal Society B"
 year: "2010"

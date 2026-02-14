@@ -1,11 +1,9 @@
 ---
 title: "Indiscriminate infanticide and reproductive skew"
 slug: "indiscriminate-infanticide-and-reproductive-skew"
-authors: ["Cant, M. A."]
+authors: "Johnstone, R. A., Cant, M. A."
 journal: "Animal Behaviour"
-url: "/pubs-news-ppl/indiscriminate-infanticide-and-reproductive-skew"
 year: "1999"
-list_summary: "1999 | Indiscriminate infanticide and reproductive skew | Animal Behaviour"
-files: [{"file":"publications/pdfs/indiscriminate-infanticide-and-reproductive-skew.pdf"}]
+url: "https://www.sciencedirect.com/science/article/abs/pii/S0003347298909526"
+pdf: "https://framerusercontent.com/assets/jPsmSwhUGpZQl0WMLpAhQPP4p4.pdf"
 ---
-

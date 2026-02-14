@@ -12,7 +12,7 @@
   },
   {
     "type": "pub",
-    "slug": "vidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal",
+    "slug": "evidence-of-oxidative-shielding-of-offspring-in-a-wild-mammal",
     "title": "Evidence of oxidative shielding of offspring in a wild mammal",
     "authors": "Vitikainen, E. I. K., Cant, M. A., Sanderson, J. L., Mitchell, C., Nichols, H. J., Marshall, H. H., Blount, J. D.",
     "journal": "Frontiers in Ecology and Evolution",
@@ -23,7 +23,7 @@
   },
   {
     "type": "pub",
-    "slug": "melling-fit-scent-marking-exposes-parasitic-infection-status-in-the-banded-mongoose",
+    "slug": "smelling-fit-scent-marking-exposes-parasitic-infection-status-in-the-banded-mongoose",
     "title": "W Smelling fit: scent marking exposes parasitic infection status in the banded mongoose",
     "authors": "Mitchell J, Cant MA, Vitikainen EIK, Nichols HJ",
     "journal": "Current Zoology",
@@ -34,7 +34,7 @@
   },
   {
     "type": "pub",
-    "slug": "regnancy-is-detected-via-odour-in-a-wild-cooperative-breeder",
+    "slug": "pregnancy-is-detected-via-odour-in-a-wild-cooperative-breeder",
     "title": "Pregnancy is detected via odour in a wild cooperative breeder",
     "authors": "Mitchell J, Cant MA, Nichols HJ",
     "journal": "Biology Letters",
@@ -45,7 +45,7 @@
   },
   {
     "type": "pub",
-    "slug": "ifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population",
+    "slug": "lifetime-fitness-consequences-of-early-life-ecological-hardship-in-a-wild-mammal-population",
     "title": "Lifetime fitness consequences of early-life ecological hardship in a wild mammal population",
     "authors": "Marshall HH, Vitikainen EIK, Mwanguhya F, Businge R, Kyabulima S, Hares MC, Inzani E, Kalema-Zikusoka G, Mwesige K, Nichols HJ, Sanderson JL, Tomspon, FJ, Cant, MA",
     "journal": "Ecology and Evolution",
@@ -56,7 +56,7 @@
   },
   {
     "type": "pub",
-    "slug": "ndividual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses",
+    "slug": "individual-and-demographic-consequences-of-mass-eviction-in-cooperative-banded-mongooses",
     "title": "XIndividual and demographic consequences of mass eviction in cooperative banded mongooses",
     "authors": "Thompson FJ, Marshall HH, Vitikainen EIK, Young AJ, Cant MA",
     "journal": "Animal Behaviour",
@@ -67,7 +67,7 @@
   },
   {
     "type": "pub",
-    "slug": "xplaining-negative-kin-discrimination-in-a-cooperative-mammal-society",
+    "slug": "explaining-negative-kin-discrimination-in-a-cooperative-mammal-society",
     "title": "FExplaining negative kin discrimination in a cooperative mammal society",
     "authors": "Thompson FJ, Cant MA, Marshall HH, Vitikainen EIK, Sanderson JL, Nichols HJ, Gilchrist JS, Bell MBV, Young AJ, Hodge SJ, Johnstone, RA",
     "journal": "PNAS",
@@ -78,7 +78,7 @@
   },
   {
     "type": "pub",
-    "slug": "auses-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses",
+    "slug": "causes-and-consequences-of-intergroup-conflict-in-cooperative-banded-mongooses",
     "title": "NCauses and consequences of intergroup conflict in cooperative banded mongooses",
     "authors": "Thompson FJ, Marshall HH, Vitikainen EIK, Cant MA",
     "journal": "Animal Behaviour",
@@ -111,7 +111,7 @@
   },
   {
     "type": "pub",
-    "slug": "in-discrimination-via-odour-in-the-cooperatively-breeding-banded-mongoose",
+    "slug": "kin-discrimination-via-odour-in-the-cooperatively-breeding-banded-mongoose",
     "title": "JKin discrimination via odour in the cooperatively breeding banded mongoose",
     "authors": "Mitchell J, Kyabulima S, Businge R, Cant MA, Nichols HJ",
     "journal": "Royal Society Open Science",
@@ -122,7 +122,7 @@
   },
   {
     "type": "pub",
-    "slug": "ntragroup-competition-predicts-individual-foraging-specialisation-in-a-group-living-mammal",
+    "slug": "intragroup-competition-predicts-individual-foraging-specialisation-in-a-group-living-mammal",
     "title": "Intragroup competition predicts individual foraging specialisation in a group-living mammal",
     "authors": "Sheppard CE, Inger R, McDonald RA, Barker S, Jackson AL, Thompson FJ, Vitikainen EIK, Cant MA, Marshall HH",
     "journal": "Ecology Letters",
@@ -133,7 +133,7 @@
   },
   {
     "type": "pub",
-    "slug": "ecoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal",
+    "slug": "decoupling-of-genetic-and-cultural-inheritance-in-a-wild-mammal",
     "title": "Decoupling of Genetic and Cultural Inheritance in a Wild Mammal",
     "authors": "Sheppard CE, Marshall HH, Inger R, Thompson FJ, Vitikainen EIK, Barker S, Nichols HJ, Wells DA, McDonald RA, Cant MA",
     "journal": "Current Biology",
@@ -155,18 +155,7 @@
   },
   {
     "type": "pub",
-    "slug": "a-high-quality-pedigree-and-genetic-markers-both-reveal-inbreeding-depression-for-quality-but-not-survival-in-a-cooperative-mammal",
-    "title": "A high-quality pedigree and genetic markers both reveal inbreeding depression for quality but not survival in a cooperative mammal",
-    "authors": "Wells DA, Cant MA, Nichols HJ, Hoffman JI",
-    "journal": "Molecular Ecology",
-    "year": "2018",
-    "pdf": "https://framerusercontent.com/assets/OA26MEmXU4q7fMGWOjQL8tSHZo.pdf",
-    "url": "https://doi.org/10.1111/mec.14570",
-    "category": "Director"
-  },
-  {
-    "type": "pub",
-    "slug": "ive-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses",
+    "slug": "live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses",
     "title": "NLive long and prosper: durable benefits of early-life care in banded mongooses",
     "authors": "Vitikainen E, Thompson F, Marshall H, Cant MA",
     "journal": "Proceedings of the Royal Society B",
@@ -177,7 +166,7 @@
   },
   {
     "type": "pub",
-    "slug": "eveloping-differences-early-life-effects-and-evolutionary-medicine",
+    "slug": "developing-differences-early-life-effects-and-evolutionary-medicine",
     "title": "DDeveloping differences: early-life effects and evolutionary medicine",
     "authors": "GKuijper ALW, Hanson MA, Vitikainen EIK, Marshall HH, Ozanne SE, Cant MA",
     "journal": "Proceedings of the Royal Society B",
@@ -188,7 +177,7 @@
   },
   {
     "type": "pub",
-    "slug": "table-isotopes-are-quantitative-indicators-of-trophic-niche",
+    "slug": "stable-isotopes-are-quantitative-indicators-of-trophic-niche",
     "title": "Stable isotopes are quantitative indicators of trophic niche",
     "authors": "Marshall, H. H., Inger, R., Jackson, A. L., McDonald, R. A., Thompson, F. J., & Cant, M. A.",
     "journal": "Ecology Letters",
@@ -198,7 +187,7 @@
   },
   {
     "type": "pub",
-    "slug": "pontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose",
+    "slug": "spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose",
     "title": "RSpontaneous abortion as a response to reproductive conflict in the banded mongoose",
     "authors": "Inzani, E., Marshall, H. H., Thompson, F. J., Kalema-Zikusoka, G., Cant, M. A., & Vitikainen, E. I. K.",
     "journal": "Biology Letters",
@@ -218,7 +207,7 @@
   },
   {
     "type": "pub",
-    "slug": "nbreeding-depresses-altruism-in-a-cooperative-society",
+    "slug": "inbreeding-depresses-altruism-in-a-cooperative-society",
     "title": "Inbreeding depresses altruism in a cooperative society",
     "authors": "Wells, D. A., Cant, M. A., Hoffman, J. I., & Nichols, H. J.",
     "journal": "Ecology Letters",
@@ -228,7 +217,7 @@
   },
   {
     "type": "pub",
-    "slug": "xploitative-leaders-incite-intergroup-warfare-in-a-social-mammal",
+    "slug": "exploitative-leaders-incite-intergroup-warfare-in-a-social-mammal",
     "title": "AExploitative leaders incite intergroup warfare in a social mammal",
     "authors": "Johnstone, R. A., Cant, M. A., Cram, D., & Thompson, F. J.",
     "journal": "PNAS",
@@ -249,7 +238,7 @@
   },
   {
     "type": "pub",
-    "slug": "ssessment-during-intergroup-contests",
+    "slug": "assessment-during-intergroup-contests",
     "title": "Assessment during intergroup contests",
     "authors": "Green, P. A., Briffa, M., & Cant, M. A.",
     "journal": "Trends in Ecology and Evolution",
@@ -280,7 +269,7 @@
   },
   {
     "type": "pub",
-    "slug": "inship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness",
+    "slug": "kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness",
     "title": "KKinship dynamics: patterns and consequences of changes in local relatedness",
     "authors": "Croft, D. P., Weiss, M. N., Nielsen, M L.K., Grimes, C., Cant, M. A., Ellis, S., . . . Johnstone, R. A.",
     "journal": "Proceedings of the Royal Society B",
@@ -290,7 +279,7 @@
   },
   {
     "type": "pub",
-    "slug": "ta-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses",
+    "slug": "a-double-pedigree-reveals-genetic-but-not-cultural-inheritance-of-cooperative-personalities-in-wild-banded-mongooses",
     "title": "A double pedigree reveals genetic but not cultural inheritance of cooperative personalities in wild banded mongooses",
     "authors": "Nichols, H.J., Arbuckle, K., Sanderson, J. L., Vitikainen, E I.K., Marshall, H.H., Thompson, F. J., . . . Wells, D. A.",
     "journal": "Ecology Letters",
@@ -311,7 +300,7 @@
   },
   {
     "type": "pub",
-    "slug": "ntangling-the-oxidative-cost-of-reproduction-an-analysis-in-wild-banded-mongooses",
+    "slug": "untangling-the-oxidative-cost-of-reproduction-an-analysis-in-wild-banded-mongooses",
     "title": "SUntangling the oxidative cost of reproduction: An analysis in wild banded mongooses",
     "authors": "Meniri, M., Evans, E., Thompson, F.J., Marshall, H.H., Nichols, H.J., Lewis, G., Holt, L., Davey, E., Mitchell, C., Johnstone, R.A. and Cant, M.A.",
     "journal": "Ecology and Evolution",
@@ -333,7 +322,7 @@
   },
   {
     "type": "pub",
-    "slug": "anded-mongooses-a-life-of-cooperation-and-conflict",
+    "slug": "banded-mongooses-a-life-of-cooperation-and-conflict",
     "title": "Banded mongooses: a life of cooperation and conflict",
     "authors": "Cant, M. A.",
     "journal": "",
@@ -342,7 +331,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-skew-and-the-threat-of-eviction-a-new-perspective",
+    "slug": "reproductive-skew-and-the-threat-of-eviction-a-new-perspective",
     "title": "Reproductive skew and the threat of eviction: a new perspective",
     "authors": "Johnstone, R. A., Cant, M. A.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -364,7 +353,7 @@
   },
   {
     "type": "pub",
-    "slug": "ndiscriminate-infanticide-and-reproductive-skew",
+    "slug": "indiscriminate-infanticide-and-reproductive-skew",
     "title": "Indiscriminate infanticide and reproductive skew",
     "authors": "Johnstone, R. A., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -375,7 +364,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-skew-in-multi-member-groups",
+    "slug": "reproductive-skew-in-multi-member-groups",
     "title": "Reproductive skew in multi-member groups",
     "authors": "Johnstone, R. A., Woodroffe, R., Cant, M. A., Wright, J.",
     "journal": "The American Naturalist",
@@ -386,7 +375,7 @@
   },
   {
     "type": "pub",
-    "slug": "ostly-young-and-reproductive-skew-in-animal-societies",
+    "slug": "costly-young-and-reproductive-skew-in-animal-societies",
     "title": "Costly young and reproductive skew in animal societies",
     "authors": "Cant, M. A., Johnstone, R. A.",
     "journal": "Behavioral Ecology",
@@ -397,7 +386,7 @@
   },
   {
     "type": "pub",
-    "slug": "ocial-control-of-reproduction-in-banded-mongooses",
+    "slug": "social-control-of-reproduction-in-banded-mongooses",
     "title": "Social control of reproduction in banded mongooses",
     "authors": "Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -408,7 +397,7 @@
   },
   {
     "type": "pub",
-    "slug": "ower-struggles-dominance-testing-and-reproductive-skew",
+    "slug": "power-struggles-dominance-testing-and-reproductive-skew",
     "title": "Power struggles, dominance testing, and reproductive skew",
     "authors": "Cant, M. A., Johnstone, R. A.",
     "journal": "The American Naturalist",
@@ -419,7 +408,7 @@
   },
   {
     "type": "pub",
-    "slug": "emale-control-of-paternity-in-cooperative-breeders",
+    "slug": "female-control-of-paternity-in-cooperative-breeders",
     "title": "Female control of paternity in cooperative breeders",
     "authors": "Cant, M. A., Reeve, H. K.",
     "journal": "The American Naturalist",
@@ -430,7 +419,7 @@
   },
   {
     "type": "pub",
-    "slug": "elping-effort-and-future-fitness-in-cooperative-animal-societies",
+    "slug": "helping-effort-and-future-fitness-in-cooperative-animal-societies",
     "title": "AHelping effort and future fitness in cooperative animal societies",
     "authors": "Cant, M. A., Field, J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -441,7 +430,7 @@
   },
   {
     "type": "pub",
-    "slug": "elping-effort-in-a-dominance-hierarchy",
+    "slug": "helping-effort-in-a-dominance-hierarchy",
     "title": "Helping effort in a dominance hierarchy",
     "authors": "Cant, M. A., Field, J.",
     "journal": "Behavioral Ecology",
@@ -452,7 +441,7 @@
   },
   {
     "type": "pub",
-    "slug": "table-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew",
+    "slug": "stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew",
     "title": "XStable group size in cooperative breeders: the role of inheritance and reproductive skew",
     "authors": "Cant, M. A., English, S.",
     "journal": "Behavioral Ecology",
@@ -463,7 +452,7 @@
   },
   {
     "type": "pub",
-    "slug": "elf-serving-punishment-and-the-evolution-of-cooperation",
+    "slug": "self-serving-punishment-and-the-evolution-of-cooperation",
     "title": "Self-serving punishment and the evolution of cooperation",
     "authors": "Cant, M. A., Johnstone, R. A.",
     "journal": "Journal of Evolutionary Biology",
@@ -474,7 +463,7 @@
   },
   {
     "type": "pub",
-    "slug": "ndogenous-timing-and-competitive-interactions-among-relatives",
+    "slug": "endogenous-timing-and-competitive-interactions-among-relatives",
     "title": "Endogenous timing and competitive interactions among relatives",
     "authors": "Cant, M. A., Shen, S-F.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -496,7 +485,7 @@
   },
   {
     "type": "pub",
-    "slug": "scalated-conflict-in-a-social-hierarchy",
+    "slug": "escalated-conflict-in-a-social-hierarchy",
     "title": "Escalated conflict in a social hierarchy",
     "authors": "Cant, M. A., English, S., Reeve, H. K., Field, J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -518,7 +507,7 @@
   },
   {
     "type": "pub",
-    "slug": "ex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior",
+    "slug": "sex-differences-in-dispersal-and-the-evolution-of-helping-and-harming-behavior",
     "title": "NSex differences in dispersal and the evolution of helping and harming behavior",
     "authors": "Johnstone, R. A., Cant, M. A.",
     "journal": "The American Naturalist",
@@ -529,7 +518,7 @@
   },
   {
     "type": "pub",
-    "slug": "odels-of-reproductive-skew-outside-options-and-the-resolution-of-reproductive-conflict",
+    "slug": "models-of-reproductive-skew-outside-options-and-the-resolution-of-reproductive-conflict",
     "title": "Models of reproductive skew \u2013 outside options and the resolution of reproductive conflict",
     "authors": "Johnstone, R. A., Cant, M. A.",
     "journal": "",
@@ -539,7 +528,7 @@
   },
   {
     "type": "pub",
-    "slug": "ow-threats-influence-the-evolutionary-resolution-of-within-group-conflict",
+    "slug": "how-threats-influence-the-evolutionary-resolution-of-within-group-conflict",
     "title": "JHow threats influence the evolutionary resolution of within-group conflict",
     "authors": "Cant, M. A., Johnstone, R. A.",
     "journal": "The American Naturalist",
@@ -550,7 +539,7 @@
   },
   {
     "type": "pub",
-    "slug": "he-role-of-threats-in-animal-cooperation",
+    "slug": "the-role-of-threats-in-animal-cooperation",
     "title": "The role of threats in animal cooperation",
     "authors": "Cant, M. A.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -561,7 +550,7 @@
   },
   {
     "type": "pub",
-    "slug": "nclusive-fitness-theory-and-eusociality",
+    "slug": "inclusive-fitness-theory-and-eusociality",
     "title": "Inclusive fitness theory and eusociality",
     "authors": "Abbot, P., Abe, J., Alcock, J., Alizon, S., Alpedrinha, J. A., Andersson, M., Andre, J. B., van Baalen, M., Balloux, F., Balshine, S.",
     "journal": "Nature Brief Communications Arising",
@@ -572,7 +561,7 @@
   },
   {
     "type": "pub",
-    "slug": "ooperative-breeding-systems",
+    "slug": "cooperative-breeding-systems",
     "title": "Cooperative breeding systems",
     "authors": "Cant, M. A.",
     "journal": "",
@@ -593,7 +582,7 @@
   },
   {
     "type": "pub",
-    "slug": "ex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects",
+    "slug": "sex-biased-dispersal-haplodiploidy-and-the-evolution-of-helping-in-social-insects",
     "title": "RSex-biased dispersal, haplodiploidy and the evolution of helping in social insects",
     "authors": "Johnstone, R. A., Cant, M. A., Field, J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -604,7 +593,7 @@
   },
   {
     "type": "pub",
-    "slug": "uppression-of-social-conflict-and-evolutionary-transitions-to-cooperation",
+    "slug": "suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation",
     "title": "JSuppression of social conflict and evolutionary transitions to cooperation",
     "authors": "Cant, M. A.",
     "journal": "The American Naturalist",
@@ -615,7 +604,7 @@
   },
   {
     "type": "pub",
-    "slug": "emography-and-social-evolution-of-banded-mongooses",
+    "slug": "demography-and-social-evolution-of-banded-mongooses",
     "title": "Demography and social evolution of banded mongooses",
     "authors": "Cant, M. A., Vitikainen, E., Nichols, H. J.",
     "journal": "Advances in the Study of Behaviour",
@@ -626,7 +615,7 @@
   },
   {
     "type": "pub",
-    "slug": "ongevity-suppresses-conflict-in-animal-societies",
+    "slug": "longevity-suppresses-conflict-in-animal-societies",
     "title": "Longevity suppresses conflict in animal societies",
     "authors": "Port, M., Cant, M. A.",
     "journal": "Biology Letters",
@@ -636,7 +625,7 @@
   },
   {
     "type": "pub",
-    "slug": "esolving-social-conflict-among-females-without-overt-aggression",
+    "slug": "resolving-social-conflict-among-females-without-overt-aggression",
     "title": "Resolving social conflict among females without overt aggression",
     "authors": "Cant, M. A., Young, A. J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -647,7 +636,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-suppression",
+    "slug": "reproductive-suppression",
     "title": "Reproductive suppression",
     "authors": "Cant, M. A.",
     "journal": "The International Encyclopedia of Human Sexuality",
@@ -657,7 +646,7 @@
   },
   {
     "type": "pub",
-    "slug": "ake-way-for-team-mongoose",
+    "slug": "make-way-for-team-mongoose",
     "title": "Make way for team mongoose",
     "authors": "Cant, M. A.",
     "journal": "",
@@ -688,7 +677,7 @@
   },
   {
     "type": "pub",
-    "slug": "viction-and-dispersal-in-co-operatively-breeding-banded-mongooses-",
+    "slug": "eviction-and-dispersal-in-co-operatively-breeding-banded-mongooses-",
     "title": "QEviction and dispersal in co-operatively breeding banded mongooses (Mungos mungo)",
     "authors": "Cant, M. A., Otali, E., Mwanguhya, F.",
     "journal": "Journal of Zoology",
@@ -710,7 +699,7 @@
   },
   {
     "type": "pub",
-    "slug": "ighting-and-mating-between-groups-in-a-cooperatively-breeding-mammal-the-banded-mongoose",
+    "slug": "fighting-and-mating-between-groups-in-a-cooperatively-breeding-mammal-the-banded-mongoose",
     "title": "ZFighting and mating between groups in a cooperatively breeding mammal, the banded mongoose",
     "authors": "Cant, M. A., Otali, E., Mwanguhya, F.",
     "journal": "Ethology",
@@ -721,7 +710,7 @@
   },
   {
     "type": "pub",
-    "slug": "he-effects-of-refuse-feeding-on-body-condition-reproduction-and-survival-of-banded-mongooses",
+    "slug": "the-effects-of-refuse-feeding-on-body-condition-reproduction-and-survival-of-banded-mongooses",
     "title": "The effects of refuse feeding on body condition, reproduction, and survival of banded mongooses",
     "authors": "Otali, E., Gilchrist, J. S.",
     "journal": "Journal of Mammalogy",
@@ -732,7 +721,7 @@
   },
   {
     "type": "pub",
-    "slug": "atterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-",
+    "slug": "patterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-",
     "title": "UPatterns of helping effort in co-operatively breeding banded mongooses (Mungos mungo)",
     "authors": "Cant, M. A.",
     "journal": "Journal of Zoology",
@@ -754,7 +743,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-success-in-a-low-skew-communal-breeding-mammal-the-banded-mongoose-mungos-mungo",
+    "slug": "reproductive-success-in-a-low-skew-communal-breeding-mammal-the-banded-mongoose-mungos-mungo",
     "title": "Reproductive success in a low skew, communal breeding mammal: the banded mongoose, Mungos mungo",
     "authors": "Gilchrist, J. S.",
     "journal": "Behavioral Ecology and Sociobiology",
@@ -798,7 +787,7 @@
   },
   {
     "type": "pub",
-    "slug": "ounting-the-costs-the-evolution-of-male-biased-care-in-the-cooperative-breeding-banded-mongoose",
+    "slug": "counting-the-costs-the-evolution-of-male-biased-care-in-the-cooperative-breeding-banded-mongoose",
     "title": "Counting the costs: the evolution of male-biased care in the cooperative breeding banded mongoose",
     "authors": "Hodge, S. J.",
     "journal": "Animal Behaviour",
@@ -809,7 +798,7 @@
   },
   {
     "type": "pub",
-    "slug": "asty-neighbours-rather-than-dear-enemies-in-a-social-carnivore",
+    "slug": "nasty-neighbours-rather-than-dear-enemies-in-a-social-carnivore",
     "title": "HNasty neighbours\u2019 rather than \u2018dear enemies\u2019 in a social carnivore",
     "authors": "Muller, C. A., Manser, M. B.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -820,7 +809,7 @@
   },
   {
     "type": "pub",
-    "slug": "utual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-banded-mongoose",
+    "slug": "mutual-recognition-of-pups-and-providers-in-the-cooperatively-breeding-banded-mongoose",
     "title": "VMutual recognition of pups and providers in the cooperatively breeding banded mongoose",
     "authors": "Muller, C. A., Manser, M. B.",
     "journal": "Animal Behaviour",
@@ -831,7 +820,7 @@
   },
   {
     "type": "pub",
-    "slug": "cent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew",
+    "slug": "scent-marking-and-intrasexual-competition-in-a-cooperative-carnivore-with-low-reproductive-skew",
     "title": "Scent-marking and intrasexual competition in a cooperative carnivore with low reproductive skew",
     "authors": "Muller, C. A., Manser, M. B.",
     "journal": "Ethology",
@@ -842,7 +831,7 @@
   },
   {
     "type": "pub",
-    "slug": "he-information-banded-mongooses-extract-from-heterospecific-alarm-calls",
+    "slug": "the-information-banded-mongooses-extract-from-heterospecific-alarm-calls",
     "title": "HThe information banded mongooses extract from heterospecific alarm calls",
     "authors": "Muller, C. A., Manser, M. B.",
     "journal": "Animal Behaviour",
@@ -853,7 +842,7 @@
   },
   {
     "type": "pub",
-    "slug": "ggressive-monoplization-of-mobile-carers-by-young-of-a-cooperative-breeder",
+    "slug": "aggressive-monoplization-of-mobile-carers-by-young-of-a-cooperative-breeder",
     "title": "KAggressive monoplization of mobile carers by young of a cooperative breeder",
     "authors": "Gilchrist, J. S.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -875,7 +864,7 @@
   },
   {
     "type": "pub",
-    "slug": "idnapping-and-infanticide-between-groups-of-banded-mongooses",
+    "slug": "kidnapping-and-infanticide-between-groups-of-banded-mongooses",
     "title": "Kidnapping and infanticide between groups of banded mongooses",
     "authors": "Muller, C. A., Bell, M. B. V.",
     "journal": "Mammalian Biology",
@@ -886,7 +875,7 @@
   },
   {
     "type": "pub",
-    "slug": "trategic-adjustment-of-begging-effort-by-banded-mongoose-pups",
+    "slug": "strategic-adjustment-of-begging-effort-by-banded-mongoose-pups",
     "title": "Strategic adjustment of begging effort by banded mongoose pups",
     "authors": "Bell, M. B. V.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -897,7 +886,7 @@
   },
   {
     "type": "pub",
-    "slug": "anded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type",
+    "slug": "banded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type",
     "title": "UBanded mongoose recruitment calls convey information about risk and not stimulus type",
     "authors": "Furrer, R. D., Manser, M. B.",
     "journal": "Animal Behaviour",
@@ -908,7 +897,7 @@
   },
   {
     "type": "pub",
-    "slug": "mitation-and-traditions-in-wild-banded-mongooses",
+    "slug": "imitation-and-traditions-in-wild-banded-mongooses",
     "title": "Imitation and traditions in wild banded mongooses",
     "authors": "Muller, C. A., Cant, M. A.",
     "journal": "Current Biology",
@@ -930,7 +919,7 @@
   },
   {
     "type": "pub",
-    "slug": "aternal-weight-offspring-competition-and-the-evolution-of-communal-breeding",
+    "slug": "maternal-weight-offspring-competition-and-the-evolution-of-communal-breeding",
     "title": "MMaternal weight, offspring competition and the evolution of communal breeding",
     "authors": "VHodge, S. J., Bell, M. B. V., Mwanhuya, F., Kyabulima, S., Waldick, R., Russell, A. F.",
     "journal": "Behavioral Ecology",
@@ -941,7 +930,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-competition-and-the-evolution-of-extreme-birth-synchrony-in-a-cooperative-mammal",
+    "slug": "reproductive-competition-and-the-evolution-of-extreme-birth-synchrony-in-a-cooperative-mammal",
     "title": "Reproductive competition and the evolution of extreme birth synchrony in a cooperative mammal",
     "authors": "Hodge, S. J., Bell, M. B. V., Cant, M. A.",
     "journal": "Biology Letters",
@@ -952,7 +941,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-control-via-eviction-",
+    "slug": "reproductive-control-via-eviction-",
     "title": "VReproductive control via eviction (but not the threat of eviction) in banded mongooses",
     "authors": "KCant, M. A., Hodge, S. J., Bell, M. B. V., Gilchrist, J. S., Nichols, H. J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -963,7 +952,7 @@
   },
   {
     "type": "pub",
-    "slug": "cent-marking-within-and-between-groups-in-banded-mongooses",
+    "slug": "scent-marking-within-and-between-groups-in-banded-mongooses",
     "title": "Scent marking within and between groups in banded mongooses",
     "authors": "CJordan, N. R., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A.",
     "journal": "Journal of Zoology",
@@ -974,7 +963,7 @@
   },
   {
     "type": "pub",
-    "slug": "cent-marking-in-wild-banded-mongooses-2-intrasexual-marking-and-competition-between-males",
+    "slug": "scent-marking-in-wild-banded-mongooses-2-intrasexual-marking-and-competition-between-males",
     "title": "Scent marking in wild banded mongooses: 2. Intrasexual marking and competition between males",
     "authors": "Jordan, N. R., Furrer, R., Kyabulima, S., Ruedi, P., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -996,7 +985,7 @@
   },
   {
     "type": "pub",
-    "slug": "cent-marking-in-wild-banded-mongooses-3-intrasexual-marking-in-females",
+    "slug": "scent-marking-in-wild-banded-mongooses-3-intrasexual-marking-in-females",
     "title": "IScent marking in wild banded mongooses: 3. Intrasexual marking in females",
     "authors": "Jordan, N. R., Mwanguhya, S., Reudi, P., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -1007,7 +996,7 @@
   },
   {
     "type": "pub",
-    "slug": "he-cost-of-dominance-suppressing-subordinate-reproduction-affects-the-reproductive-success-of-dominant-female-banded-mongooses",
+    "slug": "the-cost-of-dominance-suppressing-subordinate-reproduction-affects-the-reproductive-success-of-dominant-female-banded-mongooses",
     "title": "The cost of dominance: suppressing subordinate reproduction affects the reproductive success of dominant female banded mongooses",
     "authors": "KBell, M. B. V., Nichols, H. J., Gilchrist, J. S., Cant, M. A., Hodge, S. J.",
     "journal": "Philosophical Transactions of the Royal Society B",
@@ -1029,7 +1018,7 @@
   },
   {
     "type": "pub",
-    "slug": "cent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking",
+    "slug": "scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking",
     "title": "KScent marking in wild banded mongooses: 1. Sex-specific scent & overmarking",
     "authors": "RJordan, N. R., Manser, M. B., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -1051,7 +1040,7 @@
   },
   {
     "type": "pub",
-    "slug": "ex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore",
+    "slug": "sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore",
     "title": "Sex and age influence responses to changes in the cost of cooperative care in a social carnivore",
     "authors": "Bell, M. B. V.",
     "journal": "Behavioral Ecology",
@@ -1062,7 +1051,7 @@
   },
   {
     "type": "pub",
-    "slug": "ood-availability-shapes-patterns-of-helping-effort-in-a-cooperative-mongoose",
+    "slug": "food-availability-shapes-patterns-of-helping-effort-in-a-cooperative-mongoose",
     "title": "MFood availability shapes patterns of helping effort in a cooperative mongoose",
     "authors": "SNichols, H. J., Amos, W., Bell, M. B. V., Mwanguhya, F., Kyabulima, S., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -1073,7 +1062,7 @@
   },
   {
     "type": "pub",
-    "slug": "ow-do-banded-mongoose-locate-and-select-anvils-for-cracking-encased-food-items",
+    "slug": "how-do-banded-mongoose-locate-and-select-anvils-for-cracking-encased-food-items",
     "title": "PHow do banded mongoose locate and select anvils for cracking encased food items?",
     "authors": "McAuliffe, K., Thornton, A.",
     "journal": "Behavioural Processes",
@@ -1106,7 +1095,7 @@
   },
   {
     "type": "pub",
-    "slug": "ormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal",
+    "slug": "hormonal-mediation-of-a-carry-over-effect-in-a-wild-cooperative-mammal",
     "title": "FHormonal mediation of a carry-over effect in a wild cooperative mammal",
     "authors": "WSanderson, J. L., Young, A. J., Hodge, S. J., Kyabulima, S., Walker, S. L., Cant, M. A.",
     "journal": "Functional Ecology",
@@ -1117,7 +1106,7 @@
   },
   {
     "type": "pub",
-    "slug": "esting-for-vocal-individual-discrimination-in-adult-banded-mongooses",
+    "slug": "testing-for-vocal-individual-discrimination-in-adult-banded-mongooses",
     "title": "ETesting for vocal individual discrimination in adult banded mongooses",
     "authors": "Jansen, D. A. W. A. M., Cant, M. A., Manser, M. B.",
     "journal": "Journal of Zoology",
@@ -1128,7 +1117,7 @@
   },
   {
     "type": "pub",
-    "slug": "olicing-of-reproduction-by-hidden-threats-in-a-cooperative-mammal",
+    "slug": "policing-of-reproduction-by-hidden-threats-in-a-cooperative-mammal",
     "title": "BPolicing of reproduction by hidden threats in a cooperative mammal",
     "authors": "Cant, M. A., Nichols, H. J., Johnstone, R. A., Hodge, S. J.",
     "journal": "PNAS",
@@ -1139,7 +1128,7 @@
   },
   {
     "type": "pub",
-    "slug": "xidative-shielding-and-the-cost-of-reproduction",
+    "slug": "oxidative-shielding-and-the-cost-of-reproduction",
     "title": "Oxidative shielding and the cost of reproduction",
     "authors": "Blount, J. D., Vitikainen, E. I. K., Stott, I., Cant, M. A.",
     "journal": "Biological Reviews",
@@ -1161,7 +1150,7 @@
   },
   {
     "type": "pub",
-    "slug": "djustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal",
+    "slug": "adjustment-of-costly-extra-group-paternity-according-to-inbreeding-risk-in-a-cooperative-mammal",
     "title": "Adjustment of costly extra-group paternity according to inbreeding risk in a cooperative mammal",
     "authors": "Sanderson, J. L., Cant, M. A., Nichols, H. J.",
     "journal": "Behavioural Ecology",
@@ -1172,7 +1161,7 @@
   },
   {
     "type": "pub",
-    "slug": "vidence-for-frequent-incest-in-a-cooperatively-breeding-mammal",
+    "slug": "evidence-for-frequent-incest-in-a-cooperatively-breeding-mammal",
     "title": "Evidence for frequent incest in a cooperatively breeding mammal",
     "authors": "Nichols, H. J., Cant, M. A., Hoffman, J., Sanderson, J.",
     "journal": "Biology Letters",
@@ -1182,7 +1171,7 @@
   },
   {
     "type": "pub",
-    "slug": "he-origins-of-consistent-individual-differences-in-cooperation-in-wild-banded-mongooses",
+    "slug": "the-origins-of-consistent-individual-differences-in-cooperation-in-wild-banded-mongooses",
     "title": "XThe origins of consistent individual differences in cooperation in wild banded mongooses",
     "authors": "TSanderson, J. L., Stott, I., Young, A. J., Vitikainen, E., Hodge, S. J., Cant, M. A.",
     "journal": "Animal Behaviour",
@@ -1193,7 +1182,7 @@
   },
   {
     "type": "pub",
-    "slug": "anded-mongooses-avoid-inbreeding-when-mating-with-members-of-the-same-group",
+    "slug": "banded-mongooses-avoid-inbreeding-when-mating-with-members-of-the-same-group",
     "title": "LBanded mongooses avoid inbreeding when mating with members of the same group",
     "authors": "MSanderson, J. L., Wang, J., Vitikainen, E. I. K., Cant, M. A., Nichols, H. J.",
     "journal": "Molecular Ecology",
@@ -1248,7 +1237,7 @@
   },
   {
     "type": "pub",
-    "slug": "itness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests",
+    "slug": "fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests",
     "title": "YFitness incentives to male fighters undermine fighting performance in intergroup contests",
     "authors": "P.A. Green, D.W.E. Sankey, T. Collins, F. Mwanguhya, H.J. Nichols, M.A. Cant, F.J. Thompson",
     "journal": "Animal Behaviour",
@@ -1259,7 +1248,7 @@
   },
   {
     "type": "pub",
-    "slug": "mall-increases-in-ambient-temperature-reduce-offspring-body-mass-in-an-equatorial-mammal",
+    "slug": "small-increases-in-ambient-temperature-reduce-offspring-body-mass-in-an-equatorial-mammal",
     "title": "YSmall increases in ambient temperature reduce offspring body mass in an equatorial mammal",
     "authors": "Monil Khera, Kevin Arbuckle, Francis Mwanguhya, Solomon Kyabulima, Kenneth Mwesige, Robert Businge, Jonathan D. Blount, Michael A. Cant and Hazel J. Nichols",
     "journal": "Biology Letters",
@@ -1270,7 +1259,7 @@
   },
   {
     "type": "pub",
-    "slug": "aregiver-s-cognitive-traits-are-associated-with-pup-fitness-in-a-cooperatively-breeding-mammal",
+    "slug": "caregiver-s-cognitive-traits-are-associated-with-pup-fitness-in-a-cooperatively-breeding-mammal",
     "title": "Caregiver's cognitive traits are associated with pup fitness in a cooperatively breeding mammal",
     "authors": "C. Shelafoe, F. J. Thompson, F. Mwanguhya, S. Kyabulima, R. Businge, K. Mwesige, J. L. Sanderson, M. A. Cant, H. H. Marshall & E. I. K. Vitikainen",
     "journal": "Nature Scientific Reports",
@@ -1292,7 +1281,7 @@
   },
   {
     "type": "pub",
-    "slug": "atterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies",
+    "slug": "patterns-and-consequences-of-age-linked-change-in-local-relatedness-in-animal-societies",
     "title": "WPatterns and consequences of age-linked change in local relatedness in animal societies",
     "authors": "Samuel Ellis, Rufus A. Johnstone, Michael A. Cant, Daniel W. Franks, Michael N. Weiss, Susan C. Alberts, Kenneth C. Balcomb, Claire H. Benton, Lauren J. N. Brent, Catherine Crockford, Eve Davidian, Richard J. Delahay, David K. Ellifrit, Oliver P. H\u00f6ner, Magali Meniri, Robbie A. McDonald, Hazel J. Nichols, Faye J. Thompson, Linda Vigilant, Roman M. Wittig, Darren P. Croft",
     "journal": "Nature Ecology & Evolution",
@@ -1314,7 +1303,7 @@
   },
   {
     "type": "pub",
-    "slug": "esting-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-mongoose-species",
+    "slug": "testing-the-acoustic-adaptation-hypothesis-with-vocalizations-from-three-mongoose-species",
     "title": "YTesting the acoustic adaptation hypothesis with vocalizations from three mongoose species",
     "authors": "IArasco AG, Manser M, Wtson SK, Kyabulima S, Radford AN, Cant MA, Garcia M",
     "journal": "Animal Behaviour",
@@ -1325,7 +1314,7 @@
   },
   {
     "type": "pub",
-    "slug": "eproductive-conflict-and-the-evolution-of-menopause-in-killer-whales",
+    "slug": "reproductive-conflict-and-the-evolution-of-menopause-in-killer-whales",
     "title": "EReproductive conflict and the evolution of menopause in killer whales",
     "authors": "Cant MA, Johnstone RA, Russell AF",
     "journal": "",
