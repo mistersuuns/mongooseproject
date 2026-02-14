@@ -25,3 +25,6 @@ Thumbs.db
 # Keep the site directory but ignore temporary files
 site/*.tmp
 site/.DS_Store
+
+# Site backups (use git history instead)
+site-backup-*/
