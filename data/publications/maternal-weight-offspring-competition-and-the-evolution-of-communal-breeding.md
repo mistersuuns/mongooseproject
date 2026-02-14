@@ -1,5 +1,6 @@
 ---
 title: "MMaternal weight, offspring competition and the evolution of communal breeding"
+list_summary: "2009 | MMaternal weight, offspring competition and the evolution of communal breeding | Behavioral Ecology"
 slug: "maternal-weight-offspring-competition-and-the-evolution-of-communal-breeding"
 authors: "VHodge, S. J., Bell, M. B. V., Mwanhuya, F., Kyabulima, S., Waldick, R., Russell, A. F."
 journal: "Behavioral Ecology"

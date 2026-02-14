@@ -1,5 +1,6 @@
 ---
 title: "W Smelling fit: scent marking exposes parasitic infection status in the banded mongoose"
+list_summary: "2017 | W Smelling fit: scent marking exposes parasitic infection status in the banded mongoose | Current Zoology"
 slug: "smelling-fit-scent-marking-exposes-parasitic-infection-status-in-the-banded-mongoose"
 authors: "Mitchell J, Cant MA, Vitikainen EIK, Nichols HJ"
 journal: "Current Zoology"

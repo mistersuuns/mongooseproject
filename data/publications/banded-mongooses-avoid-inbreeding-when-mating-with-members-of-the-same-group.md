@@ -1,5 +1,6 @@
 ---
 title: "LBanded mongooses avoid inbreeding when mating with members of the same group"
+list_summary: "2015 | LBanded mongooses avoid inbreeding when mating with members of the same group | Molecular Ecology"
 slug: "banded-mongooses-avoid-inbreeding-when-mating-with-members-of-the-same-group"
 authors: "MSanderson, J. L., Wang, J., Vitikainen, E. I. K., Cant, M. A., Nichols, H. J."
 journal: "Molecular Ecology"

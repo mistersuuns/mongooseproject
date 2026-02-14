@@ -1,5 +1,6 @@
 ---
 title: "Olivier Carter"
+list_summary: "Olivier Carter | PhD student"
 slug: "olivier-carter"
 position: "PhD student"
 category: "PostDoc or Grad Student"

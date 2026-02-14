@@ -1,5 +1,6 @@
 ---
 title: "NLive long and prosper: durable benefits of early-life care in banded mongooses"
+list_summary: "2019 | NLive long and prosper: durable benefits of early-life care in banded mongooses | Proceedings of the Royal Society B"
 slug: "live-long-and-prosper-durable-benefits-of-early-life-care-in-banded-mongooses"
 authors: "Vitikainen E, Thompson F, Marshall H, Cant MA"
 journal: "Proceedings of the Royal Society B"

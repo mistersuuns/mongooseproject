@@ -1,5 +1,6 @@
 ---
 title: "Leela Channer"
+list_summary: "Leela Channer | PhD student"
 slug: "leela-channer"
 position: "PhD student"
 category: "PostDoc or Grad Student"

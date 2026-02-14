@@ -1,5 +1,6 @@
 ---
 title: "Scent marking in wild banded mongooses: 2. Intrasexual marking and competition between males"
+list_summary: "2011 | Scent marking in wild banded mongooses: 2. Intrasexual marking and competition between males | Animal Behaviour"
 slug: "scent-marking-in-wild-banded-mongooses-2-intrasexual-marking-and-competition-between-males"
 authors: "Jordan, N. R., Furrer, R., Kyabulima, S., Ruedi, P., Cant, M. A."
 journal: "Animal Behaviour"

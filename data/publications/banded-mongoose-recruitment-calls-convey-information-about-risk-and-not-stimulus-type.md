@@ -1,5 +1,6 @@
 ---
 title: "UBanded mongoose recruitment calls convey information about risk and not stimulus type"
+list_summary: "2009 | UBanded mongoose recruitment calls convey information about risk and not stimulus type | Animal Behaviour"
 slug: "banded-mongoose-recruitment-calls-convey-information-about-risk-and-not-stimulus-type"
 authors: "Furrer, R. D., Manser, M. B."
 journal: "Animal Behaviour"

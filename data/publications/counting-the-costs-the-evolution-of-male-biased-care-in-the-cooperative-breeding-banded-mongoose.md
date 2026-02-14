@@ -1,5 +1,6 @@
 ---
 title: "Counting the costs: the evolution of male-biased care in the cooperative breeding banded mongoose"
+list_summary: "2007 | Counting the costs: the evolution of male-biased care in the cooperative breeding banded mongoose | Animal Behaviour"
 slug: "counting-the-costs-the-evolution-of-male-biased-care-in-the-cooperative-breeding-banded-mongoose"
 authors: "Hodge, S. J."
 journal: "Animal Behaviour"

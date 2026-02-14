@@ -1,5 +1,6 @@
 ---
 title: "Strategic use of male alternative reproductive tactics in cooperatively breeding banded mongoose groups"
+list_summary: "2025 | Strategic use of male alternative reproductive tactics in cooperatively breeding banded mongoose groups | Royal Society Open Science"
 slug: "strategic-use-of-male-alternative-reproductive-tactics-in-cooperatively-breeding-banded-mongoose-groups"
 authors: "YGraham Birch, Hazel J. Nichols, Francis Mwanguhya, Jonathan D. Blount and Michael A. Cant"
 journal: "Royal Society Open Science"

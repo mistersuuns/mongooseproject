@@ -1,5 +1,6 @@
 ---
 title: "Rufus Johnstone"
+list_summary: "Rufus Johnstone | Professor"
 slug: "rufus-johnstone"
 position: "Professor"
 category: "Co-I"

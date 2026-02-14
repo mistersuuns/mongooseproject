@@ -1,5 +1,6 @@
 ---
 title: "RSpontaneous abortion as a response to reproductive conflict in the banded mongoose"
+list_summary: "2019 | RSpontaneous abortion as a response to reproductive conflict in the banded mongoose | Biology Letters"
 slug: "spontaneous-abortion-as-a-response-to-reproductive-conflict-in-the-banded-mongoose"
 authors: "Inzani, E., Marshall, H. H., Thompson, F. J., Kalema-Zikusoka, G., Cant, M. A., & Vitikainen, E. I. K."
 journal: "Biology Letters"

@@ -1,5 +1,6 @@
 ---
 title: "Female control of paternity in cooperative breeders"
+list_summary: "2002 | Female control of paternity in cooperative breeders | The American Naturalist"
 slug: "female-control-of-paternity-in-cooperative-breeders"
 authors: "Cant, M. A., Reeve, H. K."
 journal: "The American Naturalist"

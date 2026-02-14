@@ -1,5 +1,6 @@
 ---
 title: "Emma Vitikainen"
+list_summary: "Emma Vitikainen | Lecturer"
 slug: "emma-vitikainen"
 position: "Lecturer"
 category: "Co-I"

@@ -1,5 +1,6 @@
 ---
 title: "EReproductive conflict and the evolution of menopause in killer whales"
+list_summary: "2009 | EReproductive conflict and the evolution of menopause in killer whales"
 slug: "reproductive-conflict-and-the-evolution-of-menopause-in-killer-whales"
 authors: "Cant MA, Johnstone RA, Russell AF"
 year: "2009"

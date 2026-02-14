@@ -1,5 +1,6 @@
 ---
 title: "Costly young and reproductive skew in animal societies"
+list_summary: "1999 | Costly young and reproductive skew in animal societies | Behavioral Ecology"
 slug: "costly-young-and-reproductive-skew-in-animal-societies"
 authors: "Cant, M. A., Johnstone, R. A."
 journal: "Behavioral Ecology"

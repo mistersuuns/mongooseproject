@@ -1,5 +1,6 @@
 ---
 title: "XStable group size in cooperative breeders: the role of inheritance and reproductive skew"
+list_summary: "2006 | XStable group size in cooperative breeders: the role of inheritance and reproductive skew | Behavioral Ecology"
 slug: "stable-group-size-in-cooperative-breeders-the-role-of-inheritance-and-reproductive-skew"
 authors: "Cant, M. A., English, S."
 journal: "Behavioral Ecology"

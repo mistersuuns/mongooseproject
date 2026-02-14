@@ -1,5 +1,6 @@
 ---
 title: "KScent marking in wild banded mongooses: 1. Sex-specific scent & overmarking"
+list_summary: "2011 | KScent marking in wild banded mongooses: 1. Sex-specific scent & overmarking | Animal Behaviour"
 slug: "scent-marking-in-wild-banded-mongooses-1-sex-specific-scent-overmarking"
 authors: "RJordan, N. R., Manser, M. B., Mwanguhya, F., Kyabulima, S., Ruedi, P., Cant, M. A."
 journal: "Animal Behaviour"

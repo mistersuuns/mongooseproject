@@ -1,5 +1,6 @@
 ---
 title: "KKinship dynamics: patterns and consequences of changes in local relatedness"
+list_summary: "2021 | KKinship dynamics: patterns and consequences of changes in local relatedness | Proceedings of the Royal Society B"
 slug: "kinship-dynamics-patterns-and-consequences-of-changes-in-local-relatedness"
 authors: "Croft, D. P., Weiss, M. N., Nielsen, M L.K., Grimes, C., Cant, M. A., Ellis, S., . . . Johnstone, R. A."
 journal: "Proceedings of the Royal Society B"

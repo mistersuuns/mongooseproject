@@ -1,5 +1,6 @@
 ---
 title: "The role of threats in animal cooperation"
+list_summary: "2010 | The role of threats in animal cooperation | Philosophical Transactions of the Royal Society B"
 slug: "the-role-of-threats-in-animal-cooperation"
 authors: "Cant, M. A."
 journal: "Philosophical Transactions of the Royal Society B"

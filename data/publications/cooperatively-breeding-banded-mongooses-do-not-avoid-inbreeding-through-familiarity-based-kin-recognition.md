@@ -1,5 +1,6 @@
 ---
 title: "Cooperatively breeding banded mongooses do not avoid inbreeding through familiarity-based kin recognition"
+list_summary: "2021 | Cooperatively breeding banded mongooses do not avoid inbreeding through familiarity-based kin recognition | Behavioral Ecology and Sociobiology"
 slug: "cooperatively-breeding-banded-mongooses-do-not-avoid-inbreeding-through-familiarity-based-kin-recognition"
 authors: "VKhera, M., Arbuckle, K., Hoffman, J.I., Sanderson, J.L., Cant, M.A., & Nichols, H. J."
 journal: "Behavioral Ecology and Sociobiology"

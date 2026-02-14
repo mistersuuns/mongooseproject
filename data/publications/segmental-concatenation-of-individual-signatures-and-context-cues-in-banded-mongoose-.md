@@ -1,5 +1,6 @@
 ---
 title: "Segmental concatenation of individual signatures and context cues in banded mongoose (Mungos mungo) close calls"
+list_summary: "2012 | Segmental concatenation of individual signatures and context cues in banded mongoose (Mungos mungo) close calls | BMC Biology"
 slug: "segmental-concatenation-of-individual-signatures-and-context-cues-in-banded-mongoose-"
 authors: "Jansen, D. A., Cant, M. A., Manser, M. B."
 journal: "BMC Biology"

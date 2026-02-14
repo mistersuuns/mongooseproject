@@ -1,5 +1,6 @@
 ---
 title: "Longevity suppresses conflict in animal societies"
+list_summary: "Longevity suppresses conflict in animal societies | Biology Letters"
 slug: "longevity-suppresses-conflict-in-animal-societies"
 authors: "Port, M., Cant, M. A."
 journal: "Biology Letters"

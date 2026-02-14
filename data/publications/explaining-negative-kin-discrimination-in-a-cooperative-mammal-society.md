@@ -1,5 +1,6 @@
 ---
 title: "FExplaining negative kin discrimination in a cooperative mammal society"
+list_summary: "2017 | FExplaining negative kin discrimination in a cooperative mammal society | PNAS"
 slug: "explaining-negative-kin-discrimination-in-a-cooperative-mammal-society"
 authors: "Thompson FJ, Cant MA, Marshall HH, Vitikainen EIK, Sanderson JL, Nichols HJ, Gilchrist JS, Bell MBV, Young AJ, Hodge SJ, Johnstone, RA"
 journal: "PNAS"

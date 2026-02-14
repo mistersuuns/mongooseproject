@@ -1,5 +1,6 @@
 ---
 title: "Fighting force and experience combine to determine intergroup contest success in a warlike mammal"
+list_summary: "2022 | Fighting force and experience combine to determine intergroup contest success in a warlike mammal | PNAS"
 slug: "fighting-force-and-experience-combine-to-determine-intergroup-contest-success-in-a-warlike-mammal"
 authors: "Green, P., Thompson, F.J., Cant, M.A."
 journal: "PNAS"

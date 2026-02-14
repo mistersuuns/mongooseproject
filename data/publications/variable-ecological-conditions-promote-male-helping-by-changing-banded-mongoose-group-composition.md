@@ -1,5 +1,6 @@
 ---
 title: "Variable ecological conditions promote male helping by changing banded mongoose group composition"
+list_summary: "2016 | Variable ecological conditions promote male helping by changing banded mongoose group composition | Behavioural Ecology"
 slug: "variable-ecological-conditions-promote-male-helping-by-changing-banded-mongoose-group-composition"
 authors: "Marshall, H. H., Sanderson, J. L., Mwanghuya, F., Businge, R., Kyabulima, S., Hares, M. C., Cant, M. A."
 journal: "Behavioural Ecology"

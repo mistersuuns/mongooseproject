@@ -1,5 +1,6 @@
 ---
 title: "VDo anvil-using banded mongooses understand means-end relationships? A field experiment"
+list_summary: "2010 | VDo anvil-using banded mongooses understand means-end relationships? A field experiment | Animal Cognition"
 slug: "do-anvil-using-banded-mongooses-understand-means-end-relationships-a-field-experiment"
 authors: "Mueller, C. A."
 journal: "Animal Cognition"

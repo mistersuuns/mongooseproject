@@ -1,5 +1,6 @@
 ---
 title: "Endogenous timing and competitive interactions among relatives"
+list_summary: "2005 | Endogenous timing and competitive interactions among relatives | Philosophical Transactions of the Royal Society B"
 slug: "endogenous-timing-and-competitive-interactions-among-relatives"
 authors: "Cant, M. A., Shen, S-F."
 journal: "Philosophical Transactions of the Royal Society B"

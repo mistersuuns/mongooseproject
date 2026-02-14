@@ -1,5 +1,6 @@
 ---
 title: "Cooperative breeding systems"
+list_summary: "2012 | Cooperative breeding systems"
 slug: "cooperative-breeding-systems"
 authors: "Cant, M. A."
 year: "2012"

@@ -1,5 +1,6 @@
 ---
 title: "JSuppression of social conflict and evolutionary transitions to cooperation"
+list_summary: "2012 | JSuppression of social conflict and evolutionary transitions to cooperation | The American Naturalist"
 slug: "suppression-of-social-conflict-and-evolutionary-transitions-to-cooperation"
 authors: "Cant, M. A."
 journal: "The American Naturalist"

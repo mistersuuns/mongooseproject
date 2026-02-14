@@ -1,5 +1,6 @@
 ---
 title: "Self-serving punishment and the evolution of cooperation"
+list_summary: "2006 | Self-serving punishment and the evolution of cooperation | Journal of Evolutionary Biology"
 slug: "self-serving-punishment-and-the-evolution-of-cooperation"
 authors: "Cant, M. A., Johnstone, R. A."
 journal: "Journal of Evolutionary Biology"

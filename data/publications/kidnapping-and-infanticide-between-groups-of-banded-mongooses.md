@@ -1,5 +1,6 @@
 ---
 title: "Kidnapping and infanticide between groups of banded mongooses"
+list_summary: "2009 | Kidnapping and infanticide between groups of banded mongooses | Mammalian Biology"
 slug: "kidnapping-and-infanticide-between-groups-of-banded-mongooses"
 authors: "Muller, C. A., Bell, M. B. V."
 journal: "Mammalian Biology"

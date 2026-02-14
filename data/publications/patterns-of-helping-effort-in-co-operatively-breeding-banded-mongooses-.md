@@ -1,5 +1,6 @@
 ---
 title: "UPatterns of helping effort in co-operatively breeding banded mongooses (Mungos mungo)"
+list_summary: "2003 | UPatterns of helping effort in co-operatively breeding banded mongooses (Mungos mungo) | Journal of Zoology"
 slug: "patterns-of-helping-effort-in-co-operatively-breeding-banded-mongooses-"
 authors: "Cant, M. A."
 journal: "Journal of Zoology"

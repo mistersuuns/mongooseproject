@@ -1,5 +1,6 @@
 ---
 title: "OA model for the evolution of reproductive skew without reproductive suppression"
+list_summary: "1998 | OA model for the evolution of reproductive skew without reproductive suppression | Animal Behaviour"
 slug: "a-model-for-the-evolution-of-reproductive-skew-without-reproductive-suppression"
 authors: "Cant, M. A."
 journal: "Animal Behaviour"

@@ -1,5 +1,6 @@
 ---
 title: "Caregivers recognise and bias response towards individual young in a cooperative breeding mammal the banded mongoose"
+list_summary: "2008 | Caregivers recognise and bias response towards individual young in a cooperative breeding mammal the banded mongoose | Journal of Zoology"
 slug: "caregivers-recognise-and-bias-response-towards-individual-young-in-a-cooperative-breeding-mammal-the-banded-mongoose"
 authors: "Gilchrist, J. S., Otali, E., Mwanghuya, F."
 journal: "Journal of Zoology"

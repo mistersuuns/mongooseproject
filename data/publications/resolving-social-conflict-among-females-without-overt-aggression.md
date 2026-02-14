@@ -1,5 +1,6 @@
 ---
 title: "Resolving social conflict among females without overt aggression"
+list_summary: "2013 | Resolving social conflict among females without overt aggression | Philosophical Transactions of the Royal Society B"
 slug: "resolving-social-conflict-among-females-without-overt-aggression"
 authors: "Cant, M. A., Young, A. J."
 journal: "Philosophical Transactions of the Royal Society B"

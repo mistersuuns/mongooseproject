@@ -1,5 +1,6 @@
 ---
 title: "KAggressive monoplization of mobile carers by young of a cooperative breeder"
+list_summary: "2008 | KAggressive monoplization of mobile carers by young of a cooperative breeder | Philosophical Transactions of the Royal Society B"
 slug: "aggressive-monoplization-of-mobile-carers-by-young-of-a-cooperative-breeder"
 authors: "Gilchrist, J. S."
 journal: "Philosophical Transactions of the Royal Society B"

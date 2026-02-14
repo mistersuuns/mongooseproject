@@ -1,5 +1,6 @@
 ---
 title: "Escalated conflict in a social hierarchy"
+list_summary: "2006 | Escalated conflict in a social hierarchy | Philosophical Transactions of the Royal Society B"
 slug: "escalated-conflict-in-a-social-hierarchy"
 authors: "Cant, M. A., English, S., Reeve, H. K., Field, J."
 journal: "Philosophical Transactions of the Royal Society B"

@@ -1,5 +1,6 @@
 ---
 title: "Sex and age influence responses to changes in the cost of cooperative care in a social carnivore"
+list_summary: "2010 | Sex and age influence responses to changes in the cost of cooperative care in a social carnivore | Behavioral Ecology"
 slug: "sex-and-age-influence-responses-to-changes-in-the-cost-of-cooperative-care-in-a-social-carnivore"
 authors: "Bell, M. B. V."
 journal: "Behavioral Ecology"

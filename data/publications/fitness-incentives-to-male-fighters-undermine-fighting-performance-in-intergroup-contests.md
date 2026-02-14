@@ -1,5 +1,6 @@
 ---
 title: "YFitness incentives to male fighters undermine fighting performance in intergroup contests"
+list_summary: "2025 | YFitness incentives to male fighters undermine fighting performance in intergroup contests | Animal Behaviour"
 slug: "fitness-incentives-to-male-fighters-undermine-fighting-performance-in-intergroup-contests"
 authors: "P.A. Green, D.W.E. Sankey, T. Collins, F. Mwanguhya, H.J. Nichols, M.A. Cant, F.J. Thompson"
 journal: "Animal Behaviour"

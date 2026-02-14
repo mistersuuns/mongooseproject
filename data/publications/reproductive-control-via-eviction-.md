@@ -1,5 +1,6 @@
 ---
 title: "VReproductive control via eviction (but not the threat of eviction) in banded mongooses"
+list_summary: "2010 | VReproductive control via eviction (but not the threat of eviction) in banded mongooses | Philosophical Transactions of the Royal Society B"
 slug: "reproductive-control-via-eviction-"
 authors: "KCant, M. A., Hodge, S. J., Bell, M. B. V., Gilchrist, J. S., Nichols, H. J."
 journal: "Philosophical Transactions of the Royal Society B"

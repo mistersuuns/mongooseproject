@@ -1,5 +1,6 @@
 ---
 title: "Strategic adjustment of begging effort by banded mongoose pups"
+list_summary: "2008 | Strategic adjustment of begging effort by banded mongoose pups | Philosophical Transactions of the Royal Society B"
 slug: "strategic-adjustment-of-begging-effort-by-banded-mongoose-pups"
 authors: "Bell, M. B. V."
 journal: "Philosophical Transactions of the Royal Society B"

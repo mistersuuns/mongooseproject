@@ -1,5 +1,6 @@
 ---
 title: "Reproductive competition and the evolution of extreme birth synchrony in a cooperative mammal"
+list_summary: "2010 | Reproductive competition and the evolution of extreme birth synchrony in a cooperative mammal | Biology Letters"
 slug: "reproductive-competition-and-the-evolution-of-extreme-birth-synchrony-in-a-cooperative-mammal"
 authors: "Hodge, S. J., Bell, M. B. V., Cant, M. A."
 journal: "Biology Letters"

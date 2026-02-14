@@ -1,5 +1,6 @@
 ---
 title: "ZFighting and mating between groups in a cooperatively breeding mammal, the banded mongoose"
+list_summary: "2002 | ZFighting and mating between groups in a cooperatively breeding mammal, the banded mongoose | Ethology"
 slug: "fighting-and-mating-between-groups-in-a-cooperatively-breeding-mammal-the-banded-mongoose"
 authors: "Cant, M. A., Otali, E., Mwanguhya, F."
 journal: "Ethology"
