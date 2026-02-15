@@ -1,6 +1,7 @@
 ---
 title: "Evidence for frequent incest in a cooperatively breeding mammal"
-list_summary: "Evidence for frequent incest in a cooperatively breeding mammal | Biology Letters"
+year: "2014"
+list_summary: "2014 | Evidence for frequent incest in a cooperatively breeding mammal | Biology Letters"
 slug: "evidence-for-frequent-incest-in-a-cooperatively-breeding-mammal"
 authors: ["Nichols, H. J., Cant, M. A., Hoffman, J., Sanderson, J."]
 journal: "Biology Letters"

@@ -25,6 +25,42 @@ function getFrontmatterValue(fm, key) {
   return rest;
 }
 
+/**
+ * Attempt to extract a publication year from a DOI or URL string.
+ * Matches patterns like:
+ *   doi.org/10.1098/rsbl.2014.0898  → 2014
+ *   doi.org/10.1016/j.cub.2018.05.001  → 2018
+ *   nature.com/articles/s41598-023-44950-6  → 2023 (2-digit → 4-digit)
+ *   pmc.ncbi.nlm.nih.gov/articles/PMC5008155/  → no match (not reliable)
+ * Only returns years in a plausible academic range (1990–current+1).
+ */
+function extractYearFromUrl(url) {
+  if (!url) return null;
+  const currentYear = new Date().getFullYear();
+
+  // Try explicit 4-digit year patterns in DOI suffixes and URL paths
+  // e.g. rsbl.2014.0898, j.cub.2018.05.001, 10.3389/fevo.2016.00058
+  const fourDigit = url.match(/[./](\d{4})[./]/g);
+  if (fourDigit) {
+    for (const m of fourDigit) {
+      const y = parseInt(m.replace(/[./]/g, ''), 10);
+      if (y >= 1990 && y <= currentYear + 1) return String(y);
+    }
+  }
+
+  // Try 2-digit year in nature-style DOIs: s41598-023-44950
+  const twoDigit = url.match(/[-/]0?(\d{2})[-/]/g);
+  if (twoDigit) {
+    for (const m of twoDigit) {
+      const digits = parseInt(m.replace(/[-/]/g, ''), 10);
+      const y = digits >= 90 ? 1900 + digits : 2000 + digits;
+      if (y >= 1990 && y <= currentYear + 1) return String(y);
+    }
+  }
+
+  return null;
+}
+
 function setOrReplaceInFrontmatter(fm, key, value) {
   const escaped = value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
   const newLine = `${key}: "${escaped}"`;
@@ -44,13 +80,26 @@ function processFile(filePath, kind) {
   if (!match) return false;
   const [full, fm] = match;
   let listSummary = '';
+  let yearInferred = false;
   if (kind === 'publications') {
-    const year = getFrontmatterValue(fm, 'year');
+    let year = getFrontmatterValue(fm, 'year');
+    if (!year) {
+      const url = getFrontmatterValue(fm, 'url');
+      const pdf = getFrontmatterValue(fm, 'pdf');
+      year = extractYearFromUrl(url) || extractYearFromUrl(pdf);
+      if (year) yearInferred = true;
+    }
     const title = getFrontmatterValue(fm, 'title');
     const journal = getFrontmatterValue(fm, 'journal');
     listSummary = [year, title, journal].filter(Boolean).join(' | ');
   } else if (kind === 'news') {
-    const year = getFrontmatterValue(fm, 'year');
+    let year = getFrontmatterValue(fm, 'year');
+    if (!year) {
+      const url = getFrontmatterValue(fm, 'url');
+      const date = getFrontmatterValue(fm, 'date');
+      year = (date && date.match(/^(\d{4})/)?.[1]) || extractYearFromUrl(url);
+      if (year) yearInferred = true;
+    }
     const title = getFrontmatterValue(fm, 'title');
     listSummary = [year, title].filter(Boolean).join(' | ');
   } else if (kind === 'people') {
@@ -59,7 +108,17 @@ function processFile(filePath, kind) {
     listSummary = [title, position].filter(Boolean).join(' | ');
   }
   if (!listSummary) return false;
-  const newFm = setOrReplaceInFrontmatter(fm, 'list_summary', listSummary);
+  let newFm = fm;
+  if (yearInferred) {
+    const year = kind === 'publications'
+      ? (getFrontmatterValue(fm, 'year') || extractYearFromUrl(getFrontmatterValue(fm, 'url')) || extractYearFromUrl(getFrontmatterValue(fm, 'pdf')))
+      : (getFrontmatterValue(fm, 'year') || getFrontmatterValue(fm, 'date')?.match(/^(\d{4})/)?.[1] || extractYearFromUrl(getFrontmatterValue(fm, 'url')));
+    if (year) {
+      newFm = setOrReplaceInFrontmatter(newFm, 'year', year);
+      console.log(`  Inferred year ${year} from URL: ${path.basename(filePath)}`);
+    }
+  }
+  newFm = setOrReplaceInFrontmatter(newFm, 'list_summary', listSummary);
   const newRaw = raw.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, `---\n${newFm}\n---\n`);
   fs.writeFileSync(filePath, newRaw, 'utf-8');
   return true;
