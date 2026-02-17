@@ -493,6 +493,20 @@ function extractNews() {
         }
 
         if (newsItem.title && newsItem.slug) {
+            // Fallback: if no date from handover data, search rendered HTML near the title
+            if (!newsItem.date && newsItem.title) {
+                const titleIdx = html.indexOf(newsItem.title);
+                if (titleIdx > -1) {
+                    // Look in a window after the title for a date pattern
+                    const nearby = html.substring(titleIdx, titleIdx + 500);
+                    const dateMatch = nearby.match(/(\d{4})\/(\d{2})\/(\d{2})/);
+                    if (dateMatch) {
+                        newsItem.date = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+                        newsItem.year = dateMatch[1];
+                        console.log(`  Inferred date ${newsItem.date} from rendered HTML for: ${newsItem.slug}`);
+                    }
+                }
+            }
             news.push(newsItem);
         }
     }
