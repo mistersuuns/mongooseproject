@@ -475,11 +475,17 @@ function extractNews() {
 
             if (/^\d{4}$/.test(val)) {
                 newsItem.year = val;
+            } else if (/^\d{4}\/\d{2}\/\d{2}$/.test(val)) {
+                // Date string like "2025/10/15"
+                newsItem.date = val.replace(/\//g, '-');
+                newsItem.year = val.slice(0, 4);
             } else if (/^[a-z0-9-]+$/.test(val) && val.includes('-') && val.length > 5) {
                 newsItem.slug = val;
+            } else if (val.startsWith('https://framerusercontent.com/images/')) {
+                newsItem.image = val.replace(/\?.*$/, ''); // strip query params
             } else if (val.startsWith('http')) {
                 newsItem.url = val;
-            } else if (val.length > 20 && val.length < 200) {
+            } else if (val.length > 10 && val.length < 200 && !val.startsWith('[')) {
                 if (!newsItem.title || val.length > newsItem.title.length) {
                     newsItem.title = val;
                 }
@@ -524,7 +530,9 @@ function convertToMarkdown(items, collection) {
             if (item.image) frontmatter.push(`image: "${item.image}"`);
             if (item.link) frontmatter.push(`link: "${item.link}"`);
         } else if (collection === 'news') {
+            if (item.date) frontmatter.push(`date: "${item.date}"`);
             if (item.year) frontmatter.push(`year: "${item.year}"`);
+            if (item.image) frontmatter.push(`image: "${item.image}"`);
             if (item.url) frontmatter.push(`url: "${item.url}"`);
             if (item.description) frontmatter.push(`description: "${item.description.replace(/"/g, '\\"')}"`);
         }
