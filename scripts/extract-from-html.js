@@ -225,7 +225,7 @@ function extractPublicationsV2() {
                                 pub.url = actualValue;
                             } else if (/^[a-z0-9-]+$/.test(actualValue) && actualValue.length > 10) {
                                 pub.slug = actualValue;
-                            } else if (actualValue.length < 80 && /Journal|Biology|Ecology|Evolution|Science|Society|Nature|Proceedings|Behaviour/.test(actualValue)) {
+                            } else if (actualValue.length < 80 && /Journal|Biology|Ecology|Evolution|Science|Society|Nature|Proceedings|Behaviour/i.test(actualValue)) {
                                 pub.journal = actualValue;
                             } else if (actualValue.length > 20) {
                                 pub.title = actualValue;
@@ -326,7 +326,7 @@ function extractPublicationsV3() {
             } else if (val.endsWith('.pdf')) {
                 pub.pdf = val;
             } else if (val.length < 80 && (
-                /Journal|Biology|Ecology|Evolution|Science|Society|Nature|Proceedings|Behaviour|Behavioral|Royal|Letters|Animal/.test(val)
+                /Journal|Biology|Ecology|Evolution|Science|Society|Nature|Proceedings|Behaviour|Behavioral|Royal|Letters|Animal/i.test(val)
             )) {
                 pub.journal = val;
             } else if (val.length > 30 && val.length < 250 && !val.startsWith('http')) {
@@ -405,10 +405,10 @@ function extractPeople() {
             } else if (val.startsWith('http')) {
                 person.link = val;
             } else if (val.length < 50 && (
-                /Professor|Student|Manager|Fellow|Lecturer|Chair|Director|Researcher/.test(val)
+                /Professor|Student|Manager|Fellow|Lecturer|Chair|Director|Researcher/i.test(val)
             )) {
                 person.position = val;
-            } else if (val.length > 5 && val.length < 50 && /^[A-Z][a-z]+ [A-Z]/.test(val)) {
+            } else if (val.length > 5 && val.length < 50 && /^[A-Z][a-z]+ [A-Z]/i.test(val)) {
                 person.title = val;
             }
         }
